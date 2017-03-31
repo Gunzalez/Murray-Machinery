@@ -1,0 +1,22 @@
+.main-navigation,
+.header-login,
+.institutions-search,
+button,
+.sign-board,
+.btn,
+.footer-links,
+.order-status {
+  display: none; }
+
+.js .faqs-list ul {
+  display: block; }
+
+.js .faqs-list .active ul {
+  display: block; }
+  .js .faqs-list .active ul ul {
+    display: block; }
+  .js .faqs-list .active ul .active ul {
+    display: block; }
+
+h3.strike-through:before {
+  border-top: 1px solid #ffffff; }

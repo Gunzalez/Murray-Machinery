@@ -1,0 +1,50 @@
+@mixin border-radius($radius: 0){
+    -webkit-border-radius: $radius !important;
+    -moz-border-radius: $radius !important;
+    border-radius: $radius !important;
+}
+
+@mixin transition($transition...) {
+    -moz-transition:    $transition;
+    -o-transition:      $transition;
+    -webkit-transition: $transition;
+    transition:         $transition;
+}
+
+@mixin clearfix {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+@mixin dropshadow() {
+    -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.29);
+    -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.29);
+    box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.29);
+}
+
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    :-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    :-ms-input-placeholder      {@content}
+}
+
+%cleanUl {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+%textshadow {
+    text-shadow: 0 0 7px rgba(0, 0, 0, 0.75);
+}
+
+%visuallyHidden {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px; width: 1px;
+    margin: -1px; padding: 0; border: 0;
+}
+

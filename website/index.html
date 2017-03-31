@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Campus Clothing</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="js/vendor/easy-autocomplete.css" rel="stylesheet">
+    <link href="js/vendor/animated-burgers.css" rel="stylesheet">
+    <link href="css/murray-machinery.css" rel="stylesheet">
+    <link href="css/murray-machinery-print.css" media="print" rel="stylesheet">
+
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+
+    <script src="js/lib/jsChecks.js"></script>
+
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<div class="page">
+    <div class="section">
+        <div class="header-login">
+            <div class="container">
+                <ul class="navigation">
+                    <li>
+                        <a href="#" class="toggle-btn">
+                            <span class="show-menu">Login</span>
+                            <span class="hide-menu">Cancel</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/CampusCLtd" target="_blank">
+                            <i class="fa fa-twitter fa-lg" aria-hidden="true"></i>
+                            <span class="text">Twitter</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="http://www.facebook.com" target="_blank">
+                            <i class="fa fa-facebook fa-lg" aria-hidden="true"></i>
+                            <span class="text">Facebook</span>
+                        </a>
+                    </li>
+                </ul>
+                <div id="login-form" class="form-inline login-form form">
+                    <div class="form-group">
+                        <label for="orderNumberOrEmail">Order number/email:</label>
+                        <input type="text" class="form-control" id="orderNumberOrEmail" placeholder="Order number/email">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" class="form-control" id="password" placeholder="Password" />
+                    </div>
+                    <button type="submit" class="btn">Login <i class="fa fa-caret-right" aria-hidden="true"></i></button>
+                    <a href="forgot.html">Forgotten details <i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="header-title">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="header-box">
+                            <h1>
+                                <a href="index.html">
+                                    <span class="text">We are forever</span>
+                                    <span class="imagery"><img src="images/cc-logo.png" alt="Campus Clothing"></span>
+                                </a>
+                            </h1>
+                            <button type="button" class="hamburger hamburger--spin toggle-navigation" aria-hidden="true">
+                                          <span class="hamburger-box">
+                                            <span class="hamburger-inner"></span>
+                                          </span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12">
+                        <div class="main-navigation">
+                            <ul class="header-links">
+                                <li><a href="index.html">Home</a></li>
+                                <li><a href="contact.html">FAQ<span class="text-lowercase">s</span></a></li>
+                                <li><a href="empty-returns.html">Returns</a></li>
+                                <li><a href="http://uni.campusclothing.com/" target="_blank">Corporate</a></li>
+                                <li><a href="empty-jobs.html">Jobs</a></li>
+                                <li><a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="institutions-search">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-box">
+                            <div id="select-institution-form" class="form-inline form">
+                                <div class="form-group">
+                                    <label for="institution-name" class="sr-only">Institution name:</label>
+                                    <div class="input-wrapper">
+                                        <input type="text" class="form-control institution-name" id="institution-name" placeholder="Type your institution name..." />
+                                        <i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <a href="basket.html" class="shopping-basket-link">
+                                <i class="fa fa-shopping-cart"></i>
+                                <span class="items">2</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="sign-board">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="large-cta">
+                            <i class="fa fa-lg fa-one" aria-hidden="true"></i>
+                                        <span id="text-list" class="text display-none">
+                                            <p>Type your <strong>institution</strong> name <strong>above</strong></p>
+                                            <p>or <strong>select a product</strong> from below</p>
+                                            <p>Type your <strong>institution</strong> name <strong>above</strong> or <strong>select a product</strong> from below</p>
+                                        </span>
+                            <span id="animated-text"></span>
+                            <i class="fa fa-lg fa-two" aria-hidden="true"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="products-list static">
+            <div class="container">
+
+                <!-- item starts-->
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3">
+                        <a href="#" class="product-image open-modal">
+                            <img src="uploaded/item-1.png" class="img-responsive" alt="item 1" />
+                        </a>
+                    </div>
+                    <div class="col-xs-8 col-sm-9">
+                        <div class="product-description">
+                            <h1 class="title">
+                                <a href="#" class="open-modal">&pound;24.99 Ultra premium grad hoodie - Supersoft</a>
+                            </h1>
+                            <div class="underline">
+                                <span class="dot" aria-hidden="true"></span><hr>
+                            </div>
+                            <p>Co loalesuada ni humanity llam sed <strong>supersoft</strong> tristique aug pit Overlay Link goes wHere?.</p>
+                            <a href="#" class="btn btn-product open-modal">
+                                Select product
+                                <span class="extra sr-only"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- item starts-->
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3">
+                        <a href="#" class="product-image open-modal">
+                            <img src="uploaded/item-2.png" class="img-responsive" alt="item 2" />
+                        </a>
+                    </div>
+                    <div class="col-xs-8 col-sm-9">
+                        <div class="product-description">
+                            <h1 class="title">
+                                <a href="#" class="open-modal">&pound;14.99 Ladies 3/4 sleeve baseball T-shirt</a>
+                            </h1>
+                            <div class="underline">
+                                <span class="dot" aria-hidden="true"></span><hr>
+                            </div>
+                            <p>Duis semper rhoncus <strong>most popular</strong> nulla ex, euismod malesuada nisi accumsan ne.</p>
+                            <a href="#" class="btn btn-product open-modal">
+                                Select product
+                                <span class="extra sr-only"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- item starts-->
+                <div class="row">
+                    <div class="col-xs-4 col-sm-3">
+                        <a href="#" class="product-image open-modal">
+                            <img src="uploaded/item-3.jpg" class="img-responsive" alt="item 3" />
+                        </a>
+                    </div>
+                    <div class="col-xs-8 col-sm-9">
+                        <div class="product-description">
+                            <h1 class="title"><a href="#" class="open-modal">&pound;14.95 Campus graduation hoodie</a></h1>
+                            <div class="underline">
+                                <span class="dot" aria-hidden="true"></span><hr>
+                            </div>
+                            <p> Nullam <strong>we are forever</strong> nulla ex, euismod malesuada nisi accu Wayward Pines is so rubb ish suscipit.</p>
+                            <a href="#" class="btn btn-product open-modal">
+                                Select product
+                                <span class="extra sr-only"></span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="section">
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12">
+                        <ul class="footer-links">
+                            <li><a href="contact.html">FAQs</a></li>
+                            <li><a href="empty-returns.html">Returns</a></li>
+                            <li><a href="empty-jobs.html">Jobs</a></li>
+                            <li><a href="http://uni.campusclothing.com/" target="_blank">Corporate</a></li>
+                            <li><a href="tandcs.html">T&Cs</a></li>
+                            <li><a href="privacy.html">Privacy</a></li>
+                            <li><a href="cookies">Cookies</a></li>
+                            <li><a href="sitemap.html">Sitemap</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                        <div class="footer-copy">
+                            <p>Campus Global Ltd, Knights Farm, Avon Dasset, Southam, Warwickshire, CV47 2AS</p>
+                            <p>Enquiries: <a href="tel:03333403474">03333&nbsp;403&nbsp;474</a> &copy; 2013 Campus Global Ltd | Company Registration Number: 123456789</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="js/vendor/jquery-2.1.4.min.js"></script>
+<script src="js/vendor/easy-autocomplete.min.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/vendor/typed.min.js"></script>
+<script src="js/campus.js"></script>
+</body>
+</html>
