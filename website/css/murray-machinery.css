@@ -254,17 +254,29 @@ body {
 
 .aux-navigation li {
   display: inline; }
+  .aux-navigation li:nth-last-child(1) .icon {
+    padding-right: 12px; }
 
 .aux-navigation a {
   display: inline-block;
   font-size: 0.8em;
-  padding: 12px 15px;
+  padding: 12px;
   text-align: center;
   text-decoration: none; }
 
 .aux-navigation .icon {
-  padding: 12px 5px;
+  padding: 12px 10px;
   font-size: 1.0em; }
+
+@media (max-width: 992px) {
+  .aux-navigation .icon {
+    display: none; }
+  .aux-navigation a {
+    padding: 10px 5px 20px 5px; } }
+
+@media (max-width: 768px) {
+  .aux-navigation a {
+    font-size: 0.7em; } }
 
 .main-navigation ul {
   border-top: 1px solid #f8dbdc; }
@@ -275,7 +287,7 @@ body {
 .main-navigation a {
   display: inline-block;
   font-size: 2.0em;
-  padding: 15px 10px;
+  padding: 12px 10px;
   text-align: center;
   color: #666666;
   text-transform: uppercase;
@@ -288,25 +300,48 @@ body {
   .main-navigation a:hover {
     color: #1c3389; }
 
-@media (max-width: 992px) {
+@media (max-width: 1200px) {
   .main-navigation a {
-    font-size: 1.0em;
-    padding: 8px 10px; } }
+    font-size: 1.6em; } }
 
-@media (max-width: 768px) {
-  .main-navigation a {
-    display: block;
-    text-align: right;
-    padding: 10px; } }
+@media (max-width: 992px) {
+  .main-navigation ul {
+    display: none; } }
+
+.toggle-navigation {
+  margin-top: 10px; }
+  .toggle-navigation .hamburger-inner,
+  .toggle-navigation .hamburger-inner::before,
+  .toggle-navigation .hamburger-inner::after {
+    background-color: #d73037; }
+  @media (min-width: 993px) {
+    .toggle-navigation {
+      display: none; } }
 
 .logo {
   margin-top: -10px; }
+  .logo img {
+    width: 100%; }
+  @media (max-width: 992px) {
+    .logo {
+      width: 265px; } }
+  @media (max-width: 768px) {
+    .logo {
+      width: 190px; } }
 
 .skirt {
   height: 27px;
   background-color: #1c3389;
   width: 100%;
   margin-top: -12px; }
+  @media (max-width: 992px) {
+    .skirt {
+      margin-top: -9px;
+      height: 36px; } }
+  @media (max-width: 768px) {
+    .skirt {
+      margin-top: -5px;
+      height: 17px; } }
 
 .footer {
   background: #d73037; }
