@@ -166,52 +166,22 @@ h2 {
     line-height: 120%;
 }
 
-h3 {
-    margin-bottom: 15px;
+a {
     color: $brand-blue;
-    text-transform: uppercase;
-    font-size: 1.2em;
-    line-height: 120%;
 
-    &.strike-through {
-        position: relative;
-        z-index: 1;
-
-        &.large {
-            font-size: 1.6em;
-        }
-
-        &:before {
-            border-top: 1px solid $brand-vGrey;
-            content:"";
-            margin: 0 auto; /* this centers the line to the full width specified */
-            position: absolute; /* positioning must be absolute here, and relative positioning must be applied to the parent */
-            top: 50%; left: 0; right: 0; bottom: 0;
-            width: 100%;
-            z-index: -1;
-        }
-
-        > span {
-            /* to hide the lines from behind the text, you have to set the background color the same as the container */
-            background: #fff;
-            padding: 0 15px 0 0;
-        }
-    }
-
-    .shopping-basket-link {
-        position: absolute;
-        right: 0;
-        padding: 0 !important;
-        background: #ffffff;
-        top: 55%;
-        margin-top: -26px;
-        font-size: 2.0em;
-
-        .items {
-            top: -4px;
-        }
+    &:hover {
+        color: $brand-black;
+        text-decoration: none;
     }
 }
+
+.desktop {
+    .mobile-link {
+        color: $brand-grey;
+        cursor: default;
+    }
+}
+
 
 hr {
     border-color: $brand-vGrey;
