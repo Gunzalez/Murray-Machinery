@@ -55,10 +55,18 @@ body {
         }
     }
 
-    @media (max-width: $width-sm) {
-
+    @media (max-width: $width-xs) {
         a {
-            font-size: 0.7em;
+            padding: 5px;
+        }
+
+        li {
+            &:nth-child(2){
+                a {
+
+                    padding-bottom: 20px;
+                }
+            }
         }
     }
 }
@@ -171,7 +179,6 @@ body {
             }
         }
     }
-
 }
 
 .toggle-navigation {
@@ -187,6 +194,10 @@ body {
 
     @media (min-width: $width-md + 1) {
         display: none;
+    }
+
+    &.is-active {
+        margin-right: -10px;
     }
 }
 
@@ -220,6 +231,20 @@ body {
     @media (max-width: $width-sm) {
         margin-top: -5px;
         height: 17px;
+    }
+}
+
+.main-carousel {
+    background-position: center;
+    background-size: cover;
+
+    .slide {
+        margin-top: 120px;
+        margin-bottom: 20px;
+        margin-left: 10px;
+        width: 70%;
+        height: 200px;
+        border-radius: 2px;
     }
 }
 

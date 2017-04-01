@@ -24,10 +24,13 @@
 
             // elements of this component
             this.$parentRow = $('.main-navigation');
-            this.$menuToggleBtn = $('.has-menu', this.$parentRow);
-            this.$toggleBtn = $('.toggle-navigation', this.$parentRow);
+            this.$menuToggleBtns = $('.has-menu', this.$parentRow);
 
-            this.$menuToggleBtn.each(function(i, obj){
+            this.smallScreenMenu = $("#menu");
+            this.$toggleBtn = $('.toggle-navigation', this.$parentRow);
+            this.self = this;
+
+            this.$menuToggleBtns.each(function(i, obj){
                 $('> a',$(obj)).on('click', function(e){
                     e.preventDefault();
                     if(Modernizr.touch){
@@ -47,18 +50,38 @@
                 }
             });
 
+            this.smallScreenMenu.mmenu({
+                offCanvas: {
+                    position  : "right",
+                    "zposition": "next"
+                },
+                "extensions": [
+                    "theme-light",
+                    "pagedim-black",
+                    "border-offset"
+                ]
+            });
+            mMachinery.navigation.API = this.smallScreenMenu.data("mmenu");
+            mMachinery.navigation.API.bind( "opened", function() {
+                mMachinery.navigation.$toggleBtn.addClass('is-active');
+            });
+            mMachinery.navigation.API.bind( "closed", function() {
+                mMachinery.navigation.$toggleBtn.removeClass('is-active');
+            });
+
             this.$toggleBtn.on('click', function(e){
                 e.preventDefault();
-                $(this).blur().toggleClass('is-active');
-                //alert('Monket')
+                $(this).blur();
+                mMachinery.navigation.API.open();
             });
         },
 
-        // close on resize
         resize: function(){
-            this.$menuToggleBtn.each(function(i, obj){
+            // close and hide all menu on resize
+            this.$menuToggleBtns.each(function(i, obj){
                 $(obj).removeClass('hover');
             });
+            mMachinery.navigation.API.close();
         }
     };
 
