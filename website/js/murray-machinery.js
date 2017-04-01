@@ -1,14 +1,14 @@
 // JavaScript Document
 (function ($, window) {
 
-    var campus = {};
+    var mMachinery = {};
 
-    campus.properties = {
+    mMachinery.properties = {
         windowWidth: '',
         isMobile: false
     };
 
-    campus.utils = {
+    mMachinery.utils = {
 
         // checks based on CSS class
         mobileCheck: function() {
@@ -20,7 +20,7 @@
         }
     };
 
-    campus.environment = {
+    mMachinery.environment = {
 
         // globally used functions
         $displayToggles: $('.js-toggle-display'), // show/hide
@@ -33,8 +33,8 @@
 
         init: function (){
             // check for mobile
-            if (campus.utils.mobileCheck()){
-                campus.properties.isMobile = true;
+            if (mMachinery.utils.mobileCheck()){
+                mMachinery.properties.isMobile = true;
             }
 
             // shout out to http://amsul.ca/pickadate.js
@@ -49,7 +49,7 @@
                         closeOnClear: false,
                         close: 'Done'
                     });
-                    campus.environment.$datePickersList.push(picker);
+                    mMachinery.environment.$datePickersList.push(picker);
                 });
             }
 
@@ -87,75 +87,7 @@
         }
     };
 
-    campus.largeCTA = {
-
-        init: function () {
-            // instantiate and assign variables
-            this.$parent = $('.large-cta');
-            this.$pointers = $('i', this.$parent);
-            this.$stringDisplay = $('#animated-text', this.$parent);
-            this.$stringSource = $("#text-list", this.$parent);
-            var largeCTA = this;
-
-            // big shout out to Matt from http://www.mattboldt.com/ for this, cheers.
-            if(this.$stringDisplay.length > 0){
-                this.$stringDisplay.typed({
-                    //strings: ["First sentence.", "Second sentence."],
-                    //stringsElement: null,
-                    stringsElement: this.$stringSource,
-                    // typing speed
-                    typeSpeed: 1,
-                    // time before typing starts
-                    startDelay: 0,
-                    // backspacing speed
-                    backSpeed: 0,
-                    // shuffle the strings
-                    shuffle: false,
-                    // time before backspacing
-                    backDelay: 5000,
-                    // loop
-                    loop: false,
-                    // false = infinite
-                    loopCount: 2,
-                    // show cursor
-                    showCursor: true,
-                    // character for cursor
-                    cursorChar: "|",
-                    // attribute to type (null == text)
-                    attr: null,
-                    // either html or text
-                    contentType: 'html',
-                    // call when done callback function
-                    callback: function() {
-                        $('.typed-cursor', largeCTA.$parent).empty().text('.').removeAttr('class');
-                    },
-                    // starting callback function before each string
-                    preStringTyped: function(i) {
-                        switch (i){
-                            case 0:
-                                campus.largeCTA.$pointers.addClass('fa-caret-up');
-                                break;
-                            case 1:
-                                campus.largeCTA.$pointers.addClass('fa-caret-down').removeClass('fa-caret-up');
-                                break;
-                            default:
-                                campus.largeCTA.$pointers.removeClass('fa-caret-down').removeClass('fa-caret-up');
-                                campus.largeCTA.$pointers.eq(0).addClass('fa-caret-up');
-                                campus.largeCTA.$pointers.eq(1).addClass('fa-caret-down');
-                        }
-                    },
-                    //callback for every typed string
-                    onStringTyped: function() {
-                    },
-                    // callback for reset
-                    resetCallback: function() {
-                    }
-                });
-            }
-        }
-    };
-
-    campus.login = {
+    mMachinery.login = {
 
         // initial set up
         init: function(){
@@ -164,7 +96,7 @@
             this.$parentRow = $('.header-login');
             this.$openBtn = $('.toggle-btn', this.$parentRow);
             this.$loginFrm = $('.login-form', this.$parentRow);
-            campus.login.delayedClose = null;
+            mMachinery.login.delayedClose = null;
 
             // attach open action
             var self = this;
@@ -196,8 +128,8 @@
             this.$parentRow.addClass('open');
 
             // if Main Navigation is open, close it first
-            if(campus.navigation.isOpen){
-                campus.navigation.$toggleBtn.trigger('click');
+            if(mMachinery.navigation.isOpen){
+                mMachinery.navigation.$toggleBtn.trigger('click');
             }
         },
 
@@ -213,32 +145,32 @@
         }
     };
 
-    campus.overlay = {
+    mMachinery.overlay = {
 
         init: function () {
 
             $('.open-modal').on('click', function (e) {
                 e.preventDefault();
-                campus.overlay.showOverlay();
+                mMachinery.overlay.showOverlay();
             });
 
             $('.hide-modal').on('click', function (e) {
                 e.preventDefault();
-                campus.overlay.hideOverlay();
+                mMachinery.overlay.hideOverlay();
             });
         },
 
 
         showOverlay:function(){
-            $('#campus-overlay').css('height', '100%');
+            $('#mMachinery-overlay').css('height', '100%');
         },
 
         hideOverlay: function(){
-            $('#campus-overlay').css('height', '0');
+            $('#mMachinery-overlay').css('height', '0');
         }
     };
 
-    campus.navigation = {
+    mMachinery.navigation = {
 
         // initial set up
         init: function(){
@@ -292,53 +224,7 @@
         }
     };
 
-    campus.institutions = {
-
-        init: function(){
-            // elements for this component
-            this.$parentRow = $('.institutions-search');
-            this.$form = $('#select-institution-form', this.$parentRow);
-            this.$input = $('.institution-name');
-            this.listMax = 5;
-            this.basUrl = 'institution.html?id=';
-            var self = this;
-            
-            // stopping default for action,
-            // not best practice, but breaks the autoComplete :(
-            this.$form.on('submit', function(e){
-                e.preventDefault();
-            });
-
-            // auto complete options
-            var options = {
-                url: "js/institutions.json",
-                getValue: "name",
-                list: {
-                    maxNumberOfElements: self.listMax,
-                    match: {
-                        enabled: true
-                    },
-                    onChooseEvent: function(){
-                        // cosmetic effect - gives user feedback
-                        campus.institutions.$form.addClass('loading');
-                        // go to new page
-                        location.assign(self.basUrl + self.$input.getSelectedItemData().id);
-                    }
-                }
-            };
-
-            // cosmetic effect
-            this.$input.on('focus', function(){
-                self.$form.removeClass('loading');
-            });
-            this.$form.removeClass('loading'); // fixes bug on page load
-
-            // attach action
-            this.$input.easyAutocomplete(options);
-        }
-    };
-
-    campus.productsLists = {
+    mMachinery.productsLists = {
 
         init: function(){
             // instantiate and assign variables
@@ -382,7 +268,7 @@
         }
     };
 
-    campus.productImageSwitcher = {
+    mMachinery.productImageSwitcher = {
 
         init: function(){
             // elements for this component
@@ -405,7 +291,7 @@
         }
     };
 
-    campus.FAQs = {
+    mMachinery.FAQs = {
         init: function(){
             this.buttons = $('.faqs-list a').not('.questions a');
             this.buttons.each(function(i, obj){
@@ -423,7 +309,7 @@
         }
     };
 
-    campus.buttonToggles = {
+    mMachinery.buttonToggles = {
         init: function(){
             this.buttons = $('[data-btn-state]');
             this.buttons.each(function(i, obj){
@@ -440,47 +326,45 @@
         }
     };
 
-    campus.init = function () {
+    mMachinery.init = function () {
 
         // all init here
-        campus.environment.init();
-        campus.login.init();
-        campus.navigation.init();
-        campus.institutions.init();
-        campus.productsLists.init();
-        campus.productImageSwitcher.init();
-        campus.buttonToggles.init();
-        campus.largeCTA.init();
-        campus.overlay.init();
-        campus.FAQs.init();
+        mMachinery.environment.init();
+        mMachinery.login.init();
+        mMachinery.navigation.init();
+        mMachinery.productsLists.init();
+        mMachinery.productImageSwitcher.init();
+        mMachinery.buttonToggles.init();
+        mMachinery.overlay.init();
+        mMachinery.FAQs.init();
 
         // resize triggers
         $(window).on('resize', function () {
 
             var newWidth = $(window).width(),
-                oldWidth = campus.properties.windowWidth;
+                oldWidth = mMachinery.properties.windowWidth;
 
             if (oldWidth != newWidth) {
-                campus.properties.windowWidth = newWidth;
-                campus.resize();
+                mMachinery.properties.windowWidth = newWidth;
+                mMachinery.resize();
             }
         });
 
         // trigger initial resize, just to be sure
-        campus.resize();
+        mMachinery.resize();
         $(window).trigger('resize');
     };
 
     // main resize
-    campus.resize = function () {
-        campus.environment.resize();
-        campus.login.resize();
-        campus.navigation.resize();
+    mMachinery.resize = function () {
+        mMachinery.environment.resize();
+        mMachinery.login.resize();
+        mMachinery.navigation.resize();
     };
 
     // main init
     $(document).ready(function () {
-        campus.init();
+        mMachinery.init();
     });
 
 }(jQuery, window));

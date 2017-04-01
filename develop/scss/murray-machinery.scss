@@ -13,267 +13,140 @@ body {
     font-size: 16px;
 }
 
-.header-login {
+.header-links {
+    @extend %cleanUl;
+    border-top: 1px solid red;
 
-    .container {
-        background: url("../images/cc-shield.png") 15px 0 no-repeat;
-        @include transition(background, 0.5s);
-
-        @media (max-width: $width-sm){
-            background-position: -85px 0;
-        }
+    li {
+        display: inline;
     }
 
-    height: 35px;
-    background: url("../images/texture-red.png") 0 0 $brand-red;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-    overflow: hidden;
-    @include transition(height 0.2s);
-
-    .navigation {
-        @extend %cleanUl;
-        float: right;
-        height: 35px;
-
-        a {
-            text-transform: uppercase;
-            display: block;
-            padding: 0 15px;
-            border-left: 1px dotted $brand-white;
-            text-decoration: none;
-            font-weight: bold;
-            color: $brand-white;
-            outline: none;
-
-            &:hover {
-                color: #ffffff;
-            }
-        }
-
-        li {
-            float: left;
-            padding: 7px 0;
-            .text {
-                @extend %visuallyHidden;
-            }
-
-            &:first-child {
-                a {
-                    border-left: none;
-                }
-            }
-        }
-    }
-
-    .hide-menu { display: none; }
-    .show-menu { display: block; }
-
-    &.open {
-
-        .hide-menu { display: block; }
-        .show-menu { display: none; }
-
-        @include dropshadow();
-        .container {
-            background-image: url("../images/cc-shield-open.png");
-        }
-    }
-
-    .login-form {
-        padding: 15px 0;
-        float: left;
-        width: 100%;
-        text-align: right;
-
-        label {
-            margin-left: 15px;
-            margin-right: 5px;
-            color: #ffffff;
-            text-transform: capitalize;
-            @media (max-width: $width-sm - 1){
-                display: none;
-            }
-        }
-
-        input {
-            border: none;
-        }
-
-        button {
-            color: #ffffff;
-            background: none;
-            padding-right: 0;
-            border: none;
-            text-transform: uppercase;
-            font-weight: bold;
-            margin-left: 15px;
-            &:hover {
-                color: $brand-white;
-            }
-            &:focus {
-                border-color: $brand-white;
-            }
-        }
-
-        a {
-            display: inline-block;
-            padding: 6px 0;
-            margin-left: 30px;
-            text-decoration: none;
-            color: #ffffff;
-            &:hover {
-                color: $brand-white;
-            }
-
-            @media (max-width: $width-sm - 1){
-                float: left;
-                margin-left: 0 !important;
-            }
-        }
-
-        i {
-            font-size: 1.0em;
-        }
-    }
-}
-
-.header-title {
-
-    .container {
-        padding-top: 35px;
-        padding-bottom: 10px;
-        background: url("../images/cc-shield.png") 15px 0 no-repeat;
-        @include transition(background, 0.5s);
-
-        @media (max-width: $width-sm){
-            background-position: -85px 0;
-        }
-    }
-
-    &.open {
-
-        .container {
-            background-image: url("../images/cc-shield-open.png");
-        }
-    }
-
-    background: url("../images/texture-blue.png") 0 0 $brand-blue;
-
-    .header-box {
-        position: relative;
-    }
-
-    h1 {
+    a {
+        display: inline-block;
+        font-size: 2.0em;
+        padding: 15px 10px;
         text-align: center;
+        color: $brand-coal;
         text-transform: uppercase;
-        font-weight: 100;
-        color: $brand-white;
-        margin: 0;
-        padding: 0;
+        text-decoration: none;
+        @include transition(color, 0.25s);
+        font-family: osp-dindin;
+    }
+
+    @media (max-width: $width-md) {
 
         a {
-            display: inline-block;
-            text-decoration: none;
-            color: $brand-white;
-            &:hover {
-                color: #ffffff;
-            }
+            font-size: 1.0em;
+            padding: 8px 10px;
         }
+    }
 
-        .text {
-            display: inline-block;
-            font-size: 1.6em;
-            border-bottom: 1px solid $brand-white;
-            letter-spacing: 3px;
-        }
+    @media (max-width: $width-sm) {
 
-        .imagery {
-            padding-top: 5px;
+        a {
             display: block;
-        }
-    }
-
-    .toggle-navigation {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        margin-top: -6px;
-        color: $brand-white !important;
-        outline: none !important;
-
-        &:hover {
-            color: #ffffff !important;
-        }
-    }
-
-    @media (max-width: $width-sm){
-
-        h1 {
-            text-align: left;
-
-            .text {
-                display: none;
-            }
-
-            .imagery {
-                width: 240px;
-
-                img {
-                    width: 100%;
-                }
-            }
-        }
-    }
-
-    .header-links {
-        @extend %cleanUl;
-        text-align: center;
-        li { display: inline; }
-
-        a {
-            display: inline-block;
-            font-size: 1.5em;
-            padding: 15px 10px;
-            text-align: center;
-            color: #ffffff;
-            text-transform: uppercase;
-            text-decoration: none;
-            @include transition(color, 0.25s);
-
-            &:hover {
-                color: $brand-white;
-            }
-        }
-
-        @media (max-width: $width-md) {
-
-            a {
-                font-size: 1.0em;
-                padding: 8px 10px;
-            }
-        }
-
-        @media (max-width: $width-sm) {
-
-            a {
-                display: block;
-                text-align: right;
-                padding: 10px;
-            }
-        }
-    }
-    
-    .main-navigation {
-        position: relative;
-        height: 0;
-        &.animate {
-            @include transition(height, 0.25s);
+            text-align: right;
+            padding: 10px;
         }
     }
 }
+
+//.header-title {
+//
+//    .container {
+//        padding-top: 35px;
+//        padding-bottom: 10px;
+//        background: url("../images/cc-shield.png") 15px 0 no-repeat;
+//        @include transition(background, 0.5s);
+//
+//        @media (max-width: $width-sm){
+//            background-position: -85px 0;
+//        }
+//    }
+//
+//    &.open {
+//
+//        .container {
+//            background-image: url("../images/cc-shield-open.png");
+//        }
+//    }
+//
+//    background: url("../images/texture-blue.png") 0 0 $brand-blue;
+//
+//    .header-box {
+//        position: relative;
+//    }
+//
+//    h1 {
+//        text-align: center;
+//        text-transform: uppercase;
+//        font-weight: 100;
+//        color: $brand-white;
+//        margin: 0;
+//        padding: 0;
+//
+//        a {
+//            display: inline-block;
+//            text-decoration: none;
+//            color: $brand-white;
+//            &:hover {
+//                color: #ffffff;
+//            }
+//        }
+//
+//        .text {
+//            display: inline-block;
+//            font-size: 1.6em;
+//            border-bottom: 1px solid $brand-white;
+//            letter-spacing: 3px;
+//        }
+//
+//        .imagery {
+//            padding-top: 5px;
+//            display: block;
+//        }
+//    }
+//
+//    .toggle-navigation {
+//        position: absolute;
+//        right: 0;
+//        top: 50%;
+//        margin-top: -6px;
+//        color: $brand-white !important;
+//        outline: none !important;
+//
+//        &:hover {
+//            color: #ffffff !important;
+//        }
+//    }
+//
+//    @media (max-width: $width-sm){
+//
+//        h1 {
+//            text-align: left;
+//
+//            .text {
+//                display: none;
+//            }
+//
+//            .imagery {
+//                width: 240px;
+//
+//                img {
+//                    width: 100%;
+//                }
+//            }
+//        }
+//    }
+//
+//    .main-navigation {
+//        position: relative;
+//        height: 0;
+//        &.animate {
+//            @include transition(height, 0.25s);
+//        }
+//    }
+//}
 
 .shopping-basket-link {
     font-size: 2.5em;
