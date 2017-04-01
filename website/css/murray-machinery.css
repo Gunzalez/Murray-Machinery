@@ -243,9 +243,6 @@ select.short-select {
   .page-actions button {
     width: 100%; } }
 
-html {
-  overflow-y: scroll; }
-
 body {
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
@@ -279,20 +276,61 @@ body {
     font-size: 0.7em; } }
 
 .main-navigation ul {
-  border-top: 1px solid #f8dbdc; }
+  border-top: 1px solid #f8dbdc;
+  float: left; }
+
+.main-navigation > ul > li > a {
+  font-family: osp-dindin; }
 
 .main-navigation li {
-  display: inline; }
+  float: left;
+  position: relative; }
+  .main-navigation li.hover > a {
+    color: #1c3389; }
+  .main-navigation li.hover > ul {
+    display: block; }
+
+.main-navigation ul ul {
+  position: absolute;
+  display: none;
+  left: 0;
+  top: 100%;
+  z-index: 2;
+  width: 220px;
+  background-color: #ffffff;
+  border: 1px solid #f8dbdc;
+  -webkit-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+  -moz-box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35);
+  box-shadow: 0px 2px 6px 0px rgba(0, 0, 0, 0.35); }
+  .main-navigation ul ul > li {
+    float: none; }
+    .main-navigation ul ul > li a {
+      text-transform: capitalize;
+      text-align: left;
+      padding: 5px 10px;
+      font-size: 0.95em;
+      font-weight: bold;
+      -moz-transition: background 0.25s;
+      -o-transition: background 0.25s;
+      -webkit-transition: background 0.25s;
+      transition: background 0.25s; }
+    .main-navigation ul ul > li.hover {
+      background: #e6e6e6; }
+
+.main-navigation ul ul ul {
+  left: 100%;
+  top: -1px; }
+  .main-navigation ul ul ul li:hover {
+    background: #e6e6e6; }
 
 .main-navigation a {
-  display: inline-block;
+  display: block;
   font-size: 2.0em;
   padding: 12px 10px;
   text-align: center;
   color: #666666;
   text-transform: uppercase;
   text-decoration: none;
-  font-family: osp-dindin;
   -moz-transition: color 0.25s;
   -o-transition: color 0.25s;
   -webkit-transition: color 0.25s;
@@ -305,8 +343,12 @@ body {
     font-size: 1.6em; } }
 
 @media (max-width: 992px) {
-  .main-navigation ul {
+  .main-navigation > ul {
     display: none; } }
+
+.main-navigation .has-menu .has-menu i {
+  float: right;
+  margin-top: 3px; }
 
 .toggle-navigation {
   margin-top: 10px; }

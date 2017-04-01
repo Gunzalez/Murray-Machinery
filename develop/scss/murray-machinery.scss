@@ -4,8 +4,6 @@
 @import "scaffolding";
 @import "buttons";
 
-html { overflow-y: scroll; }
-
 body {
     overflow-x: hidden;
     font-family: 'Open Sans', sans-serif;
@@ -66,25 +64,86 @@ body {
 }
 
 .main-navigation {
+    $nav-border-colour: lighten($brand-red, 40%);
 
     ul {
         @extend %cleanUl;
-        border-top: 1px solid lighten($brand-red, 40%);
+        border-top: 1px solid $nav-border-colour;
+        float: left;
+    }
+
+    > ul {
+        > li {
+            > a {
+                font-family: osp-dindin;
+            }
+        }
     }
 
     li {
-        display: inline;
+        float: left;
+        position: relative;
+
+        &.hover {
+            > a {
+                color: $brand-blue;
+            }
+            > ul {
+                display: block;
+            }
+        }
+    }
+
+    ul ul {
+        position: absolute;
+        display: none;
+        left: 0;
+        top: 100%;
+        z-index: 2;
+        width: 220px;
+        background-color: $brand-white;
+        border: 1px solid $nav-border-colour;
+        -webkit-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.35);
+        -moz-box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.35);
+        box-shadow: 0px 2px 6px 0px rgba(0,0,0,0.35);
+
+        > li {
+            float: none;
+            a {
+                text-transform: capitalize;
+                text-align: left;
+                padding: 5px 10px;
+                font-size: 0.95em;
+                font-weight: bold;
+                @include transition(background 0.25s);
+            }
+
+            &.hover {
+                background: lighten($brand-grey, 50%);
+            }
+        }
+    }
+
+    ul ul ul {
+        left: 100%;
+        top: -1px;
+
+        li {
+            &:hover {
+                background: lighten($brand-grey, 50%);
+            }
+
+        }
     }
 
     a {
-        display: inline-block;
+        display: block;
         font-size: 2.0em;
         padding: 12px 10px;
         text-align: center;
         color: $brand-grey;
         text-transform: uppercase;
         text-decoration: none;
-        font-family: osp-dindin;
         @include transition(color 0.25s);
 
         &:hover {
@@ -99,10 +158,20 @@ body {
     }
 
     @media (max-width: $width-md) {
-        ul {
+        > ul {
             display: none;
         }
     }
+
+    .has-menu {
+        .has-menu {
+            i {
+                float: right;
+                margin-top: 3px;
+            }
+        }
+    }
+
 }
 
 .toggle-navigation {
