@@ -31,6 +31,7 @@
                     if(Modernizr.touch){
                         $(obj).siblings().removeClass('hover');
                         $(obj).toggleClass('hover');
+                        $(obj).blur();
                     }
                 });
 
@@ -48,11 +49,11 @@
             this.smallScreenMenu.mmenu({
                 offCanvas: {
                     position  : "right",
-                    "zposition": "next"
+                    "zposition": "back"
                 },
                 "extensions": [
-                    "theme-light",
-                    "pagedim-black",
+                    "theme-white",
+                    //"pagedim-black",
                     "border-offset"
                 ]
             });

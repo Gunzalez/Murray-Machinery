@@ -29,7 +29,7 @@ body {
 
     a {
         display: inline-block;
-        font-size: 0.8em;
+        font-size: 1.0em;
         padding: 12px;
         text-align: center;
         text-decoration: none;
@@ -57,14 +57,16 @@ body {
 
     @media (max-width: $width-xs) {
         a {
-            padding: 5px;
+            padding: 10px 0 0 0;
+            text-align: right;
         }
 
         li {
+            text-align: right;
+            display: block;
             &:nth-child(2){
                 a {
-
-                    padding-bottom: 20px;
+                    padding: 5px 0 15px 0;
                 }
             }
         }
@@ -225,7 +227,7 @@ body {
     }
 
     .text {
-        line-height: 50px;
+        line-height: 47px;
         height: 48px;
     }
 }
@@ -353,6 +355,43 @@ span {
     &.logo {
         display: inline-block;
     }
+}
+
+
+// small screen nav styles override
+.mm-listview>li>a,
+.mm-listview>li>span {
+    color: inherit;
+    display: block;
+    padding: 15px 15px 15px 25px;
+    margin: 0;
+    font-family: osp-dindin;
+    text-transform: uppercase;
+    font-size: 1.5em;
+}
+
+.mm-navbar .mm-title {
+    font-family: osp-dindin;
+    text-transform: uppercase;
+    font-size: 1.1em;
+    text-align: left;
+    padding-top: 12px;
+}
+
+#mm-1 {
+    .mm-title {
+        @extend %visuallyHidden;
+    }
+}
+
+#mm-blocker {
+    -webkit-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.17);
+    -moz-box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.17);
+    box-shadow: 3px 0px 5px 0px rgba(0,0,0,0.17);
+}
+
+.mm-panel {
+    background: #fefdfb;
 }
 
 
