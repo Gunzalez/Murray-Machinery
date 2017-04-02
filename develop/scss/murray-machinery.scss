@@ -29,10 +29,14 @@ body {
 
     a {
         display: inline-block;
-        font-size: 1.0em;
+        font-size: 0.85em;
         padding: 12px;
         text-align: center;
         text-decoration: none;
+
+        @media (max-width: $width-md) {
+            font-size: 1.0em;
+        }
     }
 
     .text {
@@ -301,11 +305,12 @@ body {
 }
 
 .footer {
-    background: $brand-red;
+    background: $brand-blue;
 
     .container {
         padding-top: 15px;
-        padding-bottom: 15px;
+        padding-bottom: 35px;
+        background: url("../images/bg-footer.png") bottom right no-repeat;
     }
     
     .footer-links {
@@ -313,13 +318,12 @@ body {
         @extend %cleanUl;
 
         li {
-            display: inline;
+            float: left;
 
             a {
-                display: inline-block;
+                display: block;
                 color: #ffffff;
                 font-size: 1.0em;
-                text-transform: uppercase;
                 padding: 10px;
                 text-decoration: none;
 

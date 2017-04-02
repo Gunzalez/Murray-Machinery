@@ -250,10 +250,13 @@ body {
 
 .aux-navigation a {
   display: inline-block;
-  font-size: 1.0em;
+  font-size: 0.85em;
   padding: 12px;
   text-align: center;
   text-decoration: none; }
+  @media (max-width: 992px) {
+    .aux-navigation a {
+      font-size: 1.0em; } }
 
 .aux-navigation .icon {
   padding: 12px 10px;
@@ -432,19 +435,19 @@ body {
     border-radius: 2px; }
 
 .footer {
-  background: #d73037; }
+  background: #1c3389; }
   .footer .container {
     padding-top: 15px;
-    padding-bottom: 15px; }
+    padding-bottom: 35px;
+    background: url("../images/bg-footer.png") bottom right no-repeat; }
   .footer .footer-links {
     text-align: center; }
     .footer .footer-links li {
-      display: inline; }
+      float: left; }
       .footer .footer-links li a {
-        display: inline-block;
+        display: block;
         color: #ffffff;
         font-size: 1.0em;
-        text-transform: uppercase;
         padding: 10px;
         text-decoration: none; }
         .footer .footer-links li a:hover {
