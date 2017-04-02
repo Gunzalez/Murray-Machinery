@@ -276,7 +276,8 @@ body {
   float: left; }
 
 .main-navigation > ul > li > a {
-  font-family: osp-dindin; }
+  font-family: osp-dindin;
+  outline: none !important; }
 
 .main-navigation li {
   float: left;
@@ -310,7 +311,7 @@ body {
       -o-transition: background 0.25s;
       -webkit-transition: background 0.25s;
       transition: background 0.25s; }
-    .main-navigation ul ul > li.hover {
+    .main-navigation ul ul > li.hover, .main-navigation ul ul > li:hover {
       background: #e6e6e6; }
 
 .main-navigation ul ul ul {
@@ -347,8 +348,9 @@ body {
   margin-top: 3px; }
 
 .toggle-navigation {
-  margin-top: 10px;
-  opacity: 1 !important; }
+  margin-top: 7px;
+  opacity: 1 !important;
+  outline: none !important; }
   .toggle-navigation .hamburger-inner,
   .toggle-navigation .hamburger-inner::before,
   .toggle-navigation .hamburger-inner::after {

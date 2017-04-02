@@ -84,6 +84,7 @@ body {
         > li {
             > a {
                 font-family: osp-dindin;
+                outline: none !important;
             }
         }
     }
@@ -126,7 +127,8 @@ body {
                 @include transition(background 0.25s);
             }
 
-            &.hover {
+            &.hover,
+            &:hover {
                 background: lighten($brand-grey, 50%);
             }
         }
@@ -182,8 +184,9 @@ body {
 }
 
 .toggle-navigation {
-    margin-top: 10px;
+    margin-top: 7px;
     opacity: 1 !important;
+    outline: none !important;
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {

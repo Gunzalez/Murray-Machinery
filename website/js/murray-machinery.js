@@ -7,14 +7,9 @@
         windowWidth: ''
     };
 
-    mMachinery.utils = {};
-
-    mMachinery.environment = {
-
+    mMachinery.page = {
         resize: function(){},
-
         init: function (){}
-
     };
 
     mMachinery.navigation = {
@@ -31,7 +26,7 @@
             this.self = this;
 
             this.$menuToggleBtns.each(function(i, obj){
-                $('> a',$(obj)).on('click', function(e){
+                $('> a', $(obj)).on('click', function(e){
                     e.preventDefault();
                     if(Modernizr.touch){
                         $(obj).siblings().removeClass('hover');
@@ -62,22 +57,21 @@
                 ]
             });
             mMachinery.navigation.API = this.smallScreenMenu.data("mmenu");
-            mMachinery.navigation.API.bind( "opened", function() {
+            mMachinery.navigation.API.bind("opened", function() {
                 mMachinery.navigation.$toggleBtn.addClass('is-active');
             });
-            mMachinery.navigation.API.bind( "closed", function() {
+            mMachinery.navigation.API.bind("closed", function() {
                 mMachinery.navigation.$toggleBtn.removeClass('is-active');
             });
 
             this.$toggleBtn.on('click', function(e){
                 e.preventDefault();
-                $(this).blur();
                 mMachinery.navigation.API.open();
             });
         },
 
         resize: function(){
-            // close and hide all menu on resize
+            // close/hide all menu on resize
             this.$menuToggleBtns.each(function(i, obj){
                 $(obj).removeClass('hover');
             });
@@ -88,7 +82,7 @@
     mMachinery.init = function () {
 
         // all init here
-        mMachinery.environment.init();
+        mMachinery.page.init();
         mMachinery.navigation.init();
 
         // resize triggers
@@ -110,7 +104,7 @@
 
     // main resize
     mMachinery.resize = function () {
-        mMachinery.environment.resize();
+        mMachinery.page.resize();
         mMachinery.navigation.resize();
     };
 
