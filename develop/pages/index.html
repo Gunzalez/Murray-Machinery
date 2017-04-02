@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+    {% import 'macros/main-navigation-macro.html' as nav %}
+    {{nav.active('home')}}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <div class="main-carousel" style="background-image: url('uploaded/product-carousel-image-1.png');">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="slide">
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

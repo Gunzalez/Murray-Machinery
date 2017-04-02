@@ -342,6 +342,9 @@ body {
   .main-navigation a:hover {
     color: #1c3389; }
 
+.main-navigation .active a {
+  color: #1c3389; }
+
 @media (max-width: 1200px) {
   .main-navigation a {
     font-size: 1.6em; } }

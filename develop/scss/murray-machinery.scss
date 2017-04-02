@@ -167,6 +167,12 @@ body {
         }
     }
 
+    .active {
+        a {
+            color: $brand-blue;
+        }
+    }
+
     @media (max-width: $width-lg) {
         a {
             font-size: 1.6em;

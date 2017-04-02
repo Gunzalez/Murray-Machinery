@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+    {% import 'macros/main-navigation-macro.html' as nav %}
+    {{nav.active('contact')}}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>ContactF</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
