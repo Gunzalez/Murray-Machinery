@@ -85,26 +85,49 @@
 
             this.$parent = $('.main-carousel');
             this.$slides = $('.slide');
-            this.controls = $('.slide-controls a', this.$parent);
+            this.$controlBox = $('.slide-controls');
+            this.$controls = $('.slide-controls a', this.$parent);
+
+            this.delay = 7; // in seconds
+            this.timer = null;
             var self = this;
 
-            this.controls.each(function(i, obj){
+            this.changeSlide = function(index){
+                // hide/show slide copy
+                self.$slides.removeClass('active');
+                self.$slides.eq(index).addClass('active');
+                // change slide back ground
+                var newBg = self.$slides.eq(index).attr('data-slide-bg');
+                self.$parent.css('background-image', 'url("'+newBg+'")');
+                // update blue dots to reflect change
+                self.$controls.removeClass('active');
+                self.$controls.eq(index).addClass('active');
+            };
+
+            this.$controls.each(function(i, obj){
                 $(obj).on('click', function(e){
                     e.preventDefault();
                     if(!$(obj).hasClass('active')){
-                        var index = self.controls.index($(obj));
-
-                        self.$slides.removeClass('active');
-                        self.$slides.eq(index).addClass('active');
-
-                        var newBg = self.$slides.eq(index).attr('data-slide-bg');
-                        self.$parent.css('background-image', 'url("'+newBg+'")');
-
-                        self.controls.removeClass('active');
-                        $(obj).addClass('active');
+                        var index = self.$controls.index($(obj));
+                        self.changeSlide(index);
+                        if(self.timer){
+                            clearInterval(self.timer);
+                        }
                     }
                 });
             });
+
+            this.timer = setInterval(function(){
+                if(!self.$parent.is(":hover")){
+                    var $activeLink = $('.active', self.$controlBox);
+                    var activeIndex = self.$controls.index($activeLink);
+                    var nextIndex = activeIndex + 1;
+                    if(nextIndex == self.$controls.length){
+                        nextIndex = 0
+                    }
+                    self.changeSlide(nextIndex);
+                }
+            }, (this.delay * 1000));
         }
     };
 
