@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-.aux-navigation ul, .main-navigation ul, .footer .footer-links {
+.aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .footer .footer-links {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.aux-navigation .text, #mm-1 .mm-title {
+.aux-navigation .text, .main-carousel .slide:not(.active), #mm-1 .mm-title {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -428,14 +428,71 @@ body {
 
 .main-carousel {
   background-position: center;
-  background-size: cover; }
+  background-size: cover;
+  -moz-transition: background 0.75s;
+  -o-transition: background 0.75s;
+  -webkit-transition: background 0.75s;
+  transition: background 0.75s; }
+  .main-carousel .slides {
+    height: 400px;
+    position: relative; }
+    @media (max-width: 768px) {
+      .main-carousel .slides {
+        height: 300px; } }
   .main-carousel .slide {
-    margin-top: 120px;
-    margin-bottom: 20px;
-    margin-left: 10px;
-    width: 70%;
-    height: 200px;
-    border-radius: 2px; }
+    background: #ffffff;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    border-radius: 2px !important;
+    width: 360px;
+    position: absolute;
+    bottom: 0;
+    left: 0; }
+    @media (max-width: 768px) {
+      .main-carousel .slide {
+        width: auto; } }
+  .main-carousel .title {
+    text-transform: uppercase;
+    font-size: 2.0em;
+    line-height: 120%;
+    color: #1c3389;
+    padding-bottom: 5px;
+    letter-spacing: 1px; }
+    .main-carousel .title span {
+      display: block;
+      color: #333333;
+      font-size: 1.5em; }
+  .main-carousel .slide-controls {
+    float: left; }
+    .main-carousel .slide-controls ul {
+      float: left; }
+    .main-carousel .slide-controls li {
+      float: left;
+      padding: 15px 0 15px 15px; }
+    .main-carousel .slide-controls a {
+      display: block;
+      width: 20px;
+      height: 20px;
+      -webkit-border-radius: 50% !important;
+      -moz-border-radius: 50% !important;
+      border-radius: 50% !important;
+      background: #ffffff;
+      text-indent: -9000px;
+      -moz-transition: background 0.5s;
+      -o-transition: background 0.5s;
+      -webkit-transition: background 0.5s;
+      transition: background 0.5s; }
+      .main-carousel .slide-controls a:hover, .main-carousel .slide-controls a.active {
+        background: #1c3389; }
+    @media (max-width: 768px) {
+      .main-carousel .slide-controls li {
+        float: left;
+        padding: 15px 10px 15px 15px; }
+      .main-carousel .slide-controls a {
+        width: 25px;
+        height: 25px; } }
 
 .footer {
   background: #1c3389; }

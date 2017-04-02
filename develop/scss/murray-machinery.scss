@@ -299,14 +299,91 @@ body {
 .main-carousel {
     background-position: center;
     background-size: cover;
+    @include transition(background 0.75s);
+
+    .slides {
+        height: 400px;
+        position: relative;
+
+        @media (max-width: $width-sm) {
+            height: 300px;
+        }
+    }
+
+    .slide:not(.active) {
+        @extend %visuallyHidden;
+    }
 
     .slide {
-        margin-top: 120px;
-        margin-bottom: 20px;
-        margin-left: 10px;
-        width: 70%;
-        height: 200px;
-        border-radius: 2px;
+        background: $brand-white;
+        background: rgba(255, 255, 255, 0.9);
+        padding: 20px;
+        @include border-radius(2px);
+        width: 360px;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+
+        @media (max-width: $width-sm) {
+            width: auto;
+        }
+    }
+
+    .title {
+        text-transform: uppercase;
+        font-size: 2.0em;
+        line-height: 120%;
+        color: $brand-blue;
+        padding-bottom: 5px;
+        letter-spacing: 1px;
+
+        span {
+            display: block;
+            color: $brand-coal;
+            font-size: 1.5em;
+        }
+    }
+
+    .slide-controls {
+        float: left;
+
+        ul {
+            float: left;
+            @extend %cleanUl;
+        }
+
+        li {
+            float: left;
+            padding: 15px 0 15px 15px;
+        }
+
+        a {
+            display: block;
+            width: 20px;
+            height: 20px;
+            @include border-radius(50%);
+            background: $brand-white;
+            text-indent: -9000px;
+            @include transition(background 0.5s);
+
+            &:hover,
+            &.active{
+                background: $brand-blue;
+            }
+        }
+
+        @media (max-width: $width-sm) {
+
+            li {
+                float: left;
+                padding: 15px 10px 15px 15px;
+            }
+
+            a {
+                width: 25px;
+                height: 25px;
+            }
+        }
     }
 }
 

@@ -7,12 +7,35 @@
 
 {% block content %}
     <div class="section">
-        <div class="main-carousel" style="background-image: url('uploaded/product-carousel-image-1.png');">
+        <div class="main-carousel" id="slide-bg" style="background-image: url('uploaded/product-carousel-image-1.png');">
             <div class="container">
                 <div class="row">
                     <div class="col-sm-12">
-                        <div class="slide">
-
+                        <div class="slides">
+                            <div class="slide active" data-slide-bg="uploaded/product-carousel-image-1.png">
+                                <h2 class="title">Featured Sector: <span>Agriculture</span></h2>
+                                <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.</p>
+                            </div>
+                            <div class="slide" data-slide-bg="uploaded/product-carousel-image-2.png">
+                                <h2 class="title">Featured Sector: <span>Municipal</span></h2>
+                                <p>Curabitur placerat lectus congue, auctor nunc et, molestie leo. Suspendisse laoreet cursus lobortis. Nulla gravida enim odio.</p>
+                            </div>
+                            <div class="slide" data-slide-bg="uploaded/product-carousel-image-3.png">
+                                <h2 class="title">Featured Sector: <span>Forestry</span></h2>
+                                <p>Nulla lobortis facilisis tortor a finibus. Phasellut in aliquet. Phasellus efficitur id lectus eu eleifend.</p>
+                            </div>
+                            <div class="slide" data-slide-bg="uploaded/product-carousel-image-4.png">
+                                <h2 class="title">Featured Sector: <span>Engineering</span></h2>
+                                <p>Aliquam justo ex, consequat vitae eros vitae, gravida pellentesque purus. Integer nisl metus, luctus id urn a eget, semper egestas erat.</p>
+                            </div>
+                        </div>
+                        <div class="slide-controls">
+                            <ul>
+                                <li><a href="#" class="active">0</a></li>
+                                <li><a href="#">1</a></li>
+                                <li><a href="#">2</a></li>
+                                <li><a href="#">3</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>
