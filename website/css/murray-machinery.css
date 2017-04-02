@@ -347,6 +347,34 @@ body {
   float: right;
   margin-top: 3px; }
 
+.main-navigation .sector-nav a {
+  padding: 3px 10px; }
+
+.main-navigation .sector-icon {
+  float: left;
+  width: 42px;
+  height: 48px;
+  background-size: contain;
+  margin-right: 15px; }
+  .main-navigation .sector-icon.agriculture {
+    background-image: url("../images/sector-icon-agriculture.png"); }
+  .main-navigation .sector-icon.forestry {
+    background-image: url("../images/sector-icon-forestry.png"); }
+  .main-navigation .sector-icon.renewables {
+    background-image: url("../images/sector-icon-renewables.png"); }
+  .main-navigation .sector-icon.municipal {
+    background-image: url("../images/sector-icon-municipal.png"); }
+  .main-navigation .sector-icon.engineering {
+    background-image: url("../images/sector-icon-engineering.png"); }
+  .main-navigation .sector-icon.waste {
+    background-image: url("../images/sector-icon-waste.png"); }
+  .main-navigation .sector-icon.construction {
+    background-image: url("../images/sector-icon-construction.png"); }
+
+.main-navigation .text {
+  line-height: 50px;
+  height: 48px; }
+
 .toggle-navigation {
   margin-top: 7px;
   opacity: 1 !important;

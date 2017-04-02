@@ -181,6 +181,53 @@ body {
             }
         }
     }
+
+    .sector-nav {
+        a {
+            padding: 3px 10px;
+        }
+    }
+
+    .sector-icon {
+        float: left;
+        width: 42px;
+        height: 48px;
+        background-size: contain;
+        margin-right: 15px;
+
+        &.agriculture {
+            background-image: url('../images/sector-icon-agriculture.png');
+        }
+
+        &.forestry {
+            background-image: url('../images/sector-icon-forestry.png');
+        }
+
+        &.renewables {
+            background-image: url('../images/sector-icon-renewables.png');
+        }
+
+        &.municipal {
+            background-image: url('../images/sector-icon-municipal.png');
+        }
+
+        &.engineering {
+            background-image: url('../images/sector-icon-engineering.png');
+        }
+
+        &.waste {
+            background-image: url('../images/sector-icon-waste.png');
+        }
+
+        &.construction {
+            background-image: url('../images/sector-icon-construction.png');
+        }
+    }
+
+    .text {
+        line-height: 50px;
+        height: 48px;
+    }
 }
 
 .toggle-navigation {
