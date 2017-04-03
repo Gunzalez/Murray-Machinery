@@ -316,13 +316,16 @@ body {
 
     .slide {
         background: $brand-white;
-        background: rgba(255, 255, 255, 0.9);
+        background: rgba(255, 255, 255, 0.8);
         padding: 20px;
         @include border-radius(2px);
         width: 360px;
         position: absolute;
         bottom: 0;
         left: 0;
+        -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.16);
+        -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.16);
+        box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.16);
 
         @media (max-width: $width-sm) {
             width: auto;
@@ -330,17 +333,10 @@ body {
     }
 
     .title {
-        text-transform: uppercase;
-        font-size: 2.0em;
-        line-height: 120%;
         color: $brand-blue;
-        padding-bottom: 5px;
-        letter-spacing: 1px;
 
         span {
-            display: block;
             color: $brand-coal;
-            font-size: 1.5em;
         }
     }
 
@@ -383,6 +379,67 @@ body {
                 width: 25px;
                 height: 25px;
             }
+        }
+    }
+}
+
+.title {
+    text-transform: uppercase;
+    font-size: 2.0em;
+    line-height: 120%;
+    padding-bottom: 5px;
+    letter-spacing: 1px;
+    font-weight: normal;
+
+    span {
+        display: block;
+        font-size: 1.5em;
+    }
+}
+
+.content {
+    padding: 20px 0;
+
+    .heading {
+        background: url("../images/bg-heading.png") left center no-repeat;
+        padding: 15px 10px 7px 20px;
+        margin-bottom: 15px;
+
+        a {
+            color: $brand-dark-red;
+            font-family: osp-dindin;
+            font-size: 2.0em;
+            text-transform: uppercase;
+
+            i {
+                font-size: 0.6em;
+            }
+
+            &:hover {
+                color: $brand-coal;
+            }
+        }
+
+        @media (max-width: $width-sm) {
+            padding: 10px 5px 7px 10px;
+
+            a {
+                font-size: 1.6em;
+            }
+        }
+    }
+}
+
+.product-highlight {
+    background: $brand-red;
+    height: 360px;
+    padding: 15px 0;
+
+    .title {
+        color: $brand-dark-red;
+
+        span {
+            color: $brand-white;
         }
     }
 }
