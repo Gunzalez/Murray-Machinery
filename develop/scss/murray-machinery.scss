@@ -383,6 +383,14 @@ body {
                 height: 25px;
             }
         }
+
+        &.controls-not-ready {
+            height: 50px;
+
+            * {
+                display: none;
+            }
+        }
     }
 }
 

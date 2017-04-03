@@ -5,12 +5,12 @@ Hours so far
 1st 2nd and 3rd - 16
 
 
-
+## (must have)
 TODO
 =======================
-# Display carousel after preloaded images
 
 
 
-
-# Must have
+TODO done
+=======================
+# Display carousel after pre-loaded images

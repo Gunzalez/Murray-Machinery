@@ -81,6 +81,41 @@
 
     mMachinery.carousel = {
 
+        changeSlide: function(index){
+            // hide/show slide copy
+            this.$slides.removeClass('active');
+            this.$slides.eq(index).addClass('active');
+            // change slide back ground image
+            var newBg = this.$slides.eq(index).attr('data-slide-bg');
+            this.$parent.css('background-image', 'url("'+newBg+'")');
+            // update blue dots to reflect change
+            this.$controls.removeClass('active');
+            this.$controls.eq(index).addClass('active');
+        },
+
+        doAfterImagesLoaded: function(callback){
+            var imagesToLoad = [];
+            this.$slides.each(function (i, obj) {
+                imagesToLoad.push($(obj).attr('data-slide-bg'))
+            });
+            var cnt = imagesToLoad.length;
+            var imagesLoaded = 0;
+
+            var loadAllImages = function(){
+                var img = new Image();
+                $(img).load(function(){
+                    imagesLoaded++;
+                    if(imagesLoaded == cnt){
+                        callback();
+                    } else {
+                        // recursive
+                        loadAllImages();
+                    }
+                }).attr('src',imagesToLoad[imagesLoaded]);
+            };
+            loadAllImages();
+        },
+
         init: function(){
 
             this.$parent = $('.main-carousel');
@@ -92,42 +127,39 @@
             this.timer = null;
             var self = this;
 
-            this.changeSlide = function(index){
-                // hide/show slide copy
-                self.$slides.removeClass('active');
-                self.$slides.eq(index).addClass('active');
-                // change slide back ground image
-                var newBg = self.$slides.eq(index).attr('data-slide-bg');
-                self.$parent.css('background-image', 'url("'+newBg+'")');
-                // update blue dots to reflect change
-                self.$controls.removeClass('active');
-                self.$controls.eq(index).addClass('active');
-            };
+            this.doAfterImagesLoaded(function(){
 
-            this.$controls.each(function(i, obj){
-                $(obj).on('click', function(e){
-                    e.preventDefault();
-                    if(!$(obj).hasClass('active')){
-                        var index = self.$controls.index($(obj));
-                        self.changeSlide(index);
-                        if(self.timer){
-                            clearInterval(self.timer);
+                // attach carousel controls events
+                self.$controls.each(function(i, obj){
+                    $(obj).on('click', function(e){
+                        e.preventDefault();
+                        if(!$(obj).hasClass('active')){
+                            var index = self.$controls.index($(obj));
+                            self.changeSlide(index);
+                            if(self.timer){
+                                clearInterval(self.timer);
+                            }
                         }
-                    }
+                    });
                 });
-            });
 
-            this.timer = setInterval(function(){
-                if(!self.$parent.is(":hover")){
-                    var $activeLink = $('.active', self.$controlBox);
-                    var activeIndex = self.$controls.index($activeLink);
-                    var nextIndex = activeIndex + 1;
-                    if(nextIndex == self.$controls.length){
-                        nextIndex = 0
+                // set up carousel timer
+                self.timer = setInterval(function(){
+                    if(!self.$parent.is(":hover")){
+                        var $activeLink = $('.active', self.$controlBox);
+                        var activeIndex = self.$controls.index($activeLink);
+                        var nextIndex = activeIndex + 1;
+                        if(nextIndex == self.$controls.length){
+                            nextIndex = 0
+                        }
+                        self.changeSlide(nextIndex);
                     }
-                    self.changeSlide(nextIndex);
-                }
-            }, (this.delay * 1000));
+                }, (self.delay * 1000));
+
+                // display carousel controls
+                self.$controlBox.removeClass('controls-not-ready');
+                
+            });
         }
     };
 

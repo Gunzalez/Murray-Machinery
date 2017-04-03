@@ -201,6 +201,9 @@ a {
 .display-none {
   display: none; }
 
+.opacity-zero {
+  opacity: 0; }
+
 /* styling select dropdown form field */
 select {
   background: transparent;
@@ -540,6 +543,10 @@ body {
       .main-carousel .slide-controls a {
         width: 25px;
         height: 25px; } }
+    .main-carousel .slide-controls.controls-not-ready {
+      height: 50px; }
+      .main-carousel .slide-controls.controls-not-ready * {
+        display: none; }
 
 .title {
   text-transform: uppercase;
