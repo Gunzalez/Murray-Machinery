@@ -388,15 +388,12 @@ body {
 
 .title {
     text-transform: uppercase;
-    font-size: 2.8em;
-    padding-bottom: 5px;
     line-height: 90%;
     font-weight: normal;
+}
 
-    span {
-        display: block;
-        font-size: 0.8em;
-    }
+.detail {
+    padding-bottom: 10px;
 }
 
 .content {
@@ -404,23 +401,15 @@ body {
 
     .heading {
         background: url("../images/bg-heading.png") left center no-repeat;
-        padding: 15px 10px 7px 15px;
+        padding: 15px;
         margin-bottom: 15px;
 
-        a {
-            color: $brand-dark-red;
-
-            i {
-                font-size: 0.6em;
-            }
-
-            &:hover {
-                color: $brand-coal;
-            }
+        .title {
+            padding-bottom: 0;
         }
 
         @media (max-width: $width-md) {
-            padding: 0 0 0 10px;
+            padding: 10px;
 
             a {
                 font-size: 0.7em;
@@ -431,14 +420,26 @@ body {
 
 .product-highlight {
     background: $brand-red;
-    height: 360px;
-    padding: 15px 0;
 
     .title {
         color: $brand-white;
 
         span {
             color: $brand-dark-red;
+        }
+    }
+
+    p {
+        color: $brand-white;
+    }
+
+    .product-image {
+        width: 100%;
+        margin-bottom: 10px;
+        margin-top: -40px;
+
+        @media (max-width: $width-sm) {
+            margin-top: 0;
         }
     }
 }

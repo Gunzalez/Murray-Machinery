@@ -165,21 +165,59 @@
 
 h1, h2, h3, h4 {
     margin: 0;
-    padding: 0;
+    padding: 0 0 15px 0;
     font-weight: bold;
     font-family: league_gothicregular;
 }
 
+h2 {
+    font-size: 2.8em;
+    span {
+        display: block;
+        font-size: 0.8em;
+    }
 
+    a {
+        color: $brand-dark-red;
+
+        &:hover {
+            color: $brand-coal;
+        }
+
+        i {
+            font-size: 0.6em;
+        }
+    }
+}
+
+h3 {
+    font-size: 2.0em;
+}
 
 a {
     color: $brand-blue;
 
     &:hover {
-        color: $brand-black;
+        color: $brand-coal;
         text-decoration: none;
     }
+
+    &.large-anchor {
+        color: $brand-dark-red;
+        font-family: league_gothicregular;
+        text-transform: uppercase;
+        font-size: 2.5em;
+
+        &:hover {
+            color: $brand-coal;
+        }
+
+        i {
+            font-size: 0.6em;
+        }
+    }
 }
+
 
 .desktop {
     .mobile-link {
