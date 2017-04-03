@@ -389,26 +389,28 @@ body {
   float: left;
   width: 42px;
   height: 48px;
-  background-size: contain;
   margin-right: 15px; }
-  .main-navigation .sector-icon.agriculture {
-    background-image: url("../images/sector-icon-agriculture.png"); }
-  .main-navigation .sector-icon.forestry {
-    background-image: url("../images/sector-icon-forestry.png"); }
-  .main-navigation .sector-icon.renewables {
-    background-image: url("../images/sector-icon-renewables.png"); }
-  .main-navigation .sector-icon.municipal {
-    background-image: url("../images/sector-icon-municipal.png"); }
-  .main-navigation .sector-icon.engineering {
-    background-image: url("../images/sector-icon-engineering.png"); }
-  .main-navigation .sector-icon.waste {
-    background-image: url("../images/sector-icon-waste.png"); }
-  .main-navigation .sector-icon.construction {
-    background-image: url("../images/sector-icon-construction.png"); }
 
 .main-navigation .text {
   line-height: 47px;
   height: 48px; }
+
+.sector-icon {
+  background-size: contain; }
+  .sector-icon.agriculture {
+    background-image: url("../images/sector-icon-agriculture.png"); }
+  .sector-icon.forestry {
+    background-image: url("../images/sector-icon-forestry.png"); }
+  .sector-icon.renewables {
+    background-image: url("../images/sector-icon-renewables.png"); }
+  .sector-icon.municipal {
+    background-image: url("../images/sector-icon-municipal.png"); }
+  .sector-icon.engineering {
+    background-image: url("../images/sector-icon-engineering.png"); }
+  .sector-icon.waste {
+    background-image: url("../images/sector-icon-waste.png"); }
+  .sector-icon.construction {
+    background-image: url("../images/sector-icon-construction.png"); }
 
 .toggle-navigation {
   margin-top: 7px;
@@ -589,25 +591,29 @@ span.logo {
 
 .mm-listview > li > a,
 .mm-listview > li > span {
-  color: inherit;
-  display: block;
   padding: 15px 15px 15px 25px;
-  margin: 0;
-  font-family: osp-dindin;
-  text-transform: uppercase;
-  font-size: 1.5em; }
+  text-transform: uppercase; }
 
 .mm-navbar .mm-title {
-  font-family: osp-dindin;
   text-transform: uppercase;
-  font-size: 1.1em;
-  text-align: left;
-  padding-top: 12px; }
+  text-align: left; }
 
 #mm-blocker {
-  -webkit-box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.17);
-  -moz-box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.17);
-  box-shadow: 3px 0px 5px 0px rgba(0, 0, 0, 0.17); }
+  -webkit-box-shadow: 3px 0 5px 0 rgba(0, 0, 0, 0.17);
+  -moz-box-shadow: 3px 0 5px 0 rgba(0, 0, 0, 0.17);
+  box-shadow: 3px 0 5px 0 rgba(0, 0, 0, 0.17); }
 
 .mm-panel {
   background: #fefdfb; }
+
+.mm-panels .sector-icons li a {
+  position: relative;
+  padding-left: 55px; }
+
+.mm-panels .sector-icons .sector-icon {
+  position: absolute;
+  width: 21px;
+  height: 24px;
+  top: 50%;
+  margin-top: -12px;
+  left: 20px; }

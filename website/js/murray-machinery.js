@@ -96,7 +96,7 @@
                 // hide/show slide copy
                 self.$slides.removeClass('active');
                 self.$slides.eq(index).addClass('active');
-                // change slide back ground
+                // change slide back ground image
                 var newBg = self.$slides.eq(index).attr('data-slide-bg');
                 self.$parent.css('background-image', 'url("'+newBg+'")');
                 // update blue dots to reflect change
