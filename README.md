@@ -1,3 +1,3 @@
 # Murray Machinery
 
-Responsive web templates form Murry Machinery
+Responsive web templates for the Murry Machinery website
