@@ -8,6 +8,7 @@ Hours so far
 ## (must have)
 TODO
 =======================
+Featured product carousel
 
 
 
