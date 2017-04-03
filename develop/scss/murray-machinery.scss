@@ -325,7 +325,7 @@ body {
         background: $brand-white;
         background: rgba(255, 255, 255, 0.8);
         padding: 20px;
-        @include border-radius(2px);
+        @include border-radius(1px);
         width: 320px;
         position: absolute;
         bottom: 0;
@@ -499,6 +499,7 @@ body {
 .product-image {
     width: 100%;
     margin-bottom: 10px;
+    @include border-radius(1px);
 }
 
 .footer {

@@ -226,6 +226,14 @@ a {
             font-size: 0.6em;
         }
     }
+
+    &.more-link {
+        font-weight: bold;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
 }
 
 

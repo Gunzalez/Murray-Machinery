@@ -200,6 +200,10 @@ a {
       color: #333333; }
     a.large-anchor i {
       font-size: 0.6em; }
+  a.more-link {
+    font-weight: bold; }
+    a.more-link:hover {
+      text-decoration: underline; }
 
 .desktop .mobile-link {
   color: #666666;
@@ -508,9 +512,9 @@ body {
     background: #ffffff;
     background: rgba(255, 255, 255, 0.8);
     padding: 20px;
-    -webkit-border-radius: 2px !important;
-    -moz-border-radius: 2px !important;
-    border-radius: 2px !important;
+    -webkit-border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    border-radius: 1px !important;
     width: 320px;
     position: absolute;
     bottom: 0;
@@ -632,7 +636,10 @@ body {
 
 .product-image {
   width: 100%;
-  margin-bottom: 10px; }
+  margin-bottom: 10px;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important; }
 
 .footer {
   background: #1c3389; }
