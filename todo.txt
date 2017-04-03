@@ -2,13 +2,16 @@ Estimated 90 hours
 
 Hours so far
 =====================
-1st 2nd and 3rd - 16
+1st 2nd and 3rd -           16 hr
+4th -                       7 hrs
 
 
 ## (must have)
 TODO
 =======================
-Featured product carousel
+## Featured product carousel
+## Some sort of filter on the homepage
+Drop shadow on drop down menu
 
 
 
