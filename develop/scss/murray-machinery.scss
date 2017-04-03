@@ -325,7 +325,7 @@ body {
         background: rgba(255, 255, 255, 0.8);
         padding: 20px;
         @include border-radius(2px);
-        width: 360px;
+        width: 320px;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -335,6 +335,12 @@ body {
 
         @media (max-width: $width-sm) {
             width: auto;
+        }
+
+        p {
+            &:nth-last-child(1){
+                margin-bottom: 0;
+            }
         }
     }
 
@@ -446,14 +452,24 @@ body {
     }
 
     .product-image {
-        width: 100%;
-        margin-bottom: 10px;
         margin-top: -40px;
 
         @media (max-width: $width-sm) {
             margin-top: 0;
         }
     }
+
+    .sector-icon {
+        width: 21px;
+        height: 24px;
+        display: inline-block;
+        margin-right: 5px;
+    }
+}
+
+.product-image {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .footer {
