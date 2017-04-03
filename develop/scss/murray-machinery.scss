@@ -121,9 +121,9 @@ body {
         width: 220px;
         background-color: $brand-white;
         border: 1px solid $nav-border-colour;
-        -webkit-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.35);
-        -moz-box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.35);
-        box-shadow: 0px 4px 10px 0px rgba(0,0,0,0.35);
+        -webkit-box-shadow: 0 4px 10px 0 rgba(0,0,0,0.35);
+        -moz-box-shadow: 0 4px 10px 0 rgba(0,0,0,0.35);
+        box-shadow: 0 4px 10px 0 rgba(0,0,0,0.35);
 
         > li {
             float: none;
@@ -271,6 +271,7 @@ body {
 
 .logo {
     margin-top: -10px;
+    padding-bottom: 0;
 
     img {
         width: 100%;
@@ -329,9 +330,9 @@ body {
         position: absolute;
         bottom: 0;
         left: 0;
-        -webkit-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.16);
-        -moz-box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.16);
-        box-shadow: 0px 0px 4px 1px rgba(0,0,0,0.16);
+        -webkit-box-shadow: 0 0 4px 1px rgba(0,0,0,0.16);
+        -moz-box-shadow: 0 0 4px 1px rgba(0,0,0,0.16);
+        box-shadow: 0 0 4px 1px rgba(0,0,0,0.16);
 
         @media (max-width: $width-sm) {
             width: auto;
@@ -395,7 +396,7 @@ body {
         }
 
         &.controls-not-ready {
-            height: 50px;
+            height: 53px;
 
             * {
                 display: none;
@@ -519,15 +520,7 @@ body {
     }
 }
 
-.tool-tip {
-    color: #000000;
-}
 
-span {
-    &.logo {
-        display: inline-block;
-    }
-}
 
 
 // small screen nav styles override
