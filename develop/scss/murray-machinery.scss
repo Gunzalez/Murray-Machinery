@@ -438,7 +438,8 @@ body {
     }
 }
 
-.product-highlight {
+.product-highlight,
+.page-heading {
     background: $brand-red;
 
     .title {
@@ -455,6 +456,12 @@ body {
 
     .detail {
         color: $brand-white;
+
+        p {
+            &:nth-last-child(1){
+                margin-bottom: 0;
+            }
+        }
     }
 
     ul {
@@ -477,10 +484,10 @@ body {
     }
 
     &:first-child {
-        margin-top: 30px;
+        margin-top: 20px;
 
         .product-image {
-            margin-top: -35px;
+            margin-top: -30px;
 
             @media (max-width: $width-sm) {
                 margin-top: 0;
