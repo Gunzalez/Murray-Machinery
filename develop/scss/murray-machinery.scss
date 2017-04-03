@@ -333,10 +333,10 @@ body {
     }
 
     .title {
-        color: $brand-blue;
+        color: $brand-coal;
 
         span {
-            color: $brand-coal;
+            color: $brand-blue;
         }
     }
 
@@ -364,7 +364,7 @@ body {
 
             &:hover,
             &.active{
-                background: $brand-blue;
+                background: $brand-red;
             }
         }
 
@@ -385,15 +385,14 @@ body {
 
 .title {
     text-transform: uppercase;
-    font-size: 2.0em;
-    line-height: 120%;
+    font-size: 2.8em;
     padding-bottom: 5px;
-    letter-spacing: 1px;
+    line-height: 90%;
     font-weight: normal;
 
     span {
         display: block;
-        font-size: 1.5em;
+        font-size: 0.8em;
     }
 }
 
@@ -402,14 +401,11 @@ body {
 
     .heading {
         background: url("../images/bg-heading.png") left center no-repeat;
-        padding: 15px 10px 7px 20px;
+        padding: 15px 10px 7px 15px;
         margin-bottom: 15px;
 
         a {
             color: $brand-dark-red;
-            font-family: osp-dindin;
-            font-size: 2.0em;
-            text-transform: uppercase;
 
             i {
                 font-size: 0.6em;
@@ -420,11 +416,11 @@ body {
             }
         }
 
-        @media (max-width: $width-sm) {
-            padding: 10px 5px 7px 10px;
+        @media (max-width: $width-md) {
+            padding: 0 0 0 10px;
 
             a {
-                font-size: 1.6em;
+                font-size: 0.7em;
             }
         }
     }
@@ -436,10 +432,10 @@ body {
     padding: 15px 0;
 
     .title {
-        color: $brand-dark-red;
+        color: $brand-white;
 
         span {
-            color: $brand-white;
+            color: $brand-dark-red;
         }
     }
 }
