@@ -330,6 +330,9 @@ body {
     .aux-navigation li:nth-child(2) a {
       padding: 5px 0 15px 0; } }
 
+.main-navigation a {
+  outline: none !important; }
+
 .main-navigation ul {
   border-top: 1px solid #f8dbdc;
   float: left; }
@@ -533,7 +536,8 @@ body {
       -moz-transition: background 0.5s;
       -o-transition: background 0.5s;
       -webkit-transition: background 0.5s;
-      transition: background 0.5s; }
+      transition: background 0.5s;
+      outline: none !important; }
       .main-carousel .slide-controls a:hover, .main-carousel .slide-controls a.active {
         background: #d73037; }
     @media (max-width: 768px) {

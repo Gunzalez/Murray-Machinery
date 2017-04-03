@@ -79,6 +79,9 @@ body {
 
 .main-navigation {
     $nav-border-colour: lighten($brand-red, 40%);
+    a {
+        outline: none !important;
+    }
 
     ul {
         @extend %cleanUl;
@@ -364,6 +367,7 @@ body {
             background: $brand-white;
             text-indent: -9000px;
             @include transition(background 0.5s);
+            outline: none !important;
 
             &:hover,
             &.active{
