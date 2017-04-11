@@ -5,7 +5,8 @@
   padding: 0;
   list-style: none; }
 
-.aux-navigation .text, .main-carousel .slide:not(.active), #hidden-form input[type=checkbox], #mm-1 .mm-title {
+.aux-navigation .text, .main-carousel .slide:not(.active), #hidden-form input[type=checkbox],
+#hidden-form input[type=radio], #mm-1 .mm-title {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -471,6 +472,23 @@ body {
   .sector-icon.construction {
     background-image: url("../images/sector-icon-construction.png"); }
 
+.vehicle-icon {
+  background-size: contain; }
+  .vehicle-icon.backhoe {
+    background-image: url("../images/vehicle-backhoe.png"); }
+  .vehicle-icon.forklift {
+    background-image: url("../images/vehicle-forklift.png"); }
+  .vehicle-icon.front-loader {
+    background-image: url("../images/vehicle-front-loader.png"); }
+  .vehicle-icon.skid-steer {
+    background-image: url("../images/vehicle-skid-steer.png"); }
+  .vehicle-icon.telehandler {
+    background-image: url("../images/vehicle-telehandler.png"); }
+  .vehicle-icon.tractor {
+    background-image: url("../images/vehicle-tractor.png"); }
+  .vehicle-icon.load-shovel {
+    background-image: url("../images/vehicle-load-shovel.png"); }
+
 .toggle-navigation {
   margin-top: 7px;
   opacity: 1 !important;
@@ -625,7 +643,9 @@ body {
   .product-highlight .product-image,
   .page-heading .product-image {
     padding-bottom: 20px; }
+  .product-highlight .vehicle-icon,
   .product-highlight .sector-icon,
+  .page-heading .vehicle-icon,
   .page-heading .sector-icon {
     width: 42px;
     height: 48px;
@@ -725,7 +745,12 @@ body {
     #hidden-form {
       left: 0; } }
   #hidden-form form {
-    margin-top: 15px; }
+    margin-top: 10px; }
+  #hidden-form fieldset {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-bottom: 10px; }
   #hidden-form legend {
     font-family: league_gothicregular;
     text-transform: uppercase;
@@ -741,17 +766,14 @@ body {
       padding-right: 10px; }
       #hidden-form ul li:nth-last-child(1) {
         padding-right: 0; }
-  #hidden-form input[type=checkbox] + label {
+  #hidden-form input[type=checkbox] + label,
+  #hidden-form input[type=radio] + label {
     -webkit-filter: grayscale(100%) brightness(200%);
     filter: grayscale(100%) brightness(200%);
     background-size: 80%;
     width: 90px;
     display: inline-block;
     opacity: 0.5;
-    -moz-transition: opacity 0.25s;
-    -o-transition: opacity 0.25s;
-    -webkit-transition: opacity 0.25s;
-    transition: opacity 0.25s;
     cursor: pointer;
     background-repeat: no-repeat;
     background-position: top center;
@@ -763,7 +785,8 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: uppercase; }
-  #hidden-form input[type=checkbox]:checked + label {
+  #hidden-form input[type=checkbox]:checked + label,
+  #hidden-form input[type=radio]:checked + label {
     opacity: 1; }
   #hidden-form input[data-sector="agriculture"] + label {
     background-image: url("../images/sector-icon-agriculture.png"); }
@@ -779,6 +802,20 @@ body {
     background-image: url("../images/sector-icon-engineering.png"); }
   #hidden-form input[data-sector="renewables"] + label {
     background-image: url("../images/sector-icon-renewables-white.png"); }
+  #hidden-form input[data-sector="tractor"] + label {
+    background-image: url("../images/vehicle-tractor.png"); }
+  #hidden-form input[data-sector="backhoe"] + label {
+    background-image: url("../images/vehicle-backhoe.png"); }
+  #hidden-form input[data-sector="load-shovel"] + label {
+    background-image: url("../images/vehicle-load-shovel.png"); }
+  #hidden-form input[data-sector="telehandler"] + label {
+    background-image: url("../images/vehicle-telehandler.png"); }
+  #hidden-form input[data-sector="front-loader"] + label {
+    background-image: url("../images/vehicle-front-loader.png"); }
+  #hidden-form input[data-sector="forklift"] + label {
+    background-image: url("../images/vehicle-forklift.png"); }
+  #hidden-form input[data-sector="skid-steer"] + label {
+    background-image: url("../images/vehicle-skid-steer.png"); }
 
 .mm-listview > li > a,
 .mm-listview > li > span {

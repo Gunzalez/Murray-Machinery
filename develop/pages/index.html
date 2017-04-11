@@ -55,7 +55,9 @@
             <div class="container">
                 <div class="col-sm-5">
                     <h2 class="title"><span>Featured product:</span> Large Silage Fork</h2>
-                    <p><i class="sector-icon agriculture" aria-hidden="true" title="Suitable for Agriculture"></i> <i class="sector-icon forestry" aria-hidden="true" title="Suitable for Forestry"></i></p>
+                    <p><i class="sector-icon agriculture" aria-hidden="true" title="Suitable for Agriculture"></i>
+                        <i class="sector-icon forestry" aria-hidden="true" title="Suitable for Forestry"></i>
+                        <i class="vehicle-icon load-shovel" aria-hidden="true" title="Used with Load Shovel"></i></p>
                     <div class="detail">
                         <p>The Murray Large Silage Fork is designed for extra capacity when loading chopped grass onto a silage pit.</p>
                         <p>The frame is more heavily constructed and is fitted with extra duty tines bolted into large tapered sockets fitted along the bottom and the sides of the silage fork. </p>
@@ -72,22 +74,40 @@
                             <fieldset>
                                 <legend>Select sector:</legend>
                                 <ul>
-                                    <li><input type="checkbox" id="agriculture" data-sector="agriculture">
+                                    <li><input type="checkbox" name="agriculture" id="agriculture" data-sector="agriculture">
                                         <label for="agriculture">Agriculture</label></li>
-                                    <li><input type="checkbox" id="forestry" data-sector="forestry">
+                                    <li><input type="checkbox" name="forestry" id="forestry" data-sector="forestry">
                                         <label for="forestry">Forestry</label></li>
-                                    <li><input type="checkbox" id="construction" data-sector="construction">
+                                    <li><input type="checkbox" name="construction" id="construction" data-sector="construction">
                                         <label for="construction">Construction</label></li>
-                                    <li><input type="checkbox" id="engineering" data-sector="engineering">
+                                    <li><input type="checkbox" name="engineering" id="engineering" data-sector="engineering">
                                         <label for="engineering">Engineering</label></li>
-                                    <li><input type="checkbox" id="waste" data-sector="waste">
+                                    <li><input type="checkbox" name="waste" id="waste" data-sector="waste">
                                         <label for="waste">Waste Handling</label></li>
-                                    <li><input type="checkbox" id="renewables" data-sector="renewables">
+                                    <li><input type="checkbox" name="renewables" id="renewables" data-sector="renewables">
                                         <label for="renewables">Renewables</label></li>
-                                    <li><input type="checkbox" id="municipal" data-sector="municipal">
+                                    <li><input type="checkbox" name="municipal" id="municipal" data-sector="municipal">
                                         <label for="municipal">Municipal</label></li>
                                 </ul>
-
+                            </fieldset>
+                            <fieldset>
+                                <legend>Select Vehicle:</legend>
+                                <ul>
+                                    <li><input type="radio" id="tractor" name="vehicle" value="tractor" data-sector="tractor">
+                                        <label for="tractor">Tractor</label></li>
+                                    <li><input type="radio" id="backhoe" name="vehicle" value="backhoe" data-sector="backhoe">
+                                        <label for="backhoe">Backhoe</label></li>
+                                    <li><input type="radio" id="skid-steer" name="vehicle" value="Skid Steer" data-sector="skid-steer">
+                                        <label for="skid-steer">Skid Steer</label></li>
+                                    <li><input type="radio" id="front-loader" name="vehicle" value="Front Loader" data-sector="front-loader">
+                                        <label for="front-loader">Front Loader</label></li>
+                                    <li><input type="radio" id="forklift" name="vehicle" value="Fork Lift" data-sector="forklift">
+                                        <label for="forklift">Fork Lift</label></li>
+                                    <li><input type="radio" id="telehandler" name="vehicle" value="Telehandler" data-sector="telehandler">
+                                        <label for="telehandler">Telehandler</label></li>
+                                    <li><input type="radio" id="load-shovel" name="vehicle" value="Load Shovel" data-sector="load-shovel">
+                                        <label for="load-shovel">Load Shovel</label></li>
+                                </ul>
                             </fieldset>
                         </form>
                     </div>
