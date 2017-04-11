@@ -416,28 +416,6 @@ body {
     padding-bottom: 10px;
 }
 
-.content {
-    padding: 20px 0;
-
-    .heading {
-        background: url("../images/bg-heading.png") left center no-repeat;
-        padding: 15px;
-        margin-bottom: 15px;
-
-        .title {
-            padding-bottom: 0;
-        }
-
-        @media (max-width: $width-md) {
-            padding: 10px;
-
-            a {
-                font-size: 0.7em;
-            }
-        }
-    }
-}
-
 .product-highlight,
 .page-heading {
     background: $brand-red;
@@ -456,6 +434,11 @@ body {
 
     .detail {
         color: $brand-white;
+        padding-bottom: 50px;
+
+        @media (max-width: $width-sm) {
+            padding-bottom: 15px;
+        }
 
         p {
             &:nth-last-child(1){
@@ -464,23 +447,25 @@ body {
         }
     }
 
+    .product-link {
+        display: inline-block;
+    }
+
     ul {
         padding-left: 20px;
     }
 
     .product-image {
-        margin-top: -40px;
-
-        @media (max-width: $width-sm) {
-            margin-top: 0;
-        }
+        padding-bottom: 20px;
     }
 
     .sector-icon {
-        width: 21px;
-        height: 24px;
+        width: 42px;
+        height: 48px;
         display: inline-block;
         margin-right: 5px;
+        -webkit-filter: grayscale(100%) brightness(200%);
+        filter: grayscale(100%) brightness(200%);
     }
 
     &:first-child {
@@ -549,7 +534,128 @@ body {
     }
 }
 
+#filter-trigger {
 
+    position: absolute;
+    left: 30px;
+    bottom: -5px;
+    @include transition(bottom 0.5s);
+    z-index: 2;
+
+    &.open-state {
+        bottom: 100%;
+    }
+
+    @media (max-width: $width-lg) {
+        left: 15px;
+    }
+}
+
+.filter-trigger {
+
+    font-family: league_gothicregular;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 1.5em;
+    display: inline-block;
+    text-decoration: none;
+
+    i {
+        display: block;
+    }
+
+    &:focus{
+        color: #ffffff;
+
+    }
+}
+
+#hidden-form {
+    position: absolute;
+    bottom: -100%;
+    left: 15px;
+    width: 100%;
+    padding-right: 15px;
+
+    background: $brand-red;
+    height: 100%;
+    @include transition(bottom 0.5s);
+
+    &.open {
+        bottom: 0;
+    }
+
+    @media (max-width: $width-lg) {
+        left: 0;
+    }
+
+    form {
+        margin-top: 15px;
+    }
+
+    legend {
+        font-family: league_gothicregular;
+        text-transform: uppercase;
+        color: #ffffff;
+        font-size: 1.8em;
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+
+    input[type=checkbox] {
+        @extend %visuallyHidden;
+    }
+
+    ul {
+        @extend %cleanUl;
+        float: left;
+
+        li {
+            float: left;
+            padding-right: 10px;
+
+            &:nth-last-child(1){
+                padding-right: 0;
+            }
+        }
+    }
+
+    input[type=checkbox] + label {
+        -webkit-filter: grayscale(100%) brightness(200%);
+        filter: grayscale(100%) brightness(200%);
+        background-size: 80%;
+        width: 90px;
+        display:inline-block;
+        opacity: 0.5;
+        @include transition(opacity 0.25s);
+        cursor: pointer;
+        background-repeat: no-repeat;
+        background-position: top center;
+
+        padding-top: 90px;
+        color: #ffffff;
+        font-size: 0.75em;
+        text-align: center;
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: uppercase;
+    }
+
+    input[type=checkbox]:checked + label {
+        opacity: 1;
+    }
+
+    input[data-sector="agriculture"] + label { background-image: url('../images/sector-icon-agriculture.png'); }
+    input[data-sector="forestry"] + label { background-image: url('../images/sector-icon-forestry.png'); }
+    input[data-sector="municipal"] + label { background-image: url('../images/sector-icon-municipal.png'); }
+    input[data-sector="construction"] + label { background-image: url('../images/sector-icon-construction-white.png'); }
+    input[data-sector="waste"] + label { background-image: url('../images/sector-icon-waste-white.png'); }
+    input[data-sector="engineering"] + label { background-image: url('../images/sector-icon-engineering.png'); }
+    input[data-sector="renewables"] + label { background-image: url('../images/sector-icon-renewables-white.png'); }
+}
 
 
 // small screen nav styles override

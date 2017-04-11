@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans");
 @import "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css";
-.aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .footer .footer-links {
+.aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .footer .footer-links, #hidden-form ul {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.aux-navigation .text, .main-carousel .slide:not(.active), #mm-1 .mm-title {
+.aux-navigation .text, .main-carousel .slide:not(.active), #hidden-form input[type=checkbox], #mm-1 .mm-title {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -51,10 +51,26 @@
     .container {
       width: 100%; } }
 
+.product-highlight .container {
+  position: relative;
+  overflow: hidden; }
+
 @media (max-width: 1200px) {
   .content .container {
     padding-right: 0;
     padding-left: 0; } }
+
+.content {
+  padding: 20px 0;
+  margin-bottom: 10px; }
+  .content .large-cta {
+    background: url("../images/bg-heading.png") left center no-repeat;
+    padding: 15px;
+    display: inline-block; }
+    @media (max-width: 992px) {
+      .content .large-cta {
+        padding: 10px;
+        font-size: 0.7em; } }
 
 .section {
   position: relative; }
@@ -204,6 +220,8 @@ a {
     font-weight: bold; }
     a.more-link:hover {
       text-decoration: underline; }
+    a.more-link::after {
+      content: "..."; }
 
 .desktop .mobile-link {
   color: #666666;
@@ -575,20 +593,6 @@ body {
 .detail {
   padding-bottom: 10px; }
 
-.content {
-  padding: 20px 0; }
-  .content .heading {
-    background: url("../images/bg-heading.png") left center no-repeat;
-    padding: 15px;
-    margin-bottom: 15px; }
-    .content .heading .title {
-      padding-bottom: 0; }
-    @media (max-width: 992px) {
-      .content .heading {
-        padding: 10px; }
-        .content .heading a {
-          font-size: 0.7em; } }
-
 .product-highlight,
 .page-heading {
   background: #d73037; }
@@ -603,26 +607,32 @@ body {
     color: #791b1f; }
   .product-highlight .detail,
   .page-heading .detail {
-    color: #ffffff; }
+    color: #ffffff;
+    padding-bottom: 50px; }
+    @media (max-width: 768px) {
+      .product-highlight .detail,
+      .page-heading .detail {
+        padding-bottom: 15px; } }
     .product-highlight .detail p:nth-last-child(1),
     .page-heading .detail p:nth-last-child(1) {
       margin-bottom: 0; }
+  .product-highlight .product-link,
+  .page-heading .product-link {
+    display: inline-block; }
   .product-highlight ul,
   .page-heading ul {
     padding-left: 20px; }
   .product-highlight .product-image,
   .page-heading .product-image {
-    margin-top: -40px; }
-    @media (max-width: 768px) {
-      .product-highlight .product-image,
-      .page-heading .product-image {
-        margin-top: 0; } }
+    padding-bottom: 20px; }
   .product-highlight .sector-icon,
   .page-heading .sector-icon {
-    width: 21px;
-    height: 24px;
+    width: 42px;
+    height: 48px;
     display: inline-block;
-    margin-right: 5px; }
+    margin-right: 5px;
+    -webkit-filter: grayscale(100%) brightness(200%);
+    filter: grayscale(100%) brightness(200%); }
   .product-highlight:first-child,
   .page-heading:first-child {
     margin-top: 20px; }
@@ -669,6 +679,106 @@ body {
       text-decoration: none; }
       .footer .footer-copy a:hover {
         color: #ffffff; }
+
+#filter-trigger {
+  position: absolute;
+  left: 30px;
+  bottom: -5px;
+  -moz-transition: bottom 0.5s;
+  -o-transition: bottom 0.5s;
+  -webkit-transition: bottom 0.5s;
+  transition: bottom 0.5s;
+  z-index: 2; }
+  #filter-trigger.open-state {
+    bottom: 100%; }
+  @media (max-width: 1200px) {
+    #filter-trigger {
+      left: 15px; } }
+
+.filter-trigger {
+  font-family: league_gothicregular;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.5em;
+  display: inline-block;
+  text-decoration: none; }
+  .filter-trigger i {
+    display: block; }
+  .filter-trigger:focus {
+    color: #ffffff; }
+
+#hidden-form {
+  position: absolute;
+  bottom: -100%;
+  left: 15px;
+  width: 100%;
+  padding-right: 15px;
+  background: #d73037;
+  height: 100%;
+  -moz-transition: bottom 0.5s;
+  -o-transition: bottom 0.5s;
+  -webkit-transition: bottom 0.5s;
+  transition: bottom 0.5s; }
+  #hidden-form.open {
+    bottom: 0; }
+  @media (max-width: 1200px) {
+    #hidden-form {
+      left: 0; } }
+  #hidden-form form {
+    margin-top: 15px; }
+  #hidden-form legend {
+    font-family: league_gothicregular;
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 1.8em;
+    padding: 0;
+    margin: 0;
+    border: none; }
+  #hidden-form ul {
+    float: left; }
+    #hidden-form ul li {
+      float: left;
+      padding-right: 10px; }
+      #hidden-form ul li:nth-last-child(1) {
+        padding-right: 0; }
+  #hidden-form input[type=checkbox] + label {
+    -webkit-filter: grayscale(100%) brightness(200%);
+    filter: grayscale(100%) brightness(200%);
+    background-size: 80%;
+    width: 90px;
+    display: inline-block;
+    opacity: 0.5;
+    -moz-transition: opacity 0.25s;
+    -o-transition: opacity 0.25s;
+    -webkit-transition: opacity 0.25s;
+    transition: opacity 0.25s;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 90px;
+    color: #ffffff;
+    font-size: 0.75em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase; }
+  #hidden-form input[type=checkbox]:checked + label {
+    opacity: 1; }
+  #hidden-form input[data-sector="agriculture"] + label {
+    background-image: url("../images/sector-icon-agriculture.png"); }
+  #hidden-form input[data-sector="forestry"] + label {
+    background-image: url("../images/sector-icon-forestry.png"); }
+  #hidden-form input[data-sector="municipal"] + label {
+    background-image: url("../images/sector-icon-municipal.png"); }
+  #hidden-form input[data-sector="construction"] + label {
+    background-image: url("../images/sector-icon-construction-white.png"); }
+  #hidden-form input[data-sector="waste"] + label {
+    background-image: url("../images/sector-icon-waste-white.png"); }
+  #hidden-form input[data-sector="engineering"] + label {
+    background-image: url("../images/sector-icon-engineering.png"); }
+  #hidden-form input[data-sector="renewables"] + label {
+    background-image: url("../images/sector-icon-renewables-white.png"); }
 
 .mm-listview > li > a,
 .mm-listview > li > span {

@@ -6,11 +6,34 @@
     }
 }
 
+.product-highlight {
+    .container {
+        position: relative;
+        overflow: hidden;
+    }
+}
+
 .content {
     .container {
         @media (max-width: $width-lg){
             padding-right: 0;
             padding-left: 0;
+        }
+    }
+}
+
+.content {
+    padding: 20px 0;
+    margin-bottom: 10px;
+
+    .large-cta {
+        background: url("../images/bg-heading.png") left center no-repeat;
+        padding: 15px;
+        display: inline-block;
+
+        @media (max-width: $width-md) {
+            padding: 10px;
+            font-size: 0.7em;
         }
     }
 }
@@ -232,6 +255,10 @@ a {
 
         &:hover {
             text-decoration: underline;
+        }
+
+        &::after {
+            content: "...";
         }
     }
 }

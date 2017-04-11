@@ -44,9 +44,7 @@
         <div class="content">
             <div class="container">
                 <div class="col-xs-12">
-                    <div class="heading">
-                        <h2 class="title"><a href="stock.html">View current stock list <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></h2>
-                    </div>
+                    <h2 class="title"><a href="stock.html" class="large-cta">View current stock list <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></h2>
                     <div class="detail">
                         <p>The Murray <strong>Top Grab</strong> further enhances the purpose of the Murray Muck Fork. Its construction consists of a standard Muck Fork with a top grab fitted.</p>
                     </div>
@@ -65,8 +63,36 @@
                     </div>
                 </div>
                 <div class="col-sm-7">
-                    <a href="product.html" title="Large Silage Fork"><img src="uploaded/product-highlight-image-1.png" class="img-responsive product-image" alt="Large Silage Fork" /></a>
+                    <a href="product.html" class="product-link" title="Large Silage Fork"><img src="uploaded/product-highlight-image-1.png" class="img-responsive product-image" alt="Large Silage Fork" /></a>
                 </div>
+                <div id="hidden-form">
+                    <div class="col-sm-12">
+                        <a href="#" id="filter-shutter" class="filter-trigger">Hide Filter <i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></a>
+                        <form id="product-filter" action="products.html" method="post">
+                            <fieldset>
+                                <legend>Select sector:</legend>
+                                <ul>
+                                    <li><input type="checkbox" id="agriculture" data-sector="agriculture">
+                                        <label for="agriculture">Agriculture</label></li>
+                                    <li><input type="checkbox" id="forestry" data-sector="forestry">
+                                        <label for="forestry">Forestry</label></li>
+                                    <li><input type="checkbox" id="construction" data-sector="construction">
+                                        <label for="construction">Construction</label></li>
+                                    <li><input type="checkbox" id="engineering" data-sector="engineering">
+                                        <label for="engineering">Engineering</label></li>
+                                    <li><input type="checkbox" id="waste" data-sector="waste">
+                                        <label for="waste">Waste Handling</label></li>
+                                    <li><input type="checkbox" id="renewables" data-sector="renewables">
+                                        <label for="renewables">Renewables</label></li>
+                                    <li><input type="checkbox" id="municipal" data-sector="municipal">
+                                        <label for="municipal">Municipal</label></li>
+                                </ul>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+                <a href="#" id="filter-trigger" class="filter-trigger"><i class="glyphicon glyphicon-triangle-top" aria-hidden="true"></i> Product Filter </a>
             </div>
         </div>
         <div class="content">
@@ -86,7 +112,7 @@
                                 <a href="news.html?id=298821"><img src="uploaded/news-image-1.jpg" class="img-responsive product-image" alt="News image title" /></a></div>
                             <div class="col-sm-7">
                                 <h4>Sample news title, new title, new title.</h4>
-                                <p>The Murray <strong>Top Grab</strong> further enhances the purpose of the Murray Muck Fork. Its construction consists of a standard Muck Fork with a top grab fitted. <a href="news.html?id=298821" class="more-link">More...</a></p>
+                                <p>The Murray <strong>Top Grab</strong> further enhances the purpose of the Murray Muck Fork. Its construction consists of a standard Muck Fork with a top grab fitted. <a href="news.html?id=298821" class="more-link">Mores</a></p>
                             </div>
                         </div>
                     </div>

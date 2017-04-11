@@ -163,12 +163,44 @@
         }
     };
 
+    mMachinery.filter = {
+
+        toggle: function (toggle) {
+            if(toggle){
+                this.panel.addClass('open');
+                this.trigger.addClass('open-state');
+            } else {
+                this.panel.removeClass('open');
+                this.trigger.removeClass('open-state');
+            }
+        },
+
+        init: function () {
+            this.trigger = $('#filter-trigger');
+            this.shutter = $('#filter-shutter');
+            this.panel = $('#hidden-form');
+            var self = this;
+
+            this.trigger.on('click', function (e) {
+                e.preventDefault();
+                self.toggle('open');
+            });
+
+            this.shutter.on('click', function (e) {
+                e.preventDefault();
+                self.toggle(false);
+            })
+        }
+
+    };
+
     mMachinery.init = function () {
 
         // all init here
         mMachinery.page.init();
         mMachinery.navigation.init();
         mMachinery.carousel.init();
+        mMachinery.filter.init();
 
         // resize triggers
         $(window).on('resize', function () {
