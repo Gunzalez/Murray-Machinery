@@ -65,24 +65,30 @@
   padding: 20px 0;
   margin-bottom: 10px; }
   .content .large-cta {
-    background: url("../images/bg-heading.png") left center no-repeat;
-    padding: 15px;
-    display: inline-block; }
+    background: url("../images/bg-heading.png") 0 center no-repeat;
+    padding: 15px 15px 12px 15px;
+    display: inline-block;
+    -moz-transition: all 0.25s;
+    -o-transition: all 0.25s;
+    -webkit-transition: all 0.25s;
+    transition: all 0.25s; }
     @media (max-width: 992px) {
       .content .large-cta {
         padding: 10px;
         font-size: 0.7em; } }
+    .content .large-cta:hover {
+      background: url("../images/bg-heading.png") -15px center no-repeat; }
 
 .section {
   position: relative; }
 
-.form label {
+form label {
   font-weight: normal !important; }
 
-.form .form-group [readonly] {
+form .form-group [readonly] {
   background: #ffffff !important; }
 
-.form input, .form select, .form textarea, .form button, .form .form-control {
+form input, form select, form textarea, form button, form .form-control {
   -webkit-border-radius: 2px !important;
   -moz-border-radius: 2px !important;
   border-radius: 2px !important;
@@ -90,48 +96,48 @@
   border-color: #333333 !important;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal !important; }
-  .form input:focus, .form select:focus, .form textarea:focus, .form button:focus, .form .form-control:focus {
+  form input:focus, form select:focus, form textarea:focus, form button:focus, form .form-control:focus {
     border-color: #000000 !important;
     box-shadow: none !important; }
 
-.form input:not([type="checkbox"]), .form select:not([type="checkbox"]), .form textarea:not([type="checkbox"]), .form button:not([type="checkbox"]) {
+form input:not([type="checkbox"]), form select:not([type="checkbox"]), form textarea:not([type="checkbox"]), form button:not([type="checkbox"]) {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none; }
 
-.form input, .form select, .form textarea {
+form input, form select, form textarea {
   color: #000000; }
 
-.form .form-horizontal {
+form .form-horizontal {
   padding-bottom: 15px; }
-  .form .form-horizontal label:not(.checkbox-right) {
+  form .form-horizontal label:not(.checkbox-right) {
     font-weight: normal !important;
     text-align: left !important; }
 
-.form .form-inline label {
+form .form-inline label {
   display: block;
   float: left; }
 
-.form .form-inline input {
+form .form-inline input {
   float: none !important; }
 
-.form .form-inline .form-group {
+form .form-inline .form-group {
   margin: 0 !important;
   width: 100%; }
 
-.form .form-3-char {
+form .form-3-char {
   width: 40% !important; }
 
-.form .checkbox-right,
-.form .checkbox-left {
+form .checkbox-right,
+form .checkbox-left {
   position: relative;
   width: 100%;
   min-height: 30px; }
-  .form .checkbox-right span,
-  .form .checkbox-left span {
+  form .checkbox-right span,
+  form .checkbox-left span {
     display: inline-block; }
-  .form .checkbox-right input,
-  .form .checkbox-left input {
+  form .checkbox-right input,
+  form .checkbox-left input {
     position: absolute;
     top: 4px;
     width: 15px;
@@ -140,38 +146,54 @@
     cursor: pointer;
     margin: 0; }
 
-.form .btn-product {
-  -webkit-border-radius: 6px !important;
-  -moz-border-radius: 6px !important;
-  border-radius: 6px !important; }
-
-.form .checkbox-right {
+form .checkbox-right {
   text-align: right !important; }
-  .form .checkbox-right span {
+  form .checkbox-right span {
     padding-right: 27px; }
-  .form .checkbox-right input {
+  form .checkbox-right input {
     right: 0; }
 
-.form .checkbox-left {
+form .checkbox-left {
   text-align: left !important; }
-  .form .checkbox-left span {
+  form .checkbox-left span {
     padding-left: 27px; }
-  .form .checkbox-left input {
+  form .checkbox-left input {
     left: 0; }
 
-.form .error-message {
+form .btn {
+  border: none;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+  -moz-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s;
+  font-family: league_gothicregular;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  color: #791b1f;
+  background-color: #d2d2d2;
+  outline: none !important; }
+  form .btn i {
+    font-size: 0.75em; }
+  form .btn .btn-reverse {
+    color: #791b1f;
+    background-color: #d2d2d2; }
+
+form .error-message {
   display: none;
   padding-top: 2px;
   color: #d73037;
   font-size: 0.8em; }
 
-.form .error .error-message {
+form .error .error-message {
   display: block; }
 
-.form textarea {
+form textarea {
   resize: none; }
 
-.form .stacked-group label {
+form .stacked-group label {
   margin-bottom: 5px !important;
   padding-top: 0 !important; }
 
@@ -187,7 +209,15 @@ h2 {
     display: block;
     font-size: 0.8em; }
   h2 a {
-    color: #791b1f; }
+    color: #791b1f;
+    -moz-transition: color 0.25s;
+    -o-transition: color 0.25s;
+    -webkit-transition: color 0.25s;
+    transition: color 0.25s;
+    outline: none !important;
+    text-decoration: none !important; }
+    h2 a:focus {
+      color: #791b1f; }
     h2 a:hover {
       color: #333333; }
     h2 a i {
@@ -204,7 +234,11 @@ h4 {
   font-weight: bold; }
 
 a {
-  color: #1c3389; }
+  color: #1c3389;
+  -moz-transition: color 0.25s;
+  -o-transition: color 0.25s;
+  -webkit-transition: color 0.25s;
+  transition: color 0.25s; }
   a:hover {
     color: #333333;
     text-decoration: none; }
@@ -704,10 +738,10 @@ body {
   position: absolute;
   left: 30px;
   bottom: -5px;
-  -moz-transition: bottom 0.5s;
-  -o-transition: bottom 0.5s;
-  -webkit-transition: bottom 0.5s;
-  transition: bottom 0.5s;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
   z-index: 2; }
   #filter-trigger.open-state {
     bottom: 100%; }
@@ -718,7 +752,7 @@ body {
 .filter-trigger {
   font-family: league_gothicregular;
   text-transform: uppercase;
-  color: #ffffff;
+  color: #791b1f;
   font-size: 1.5em;
   display: inline-block;
   text-decoration: none; }
@@ -735,10 +769,10 @@ body {
   padding-right: 15px;
   background: #d73037;
   height: 100%;
-  -moz-transition: bottom 0.5s;
-  -o-transition: bottom 0.5s;
-  -webkit-transition: bottom 0.5s;
-  transition: bottom 0.5s; }
+  -moz-transition: bottom 0.25s;
+  -o-transition: bottom 0.25s;
+  -webkit-transition: bottom 0.25s;
+  transition: bottom 0.25s; }
   #hidden-form.open {
     bottom: 0; }
   @media (max-width: 1200px) {

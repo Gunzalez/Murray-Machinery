@@ -169,6 +169,11 @@
             if(toggle){
                 this.panel.addClass('open');
                 this.trigger.addClass('open-state');
+
+                $('html, body').animate({
+                    //scrollTop: this.panel.offset().top
+                }, 500);
+
             } else {
                 this.panel.removeClass('open');
                 this.trigger.removeClass('open-state');

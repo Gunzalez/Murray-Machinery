@@ -515,6 +515,9 @@ body {
     }
 }
 
+
+
+
 .product-image {
     width: 100%;
     margin-bottom: 10px;
@@ -573,7 +576,7 @@ body {
     position: absolute;
     left: 30px;
     bottom: -5px;
-    @include transition(bottom 0.5s);
+    @include transition(all 0.25s);
     z-index: 2;
 
     &.open-state {
@@ -589,7 +592,7 @@ body {
 
     font-family: league_gothicregular;
     text-transform: uppercase;
-    color: #ffffff;
+    color: $brand-dark-red;
     font-size: 1.5em;
     display: inline-block;
     text-decoration: none;
@@ -600,7 +603,6 @@ body {
 
     &:focus{
         color: #ffffff;
-
     }
 }
 
@@ -613,7 +615,7 @@ body {
 
     background: $brand-red;
     height: 100%;
-    @include transition(bottom 0.5s);
+    @include transition(bottom 0.25s);
 
     &.open {
         bottom: 0;
@@ -685,6 +687,12 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
         text-transform: uppercase;
+
+
+
+        //@media (max-width: $width-lg) {
+        //    width: 80px;
+        //}
     }
 
     input[type=checkbox]:checked + label,
