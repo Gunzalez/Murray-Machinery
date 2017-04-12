@@ -229,6 +229,10 @@ body {
 
     &.renewables {
         background-image: url('../images/sector-icon-renewables.png');
+
+        &.white {
+            background-image: url('../images/sector-icon-renewables-white.png');
+        }
     }
 
     &.municipal {
@@ -241,10 +245,18 @@ body {
 
     &.waste {
         background-image: url('../images/sector-icon-waste.png');
+
+        &.white {
+            background-image: url('../images/sector-icon-waste-white.png');
+        }
     }
 
     &.construction {
         background-image: url('../images/sector-icon-construction.png');
+
+        &.white {
+            background-image: url('../images/sector-icon-construction-white.png');
+        }
     }
 }
 
@@ -502,15 +514,65 @@ body {
         filter: grayscale(100%) brightness(200%);
     }
 
-    &:first-child {
-        margin-top: 20px;
+    .sector-list,
+    .vehicle-list {
+        @extend %cleanUl;
+        float: left;
+        clear: left;
+        width: 100%;
+        border-bottom: 1px solid #ffffff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
-        .product-image {
-            margin-top: -30px;
+        li {
+            float: left;
+            text-align: center;
+            padding-bottom: 10px;
+            padding-right: 10px;
+            width: 90px;
 
-            @media (max-width: $width-sm) {
-                margin-top: 0;
+            a {
+                display: block;
             }
+
+            color: #ffffff;
+            text-transform: uppercase;
+            font-size: 0.75em;
+        }
+
+        i {
+            display: inline-block;
+            width: 63px;
+            height: 72px;
+            margin: 0;
+        }
+    }
+
+    .vehicle-list {
+        border: none;
+        padding-top: 20px;
+
+        li {
+            color: #000000 !important;
+        }
+
+        i {
+            -webkit-filter: invert(90%);
+            filter: invert(90%);
+        }
+    }
+}
+
+.page-heading {
+
+    margin-top: 20px;
+
+    .product-image {
+        margin-top: -30px;
+        padding-bottom: 0;
+        margin-bottom: 0;
+
+        @media (max-width: $width-sm) {
+            margin-top: 0;
         }
     }
 }
@@ -630,8 +692,8 @@ body {
     }
 
     fieldset {
-        border-bottom: 1px solid #ffffff;
         padding-bottom: 10px;
+        border-bottom: 1px solid #ffffff;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
         margin-bottom: 10px;
     }
@@ -715,6 +777,16 @@ body {
     input[data-sector="front-loader"] + label { background-image: url('../images/vehicle-front-loader.png'); }
     input[data-sector="forklift"] + label { background-image: url('../images/vehicle-forklift.png'); }
     input[data-sector="skid-steer"] + label { background-image: url('../images/vehicle-skid-steer.png'); }
+
+    .inverted {
+
+        input[type=checkbox] + label,
+        input[type=radio] + label {
+            //color: #000000;
+            font-weight: bold;
+            filter: invert(100%);
+        }
+    }
 }
 
 
