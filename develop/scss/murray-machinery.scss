@@ -838,4 +838,36 @@ body {
     }
 }
 
+.product-extras {
+    @extend %cleanUl;
+    float: left;
+    background: $brand-grey-btn;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 30px;
+
+    li {
+        float: left;
+        padding: 10px 10px  10020px 10px;
+        font-size: 0.75em;
+        width: 25%;
+        border-right: 1px solid #ffffff;
+        height: 100%;
+        margin-bottom: -10000px;
+
+        @media (max-width: $width-md) {
+            width: 50%;
+        }
+
+        @media (max-width: $width-xs) {
+            width: 100%;
+            border-bottom: 1px solid #ffffff;
+        }
+    }
+
+    a {
+        display: block;
+    }
+}
+
 
