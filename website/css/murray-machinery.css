@@ -64,6 +64,9 @@
     padding-right: 0;
     padding-left: 0; } }
 
+.cleft {
+  clear: left; }
+
 .content {
   padding: 20px 0;
   margin-bottom: 10px; }
@@ -209,6 +212,9 @@ form .stacked-group label {
 
 .links-list .btn {
   margin-bottom: 10px; }
+  @media (max-width: 768px) {
+    .links-list .btn {
+      display: block; } }
 
 h1, h2, h3 {
   margin: 0;
@@ -974,3 +980,56 @@ body {
         border-bottom: 1px solid #ffffff; } }
   .product-extras a {
     display: block; }
+
+.header-board {
+  padding: 10px 10px 0 10px;
+  background: #d2d2d2; }
+  .header-board .title {
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 5px; }
+
+.product-variations {
+  width: 100%;
+  margin-bottom: 20px; }
+  .product-variations caption {
+    font-family: league_gothicregular;
+    text-transform: uppercase;
+    padding: 10px;
+    background: #d2d2d2;
+    color: #111111;
+    font-size: 2.5em;
+    border-bottom: 1px solid #ffffff; }
+  .product-variations th {
+    white-space: nowrap;
+    background: #d2d2d2; }
+  .product-variations td, .product-variations th {
+    font-size: 0.75em;
+    padding: 10px;
+    font-weight: bold;
+    vertical-align: top;
+    border-right: 1px solid #ffffff; }
+  .product-variations tr td:nth-last-child(1), .product-variations tr th:nth-last-child(1) {
+    border-right: none; }
+  .product-variations tr:nth-child(odd) td {
+    background: #d2d2d2; }
+  .product-variations .money {
+    text-align: right; }
+  .product-variations .green {
+    text-align: center;
+    text-transform: uppercase;
+    color: #4cae4c; }
+
+.table-key {
+  font-size: 0.85em !important; }
+  .table-key h4 {
+    font-size: 1.0em !important; }
+  .table-key dt {
+    float: left;
+    padding-right: 3px; }
+    .table-key dt::after {
+      content: " = "; }
+  .table-key dd {
+    float: left;
+    padding-right: 10px; }
+    .table-key dd::after {
+      content: ","; }

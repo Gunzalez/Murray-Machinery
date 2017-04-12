@@ -790,7 +790,6 @@ body {
 }
 
 
-
 // small screen nav styles override
 .mm-listview>li>a,
 .mm-listview>li>span {
@@ -841,7 +840,7 @@ body {
 .product-extras {
     @extend %cleanUl;
     float: left;
-    background: $brand-grey-btn;
+    background: $brand-grey-light;
     width: 100%;
     overflow: hidden;
     margin-bottom: 30px;
@@ -870,4 +869,93 @@ body {
     }
 }
 
+.header-board {
+    padding: 10px 10px 0 10px;
+    background: $brand-grey-light;
+
+    .title {
+        border-bottom: 1px solid $brand-white;
+        padding-bottom: 5px;
+    }
+}
+
+.product-variations {
+    width: 100%;
+    margin-bottom: 20px;
+
+    caption {
+        font-family: league_gothicregular;
+        text-transform: uppercase;
+        padding: 10px;
+        background: $brand-grey-light;
+        color: $brand-black;
+        font-size: 2.5em;
+        border-bottom: 1px solid #ffffff;
+    }
+
+    th {
+        white-space: nowrap;
+        background: $brand-grey-light;
+    }
+
+    td, th {
+        font-size: 0.75em;
+        padding: 10px;
+        font-weight: bold;
+        vertical-align: top;
+
+        border-right: 1px solid #ffffff;
+    }
+
+    tr {
+        td, th {
+            &:nth-last-child(1){
+                border-right: none;
+            }
+        }
+        &:nth-child(odd){
+            td {
+                background: $brand-grey-light;
+            }
+        }
+    }
+
+    .money {
+        text-align: right;
+    }
+
+    .green {
+        text-align: center;
+        text-transform: uppercase;
+        color: #4cae4c;
+    }
+}
+
+.table-key {
+    font-size: 0.85em !important;
+    h4 {
+        font-size: 1.0em !important;
+    }
+
+    dl {
+    }
+
+    dt {
+        float: left;
+        padding-right: 3px;
+
+        &::after {
+            content: " = ";
+        }
+    }
+
+    dd {
+        float: left;
+        padding-right: 10px;
+
+        &::after {
+            content: ",";
+        }
+    }
+}
 

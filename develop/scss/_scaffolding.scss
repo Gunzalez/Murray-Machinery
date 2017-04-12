@@ -22,6 +22,10 @@
     }
 }
 
+.cleft {
+    clear: left;
+}
+
 .content {
     padding: 20px 0;
     margin-bottom: 10px;
@@ -222,6 +226,9 @@ form {
 .links-list {
     .btn {
         margin-bottom: 10px;
+        @media (max-width: $width-sm) {
+            display: block;
+        }
     }
 }
 
