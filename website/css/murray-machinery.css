@@ -163,27 +163,6 @@ form .checkbox-left {
   form .checkbox-left input {
     left: 0; }
 
-form .btn {
-  border: none;
-  -webkit-border-radius: 1px !important;
-  -moz-border-radius: 1px !important;
-  border-radius: 1px !important;
-  -moz-transition: color 0.25s;
-  -o-transition: color 0.25s;
-  -webkit-transition: color 0.25s;
-  transition: color 0.25s;
-  font-family: league_gothicregular;
-  text-transform: uppercase;
-  font-size: 1.5em;
-  color: #791b1f;
-  background-color: #d2d2d2;
-  outline: none !important; }
-  form .btn i {
-    font-size: 0.75em; }
-  form .btn .btn-reverse {
-    color: #791b1f;
-    background-color: #d2d2d2; }
-
 form .error-message {
   display: none;
   padding-top: 2px;
@@ -199,6 +178,37 @@ form textarea {
 form .stacked-group label {
   margin-bottom: 5px !important;
   padding-top: 0 !important; }
+
+.btn {
+  border: none;
+  -webkit-border-radius: 1px !important;
+  -moz-border-radius: 1px !important;
+  border-radius: 1px !important;
+  -moz-transition: all 0.25s;
+  -o-transition: all 0.25s;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  font-family: league_gothicregular;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  color: #791b1f;
+  background-color: #d2d2d2;
+  outline: none !important;
+  padding: 6px 8px 6px 12px; }
+  .btn i {
+    font-size: 0.75em; }
+  .btn:hover {
+    background-color: #333333;
+    color: #ffffff; }
+  .btn.btn-reverse {
+    background-color: #d73037;
+    color: #d2d2d2; }
+    .btn.btn-reverse:hover {
+      background-color: #333333;
+      color: #ffffff; }
+
+.links-list .btn {
+  margin-bottom: 10px; }
 
 h1, h2, h3 {
   margin: 0;
