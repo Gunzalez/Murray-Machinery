@@ -3,7 +3,7 @@
 .aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .product-highlight .sector-list,
 .product-highlight .vehicle-list,
 .page-heading .sector-list,
-.page-heading .vehicle-list, .product-item .sector-vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras, .other-views {
+.page-heading .vehicle-list, .product-item .sector-vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras, .other-views, .other-news {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -1150,3 +1150,10 @@ body {
     margin: 0 5px; }
   .other-views img {
     width: 100%; }
+
+.other-news li {
+  border-bottom: 1px solid #d2d2d2;
+  margin-bottom: 15px; }
+  .other-news li:nth-last-child(1) {
+    border-bottom: none;
+    margin-bottom: 0; }

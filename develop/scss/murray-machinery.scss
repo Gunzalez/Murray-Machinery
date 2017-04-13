@@ -1092,5 +1092,19 @@ body {
     }
 }
 
+.other-news {
+    @extend %cleanUl;
+
+    li {
+        border-bottom: 1px solid $brand-grey-light;
+        margin-bottom: 15px;
+
+        &:nth-last-child(1){
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+    }
+}
+
 
 
