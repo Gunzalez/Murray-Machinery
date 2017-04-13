@@ -163,6 +163,21 @@
         }
     };
 
+    mMachinery.views = {
+        init: function () {
+            this.listOfOtherViewPods = $('.with-other-views');
+            this.listOfOtherViewPods.each(function (i, obj) {
+                var $mainView = $('.main-view', $(obj)),
+                    $otherViews = $('.other-views', $(obj));
+
+                $('a', $otherViews).on('click', function (e) {
+                    e.preventDefault();
+                    $mainView.attr('src', $('img',$(this)).attr('src'));
+                });
+            })
+        }
+    };
+
     mMachinery.filter = {
 
         toggle: function (toggle) {
@@ -206,6 +221,7 @@
         mMachinery.navigation.init();
         mMachinery.carousel.init();
         mMachinery.filter.init();
+        mMachinery.views.init();
 
         // resize triggers
         $(window).on('resize', function () {

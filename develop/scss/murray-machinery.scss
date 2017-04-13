@@ -563,6 +563,12 @@ body {
 }
 
 .product-item {
+    border-bottom: 1px solid $brand-grey-light;
+
+    &:nth-last-child(1){
+        border-bottom: none;
+    }
+
     .vehicle-icon,
     .sector-icon {
         width: 42px;
@@ -901,6 +907,16 @@ body {
 
     a {
         display: block;
+        img {
+            @include transition(all, 0.25s);
+        }
+
+        &:hover {
+            img {
+                -webkit-filter: brightness(120%);
+                filter: brightness(120%);
+            }
+        }
     }
 }
 
@@ -1013,7 +1029,6 @@ body {
     float: left;
     margin: 0 -5px;
     overflow: hidden;
-    margin-bottom: 20px;
 
     li {
         float: left;
