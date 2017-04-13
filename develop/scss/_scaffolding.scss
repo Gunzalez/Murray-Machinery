@@ -329,10 +329,7 @@ a {
 
     &.more-link {
         font-weight: bold;
-
-        &:hover {
-            text-decoration: underline;
-        }
+        color: $brand-dark-red;
 
         &::after {
             content: "...";

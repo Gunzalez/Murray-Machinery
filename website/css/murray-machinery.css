@@ -295,9 +295,8 @@ a {
     a.large-anchor i {
       font-size: 0.6em; }
   a.more-link {
-    font-weight: bold; }
-    a.more-link:hover {
-      text-decoration: underline; }
+    font-weight: bold;
+    color: #791b1f; }
     a.more-link::after {
       content: "..."; }
 
@@ -1159,3 +1158,30 @@ body {
   .other-news li:nth-last-child(1) {
     border-bottom: none;
     margin-bottom: 0; }
+
+blockquote {
+  display: block;
+  background: #fff;
+  padding: 0 20px 20px 45px;
+  margin: 0;
+  position: relative;
+  border: none; }
+  blockquote::before {
+    content: "\201C";
+    /*Unicode for Left Double Quote*/
+    font-family: league_gothicregular;
+    font-size: 6.0em;
+    font-weight: bold;
+    color: #d2d2d2;
+    line-height: 100%;
+    position: absolute;
+    left: 0;
+    top: 0; }
+  blockquote::after {
+    /*Reset to make sure*/
+    content: ""; }
+  blockquote footer {
+    font-family: league_gothicregular;
+    font-size: 1.5em;
+    line-height: 100%;
+    padding-top: 5px; }

@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+    {% import 'macros/main-navigation-macro.html' as nav %}
+    {{nav.active('info')}}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <div class="content page-heading">
+            <div class="container">
+                <div class="col-sm-12">
+                    <h2 class="title text-uppercase">Testimonials</h2>
+                    <div class="detail">
+                        <p>Fue lectus a, fringilla nullaPhasellus vitae dui acld.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content product-item"><!-- testimonial item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="article.html?id=011"><img src="uploaded/testimonial-image-2.jpg" alt="Satisfied farmer" class="img-responsive product-image" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <blockquote class="blockquote">
+                        <p>Aenean eget malesuada ex, at placerat risus. Maecenas a <a href="product.html?id=44">tempor</a> ipsum, ut elementum augue. Aliquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                        <footer>
+                            Mr Buffet,<br>
+                            Aladdin
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div><!-- testimonial item ends -->
+
+        <div class="content product-item"><!-- testimonial item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="article.html?id=011"><img src="uploaded/testimonial-image-1.jpg" alt="Satisfied farmer" class="img-responsive product-image" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <blockquote class="blockquote">
+                        <p><strong>Malesuada</strong> ex, at placit amet nibh venenatis venenatis. Nunc iaus. Dque lectus a, fringilla nulla.Maecenas a <a href="product.html?id=44">tempor</a> ipsum, ut elementum auguis id ligula.</p>
+                        <p> <strong>Proin eu nisl</strong> sus vitaeiacu rnare volutpat et ac arcuculi rat ris.</p>
+                        <footer>
+                            Alan Johnson<br>
+                            Aberden
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div><!-- testimonial item ends -->
+
+    </div>
+{% endblock %}

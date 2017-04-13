@@ -1106,5 +1106,46 @@ body {
     }
 }
 
+blockquote{
+    display: block;
+    background: #fff;
+    padding: 0 20px 20px 45px;
+    margin: 0;
+    position: relative;
+    border: none;
+
+    &::before{
+        content: "\201C"; /*Unicode for Left Double Quote*/
+
+        font-family: league_gothicregular;
+        font-size: 6.0em;
+        font-weight: bold;
+        color: $brand-grey-light;
+        line-height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    &::after{
+        /*Reset to make sure*/
+        content: "";
+    }
+
+    footer {
+        font-family: league_gothicregular;
+        font-size: 1.5em;
+        line-height: 100%;
+        padding-top: 5px;
+    }
+
+}
+
+
+
+
+
+
+
 
 
