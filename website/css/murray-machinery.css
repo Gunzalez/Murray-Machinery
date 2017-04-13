@@ -1066,16 +1066,35 @@ body {
     font-weight: bold;
     vertical-align: top;
     border-right: 1px solid #ffffff; }
-  .product-variations tr td:nth-last-child(1), .product-variations tr th:nth-last-child(1) {
-    border-right: none; }
-  .product-variations tr:nth-child(odd) td {
-    background: #d2d2d2; }
   .product-variations .money {
     text-align: right; }
   .product-variations .green {
     text-align: center;
     text-transform: uppercase;
     color: #4cae4c; }
+  .product-variations tr td:nth-last-child(1), .product-variations tr th:nth-last-child(1) {
+    border-right: none; }
+  .product-variations tr:nth-child(odd) td {
+    background: #d2d2d2; }
+  @media (max-width: 992px) and (min-width: 768px) {
+    .product-variations th {
+      background: #666666;
+      color: #ffffff; }
+      .product-variations th:first-child {
+        display: none; }
+    .product-variations td, .product-variations th {
+      display: block;
+      border-bottom: 1px solid #ffffff;
+      float: left;
+      width: 25%;
+      border-right: none; }
+      .product-variations td:first-child, .product-variations th:first-child {
+        float: none;
+        width: 100%;
+        font-size: 0.9em;
+        border-right: none; }
+    .product-variations tr:nth-child(even) td {
+      border-color: #d2d2d2; } }
 
 .table-key {
   font-size: 0.85em !important; }
