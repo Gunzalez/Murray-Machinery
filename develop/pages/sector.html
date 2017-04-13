@@ -10,7 +10,19 @@
         <div class="content page-heading">
             <div class="container">
                 <div class="col-sm-12">
-                    <h2 class="title text-uppercase">Agriculture</h2>
+                    <h2 class="title text-uppercase" id="display-box">Agriculture</h2>
+                    <script type="text/javascript">
+                        // TODO: simulation
+                        var loc = window.location.href,
+                            qS = loc.split('?')[1],
+                            id = qS.split('=')[1],
+                            displayBox = document.getElementById('display-box');
+
+                        id = id.replace('+', ' ');
+                        if(id.length > 0){
+                            displayBox.innerHTML = id;
+                        }
+                    </script>
                 </div>
             </div>
         </div>

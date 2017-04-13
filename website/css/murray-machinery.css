@@ -1142,7 +1142,8 @@ body {
 .product-id,
 .attachment-type,
 .article-date {
-  color: #1c3389; }
+  color: #1c3389;
+  font-weight: 700; }
 
 .other-views {
   float: left;

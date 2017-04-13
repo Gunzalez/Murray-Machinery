@@ -128,7 +128,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="sector.html?id=waste">
+                                        <a href="sector.html?id=waste+handling">
                                             <span class="sector-icon waste" aria-hidden="true"></span>
                                             <span class="text">Waste Handling</span>
                                         </a>
@@ -176,35 +176,34 @@
                         <p>Filtered by: <span id="filter-string"></span></p>
 
                         <script type="text/javascript">
-                            // TODO: Rob, obviously do this with PHP
-                            var loc = window.location.href,
-                                qS = loc.split('?')[1],
-                                qsArr = qS.split('&'),
-                                filterString = "",
-                                stringDisplay = document.getElementById('filter-string');
+                        // TODO: simulation
+                        var loc = window.location.href,
+                            qS = loc.split('?')[1],
+                            qsArr = qS.split('&'),
+                            filterString = "",
+                            stringDisplay = document.getElementById('filter-string');
 
-                            if(qS.length < 1){
+                        if(qS.length < 1){
 
-                                // no filter, go to stock items
-                                window.location.assign('stock.html');
+                            // no filter, go to stock items
+                            window.location.assign('stock.html');
 
-                            } else {
+                        } else {
 
-                                // write out users filter settings
-                                for(var i = 0; i < qsArr.length; i++ ){
-                                    qsArr[i] = qsArr[i].split('=')[1].replace('+', " ")
-                                }
-
-                                if(qsArr.length == 1){
-                                    stringDisplay.innerHTML = qsArr[0]+'.';
-                                }
-
-                                if(qsArr.length > 1){
-                                    filterString = qsArr.join(' + ');
-                                    stringDisplay.innerHTML = filterString+'.';
-                                }
+                            // write out users filter settings
+                            for(var i = 0; i < qsArr.length; i++ ){
+                                qsArr[i] = qsArr[i].split('=')[1].replace('+', " ")
                             }
 
+                            if(qsArr.length == 1){
+                                stringDisplay.innerHTML = qsArr[0]+'.';
+                            }
+
+                            if(qsArr.length > 1){
+                                filterString = qsArr.join(' + ');
+                                stringDisplay.innerHTML = filterString+'.';
+                            }
+                        }
                         </script>
                     </div>
                 </div>
