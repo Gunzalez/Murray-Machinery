@@ -1,6 +1,6 @@
 {% macro active(activePage='home') %}
                         <ul>
-                            <li class="has-menu {%if activePage == 'product' %} active {% endif %}"><a href="products.html">Products</a>
+                            <li class="has-menu {% if activePage == 'product' %} active {% endif %}"><a href="products.html">Products</a>
                                 <ul>
                                     <li class="has-menu"><a href="#">Forks & Grabs <i class="fa fa-chevron-right" aria-hidden="true"></i></a>
                                         <ul>
@@ -30,7 +30,7 @@
                                     <li><a href="#">Bespoke Builds</a></li>
                                 </ul>
                             </li>
-                            <li class="has-menu {%if activePage == 'sector' %} active {% endif %}"><a href="sectors.html">Sectors</a>
+                            <li class="has-menu {% if activePage == 'sector' %} active {% endif %}"><a href="sectors.html">Sectors</a>
                                 <ul class="sector-nav">
                                     <li>
                                         <a href="sector.html?id=agriculture">
@@ -76,10 +76,10 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="{%if activePage == 'stock' %} active {% endif %}"><a href="stock.html">Stock</a></li>
-                            <li class="{%if activePage == 'owners' %} active {% endif %}"><a href="owners.html">Owners</a></li>
-                            <li class="{%if activePage == 'about' %} active {% endif %}"><a href="about.html">About</a></li>
-                            <li class="{%if activePage == 'news' %} active {% endif %}"><a href="news.html">News</a></li>
-                            <li class="{%if activePage == 'contact' %} active {% endif %}"><a href="contact.html">Contact</a></li>
+                            <li class="{% if activePage == 'stock' %} active {% endif %}"><a href="stock.html">Stock</a></li>
+                            <li class="{% if activePage == 'owners' %} active {% endif %}"><a href="owners.html">Owners</a></li>
+                            <li class="{% if activePage == 'about' %} active {% endif %}"><a href="about.html">About</a></li>
+                            <li class="{% if activePage == 'news' %} active {% endif %}"><a href="news.html">News</a></li>
+                            <li class="{% if activePage == 'contact' %} active {% endif %}"><a href="contact.html">Contact</a></li>
                         </ul>
 {% endmacro %}
