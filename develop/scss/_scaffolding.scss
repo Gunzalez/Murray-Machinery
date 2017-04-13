@@ -293,7 +293,11 @@ h3 {
 h4 {
     padding: 0 0 10px 0;
     margin: 0;
-    font-weight: bold;
+
+    &.title {
+        font-family: league_gothicregular;
+        font-size: 2.0em;
+    }
 }
 
 a {
