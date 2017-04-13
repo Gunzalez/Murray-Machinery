@@ -147,7 +147,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class=""><a href="stock.html">Stock</a></li>
+                            <li class=" active "><a href="stock.html">Stock</a></li>
                             <li class=""><a href="owners.html">Owners</a></li>
                             <li class=""><a href="about.html">About</a></li>
                             <li class=""><a href="news.html">News</a></li>
@@ -168,139 +168,187 @@
     </div>
     
     <div class="section">
-        <div class="main-carousel" id="slide-bg" style="background-image: url('uploaded/product-carousel-image-1.png');">
+        <div class="content page-heading">
             <div class="container">
-                <div class="row">
-                    <div class="col-sm-12">
-                        <div class="slides">
-                            <div class="slide active" data-slide-bg="uploaded/product-carousel-image-1.png">
-                                <h2 class="title text-uppercase"><span>Featured Sector:</span> Agriculture</h2>
-                                <p>Pe entesque habi que sen ctus et netus et malesuada fames ac turpis egestas.</p>
-                            </div>
-                            <div class="slide" data-slide-bg="uploaded/product-carousel-image-2.png">
-                                <h2 class="title text-uppercase"><span>Featured Sector:</span> Municipal</h2>
-                                <p>Curabitur placerat lectus co or nunc et, mol rsus lobortis. Nulla gravida enim odio.</p>
-                            </div>
-                            <div class="slide" data-slide-bg="uploaded/product-carousel-image-3.png">
-                                <h2 class="title text-uppercase"><span>Featured Sector:</span> Forestry</h2>
-                                <p>Nulla lob ortis faci sis tortor a finibus. Phasellut in alctus eu eleifend.</p>
-                            </div>
-                            <div class="slide" data-slide-bg="uploaded/product-carousel-image-4.png">
-                                <h2 class="title text-uppercase"><span>Featured Sector:</span> Engineering</h2>
-                                <p>Aliquam justo ex, consequat vitae eros vitae, gravida pell urueget, semper egestas erat.</p>
-                            </div>
-                        </div>
-                        <div class="slide-controls controls-not-ready">
-                            <ul>
-                                <li><a href="#" class="active">0</a></li>
-                                <li><a href="#">1</a></li>
-                                <li><a href="#">2</a></li>
-                                <li><a href="#">3</a></li>
-                            </ul>
-                        </div>
+                <div class="col-sm-12">
+                    <h2 class="title text-uppercase">Products</h2>
+                    <div class="detail">
+                        <p>Filter: <span id="filter-string"></span></p>
+
+                        <script type="text/javascript">
+                            // TODO: Rob, obviously do this with PHP
+                            var loc = window.location.href,
+                                qS = loc.split('?')[1],
+                                qsArr = qS.split('&'),
+                                filterString = "",
+                                stringDisplay = document.getElementById('filter-string');
+
+                            if(qS.length < 1){
+
+                                // no filter, go to stock items
+                                window.location.assign('stock.html');
+
+                            } else {
+
+                                // write out users filter settings
+                                for(var i = 0; i < qsArr.length; i++ ){
+                                    qsArr[i] = qsArr[i].split('=')[1].replace('+', " ")
+                                }
+
+                                if(qsArr.length == 1){
+                                    stringDisplay.innerHTML = qsArr[0]+'.';
+                                }
+
+                                if(qsArr.length > 1){
+                                    filterString = qsArr.join(' + ');
+                                    stringDisplay.innerHTML = filterString+'.';
+                                }
+                            }
+
+                        </script>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="content">
+
+        <div class="content product-item"><!-- stock item starts -->
             <div class="container">
-                <div class="col-xs-12">
-                    <h2 class="title text-uppercase"><a href="stock.html" class="large-cta">View current stock list <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></h2>
-                    <div class="detail">
-                        <p>The Murray <strong>Top Grab</strong> further enhances the purpose of the Murray Muck Fork. Its construction consists of a standard Muck Fork with a top grab fitted.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="content product-highlight">
-            <div class="container">
-                <div class="col-sm-5">
-                    <h2 class="title"><span class="text-uppercase">Featured product:</span> Large Silage Fork</h2>
-                    <p><i class="sector-icon agriculture" aria-hidden="true" title="Suitable for Agriculture"></i>
-                        <i class="sector-icon forestry" aria-hidden="true" title="Suitable for Forestry"></i>
-                        <i class="vehicle-icon load-shovel" aria-hidden="true" title="Suitable for Load Shovel"></i></p>
-                    <div class="detail">
-                        <p>The Murray Large Silage Fork is designed for extra capacity when loading chopped grass onto a silage pit.</p>
-                        <p>The frame is more heavily constructed and is fitted with extra duty tines bolted into large tapered sockets fitted along the bottom and the sides of the silage fork. </p>
-                        <p><a href="product.html" class="large-anchor">View product <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></p>
-                    </div>
-                </div>
-                <div class="col-sm-7">
-                    <a href="product.html" class="product-link" title="Large Silage Fork"><img src="uploaded/product-highlight-image-1.png" class="img-responsive product-image" alt="Large Silage Fork" /></a>
-                </div>
-                <div id="hidden-form">
-                    <div class="col-sm-12">
-                        <a href="#" id="filter-shutter" class="filter-trigger">Hide Filter <i class="glyphicon glyphicon-triangle-bottom" aria-hidden="true"></i></a>
-                        <form id="product-filter" action="products.html" method="get">
-                            <fieldset>
-                                <legend>Select sector:</legend>
-                                <ul>
-                                    <li><input type="checkbox" name="agriculture" id="agriculture" value="Agriculture" data-sector="agriculture">
-                                        <label for="agriculture">Agriculture</label></li>
-                                    <li><input type="checkbox" name="forestry" id="forestry" value="Forestry" data-sector="forestry">
-                                        <label for="forestry">Forestry</label></li>
-                                    <li><input type="checkbox" name="construction" id="construction" value="Construction" data-sector="construction">
-                                        <label for="construction">Construction</label></li>
-                                    <li><input type="checkbox" name="engineering" id="engineering" value="Engineering" data-sector="engineering">
-                                        <label for="engineering">Engineering</label></li>
-                                    <li><input type="checkbox" name="waste" id="waste" value="Waste Handling" data-sector="waste">
-                                        <label for="waste">Waste Handling</label></li>
-                                    <li><input type="checkbox" name="renewables" id="renewables" value="Renewables" data-sector="renewables">
-                                        <label for="renewables">Renewables</label></li>
-                                    <li><input type="checkbox" name="municipal" id="municipal" value="Municipal" data-sector="municipal">
-                                        <label for="municipal">Municipal</label></li>
-                                </ul>
-                            </fieldset>
-                            <fieldset>
-                                <legend>Select Vehicle:</legend>
-                                <ul class="inverted">
-                                    <li><input type="checkbox" id="tractor" name="tractor" value="Tractor" data-sector="tractor">
-                                        <label for="tractor">Tractor</label></li>
-                                    <li><input type="checkbox" id="backhoe" name="backhoe" value="Backhoe" data-sector="backhoe">
-                                        <label for="backhoe">Backhoe</label></li>
-                                    <li><input type="checkbox" id="skid-steer" name="skid-steer" value="Skid Steer" data-sector="skid-steer">
-                                        <label for="skid-steer">Skid Steer</label></li>
-                                    <li><input type="checkbox" id="front-loader" name="front-loader" value="Front Loader" data-sector="front-loader">
-                                        <label for="front-loader">Front Loader</label></li>
-                                    <li><input type="checkbox" id="forklift" name="forklift" value="Fork Lift" data-sector="forklift">
-                                        <label for="forklift">Fork Lift</label></li>
-                                    <li><input type="checkbox" id="telehandler" name="telehandler" value="Telehandler" data-sector="telehandler">
-                                        <label for="telehandler">Telehandler</label></li>
-                                    <li><input type="checkbox" id="load-shovel" name="load-shovel" value="Load Shovel" data-sector="load-shovel">
-                                        <label for="load-shovel">Load Shovel</label></li>
-                                </ul>
-                            </fieldset>
-                            <button class="btn">Submit filter <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></button>
-                        </form>
-                    </div>
-                </div>
-                <a href="#" id="filter-trigger" class="filter-trigger"><i class="glyphicon glyphicon-triangle-top" aria-hidden="true"></i> Product Filter </a>
-            </div>
-        </div>
-        <div class="content">
-            <div class="container">
-                <div class="col-sm-7">
-                        <h2 class="title">WELCOME TO MURRAY MACHINERY</h2>
-                    <div class="detail">
-                        <p>The Murray Grain Pusher is designed to push grain considerably higher than is possible with a standard grain bucket. It consists of a blade which is attached to a long box section frame with Tractor 'Loader or Telescopic Handler mounting brackets at the opposite end.</p>
-                        <p>The Murray <strong>Large Silage Fork</strong> is designed for extra capacity when loading chopped grass onto a silage pit. The frame is more heavily constructed and is fitted with extra duty tines bolted into large tapered sockets fitted along the bottom and the sides of the silage fork.</p>
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="product.html"><img src="uploaded/product-alt-image-3.jpg" alt="LARGE SILAGE FORK" class="img-responsive product-image main-view" /></a>
+                        <ul class="other-views">
+                            <li><a href="#"><img src="uploaded/product-alt-image-1.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                            <li><a href="#"><img src="uploaded/product-alt-image-2.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                            <li><a href="#"><img src="uploaded/product-alt-image-3.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                        </ul>
+                        <a href="product.html" class="large-anchor">View Product <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
                     </div>
                 </div>
                 <div class="col-sm-5">
-                    <h2 class="title text-uppercase"><a href="news.html">Latest News <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></h2>
+                    <h2 class="title">Large Silage Fork</a></h2>
                     <div class="detail">
-                        <div class="row">
-                            <div class="col-sm-5">
-                                <a href="news.html?id=298821"><img src="uploaded/news-image-1.jpg" class="img-responsive product-image" alt="News image title" /></a></div>
-                            <div class="col-sm-7">
-                                <h4>Sample news title, new title, new title.</h4>
-                                <p>The Murray <strong>Top Grab</strong> further enhances the purpose of the Murray Muck Fork. Its construction consists of a standard Muck Fork with a top grab fitted. <a href="news.html?id=298821" class="more-link">Mores</a></p>
-                            </div>
-                        </div>
+                        <h4 class="product-id">Product ID: 0037</h4>
+                        <p>The Murray 8’ Muck Fork with Top Grab is designed to push grain considerably higher than is possible with a standard grain bucket.</p>
+                        <p>It consists of a blade which is attached to a long box section frame with Tractor 'Loader or Telescopic Handler mounting brackets at the opposite end.</p>
+                        <h4>Attachment Type: <span class="attachment-type">Matbro / Pin & Cone</span></h4>
+                        <ul class="sector-vehicle-list">
+                            <li>
+                                <i class="vehicle-icon load-shovel inverted" aria-hidden="true"></i>
+                                <span>Load Shovel</span>
+                            </li>
+                            <li>
+                                <i class="sector-icon agriculture" aria-hidden="true"></i>
+                                <span>Agriculture</span>
+                            </li>
+                            <li>
+                                <i class="sector-icon forestry" aria-hidden="true"></i>
+                                <span>Forestry</span>
+                            </li>
+                        </ul>
+                        <div class="cleft"></div>
                     </div>
                 </div>
+                <div class="col-sm-3 text-right">
+                    <h2 class="title">Price Ex Yard:</h2>
+                    <span class="price">&pound;1,275</span>
+                    <a href="contact.html" class="btn">Enquire/Order <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
             </div>
-        </div>
+        </div><!-- stock item ends -->
+
+
+        <div class="content product-item"><!-- stock item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="product.html"><img src="uploaded/product-alt-image-2.jpg" alt="LARGE SILAGE FORK" class="img-responsive product-image main-view" /></a>
+                        <ul class="other-views">
+                            <li><a href="#"><img src="uploaded/product-alt-image-1.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                            <li><a href="#"><img src="uploaded/product-alt-image-2.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                            <li><a href="#"><img src="uploaded/product-alt-image-3.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                        </ul>
+                        <a href="product.html" class="large-anchor">View Product <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <h2 class="title">Large Silage Fork</a></h2>
+                    <div class="detail">
+                        <h4 class="product-id">Product ID: 0037</h4>
+                        <p>The Murray 8’ Muck Fork with Top Grab is designed to push grain considerably higher than is possible with a standard grain bucket.</p>
+                        <p>It consists of a blade which is attached to a long box section frame with Tractor 'Loader or Telescopic Handler mounting brackets at the opposite end.</p>
+                        <h4>Attachment Type: <span class="attachment-type">Matbro / Pin & Cone</span></h4>
+                        <ul class="sector-vehicle-list">
+                            <li>
+                                <i class="vehicle-icon load-shovel inverted" aria-hidden="true"></i>
+                                <span>Load Shovel</span>
+                            </li>
+                            <li>
+                                <i class="sector-icon agriculture" aria-hidden="true"></i>
+                                <span>Agriculture</span>
+                            </li>
+                            <li>
+                                <i class="sector-icon forestry" aria-hidden="true"></i>
+                                <span>Forestry</span>
+                            </li>
+                        </ul>
+                        <div class="cleft"></div>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <h2 class="title">Price Ex Yard:</h2>
+                    <span class="price">&pound;1,275</span>
+                    <a href="contact.html" class="btn">Enquire/Order <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div><!-- stock item ends -->
+
+
+
+        <div class="content product-item"><!-- stock item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="product.html"><img src="uploaded/product-alt-image-1.jpg" alt="LARGE SILAGE FORK" class="img-responsive product-image main-view" /></a>
+                        <ul class="other-views">
+                            <li><a href="#"><img src="uploaded/product-alt-image-1.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                            <li><a href="#"><img src="uploaded/product-alt-image-2.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                            <li><a href="#"><img src="uploaded/product-alt-image-3.jpg" class="img-responsive product-image" alt="LARGE SILAGE FORK"></a></li>
+                        </ul>
+                        <a href="product.html" class="large-anchor">View Product <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <h2 class="title">Large Silage Fork</a></h2>
+                    <div class="detail">
+                        <h4 class="product-id">Product ID: 0037</h4>
+                        <p>The Murray 8’ Muck Fork with Top Grab is designed to push grain considerably higher than is possible with a standard grain bucket.</p>
+                        <p>It consists of a blade which is attached to a long box section frame with Tractor 'Loader or Telescopic Handler mounting brackets at the opposite end.</p>
+                        <h4>Attachment Type: <span class="attachment-type">Matbro / Pin & Cone</span></h4>
+                        <ul class="sector-vehicle-list">
+                            <li>
+                                <i class="vehicle-icon load-shovel inverted" aria-hidden="true"></i>
+                                <span>Load Shovel</span>
+                            </li>
+                            <li>
+                                <i class="sector-icon agriculture" aria-hidden="true"></i>
+                                <span>Agriculture</span>
+                            </li>
+                            <li>
+                                <i class="sector-icon forestry" aria-hidden="true"></i>
+                                <span>Forestry</span>
+                            </li>
+                        </ul>
+                        <div class="cleft"></div>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <h2 class="title">Price Ex Yard:</h2>
+                    <span class="price">&pound;1,275</span>
+                    <a href="contact.html" class="btn">Enquire/Order <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div><!-- stock item ends -->
+
     </div>
 
     <div class="section">

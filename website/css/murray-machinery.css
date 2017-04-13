@@ -1110,6 +1110,8 @@ body {
     padding-right: 10px; }
     .table-key dd::after {
       content: ","; }
+    .table-key dd:nth-last-child(1)::after {
+      content: "."; }
 
 .price {
   display: block;

@@ -1046,6 +1046,13 @@ body {
         &::after {
             content: ",";
         }
+
+        &:nth-last-child(1){
+
+            &::after {
+                content: ".";
+            }
+        }
     }
 }
 
