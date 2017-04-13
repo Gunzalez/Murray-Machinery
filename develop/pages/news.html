@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+    {% import 'macros/main-navigation-macro.html' as nav %}
+    {{nav.active('stock')}}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <div class="content page-heading">
+            <div class="container">
+                <div class="col-sm-12">
+                    <h2 class="title text-uppercase">News</h2>
+                    <div class="detail">
+                        <p>Stay up to date with Murray Machines</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content product-item"><!-- news item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="article.html?id=011"><img src="uploaded/product-alt-image-3.jpg" alt="Large grabbing hands" class="img-responsive product-image main-view" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h2 class="title">Introducing your new favourite machine!</h2>
+                    <div class="detail">
+                        <h4 class="article-date">16/02/2017</h4>
+                        <p>Aenean eget malesuada ex, at placerat risus. Maecenas a <a href="product.html?id=44">tempor</a> ipsum, ut elementum augue. Aliquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                        <p>Phasellus vitae dui accumsan, pellentesque lectus a, fringilla nulla. Proin eu nisl sit amet nibh venenatis venenatis. Nunc iaculis tempor dui, facilisis maximus. Maecenas ut velit eu enim ornare volutpat et ac arcu. </p>
+                        <p><a href="article.html?id=011" class="article-link">Read the full article <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- news item ends -->
+
+        <div class="content product-item"><!-- news item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="article.html?id=040"><img src="uploaded/product-related-3.jpg" alt="Large grabbing hands" class="img-responsive product-image main-view" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h2 class="title">Ready when you are</h2>
+                    <div class="detail">
+                        <h4 class="article-date">19/03/2017</h4>
+                        <p>Desuada ex, at placerat risus. Suspendisse commodo erat quis nisi pretium, sit amet malesuada nisl consequat. Ut ac purus et neque lacinia auctor. ipsum, ut elementum augue. Aliquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                        <p>Macerat risus. Suspendisse commodPhasellus vitae dui accumsan, pellentesque lectus a, fringilla nulla. Proin eu nisl sit amet nibh venenatis venenatis. Nunc iaculis tempor dui, facilisis maximus. Maecenas ut velit eu enim ornare volutpat et ac arcunatis at, sagittis id ligula. </p>
+                        <p><a href="article.html?id=011" class="article-link">Read the full article <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- news item ends -->
+
+
+        <div class="content product-item"><!-- news item starts -->
+            <div class="container">
+                <div class="col-sm-4">
+                    <div class="with-other-views">
+                        <a href="article.html?id=040"><img src="uploaded/product-extra-2.jpg" alt="Blue machine bits" class="img-responsive product-image main-view" /></a>
+                    </div>
+                </div>
+                <div class="col-sm-8">
+                    <h2 class="title">Large and sharp blue tractor thingy</h2>
+                    <div class="detail">
+                        <h4 class="article-date">11/04/2017</h4>
+                        <p>Vivamus ac felis sed ipsum dignissim semper quis at libero. Donec nulla elit, mollis id ultrices a, varius nec quam. Phasellus posuere ex lectus, id commodo massa ultricies at. Aliquam aliquam, ligula sed fringilla interdum, nisi dui eleifend tortor, sed gravida libero est tincidunt nibh. Pellentesque sed justo lacus. </p>
+                        <p>Ut ac purus et neque lacinia auctor. Etiam convallis velit ut mauris finibus, dapibus iaculis ipsum dictum.</p>
+                        <p><a href="article.html?id=011" class="article-link">Read the full article <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a></p>
+                    </div>
+                </div>
+            </div>
+        </div><!-- news item ends -->
+
+    </div>
+{% endblock %}

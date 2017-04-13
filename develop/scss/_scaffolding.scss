@@ -340,6 +340,27 @@ a {
     font-weight: bold;
 }
 
+.detail {
+
+    a {
+        text-decoration: underline;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .article-link {
+        color: $brand-red;
+        font-weight: bold;
+        text-decoration: none;
+
+        &:hover {
+            color: $brand-black;
+        }
+    }
+}
+
 .desktop {
     .mobile-link {
         color: $brand-grey;

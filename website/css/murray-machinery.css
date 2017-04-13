@@ -302,6 +302,18 @@ a {
 .strong {
   font-weight: bold; }
 
+.detail a {
+  text-decoration: underline; }
+  .detail a:hover {
+    text-decoration: none; }
+
+.detail .article-link {
+  color: #d73037;
+  font-weight: bold;
+  text-decoration: none; }
+  .detail .article-link:hover {
+    color: #111111; }
+
 .desktop .mobile-link {
   color: #666666;
   cursor: default; }
@@ -1122,7 +1134,8 @@ body {
   padding-bottom: 10px; }
 
 .product-id,
-.attachment-type {
+.attachment-type,
+.article-date {
   color: #1c3389; }
 
 .other-views {
