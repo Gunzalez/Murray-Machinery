@@ -479,7 +479,7 @@ body {
 
     .detail {
         color: $brand-white;
-        padding-bottom: 50px;
+        //padding-bottom: 50px;
 
         @media (max-width: $width-sm) {
             padding-bottom: 15px;
@@ -562,8 +562,46 @@ body {
     }
 }
 
-.page-heading {
+.product-item {
+    .vehicle-icon,
+    .sector-icon {
+        width: 42px;
+        height: 48px;
+        display: inline-block;
+    }
 
+    .sector-vehicle-list {
+        @extend %cleanUl;
+        float: left;
+
+        li {
+            float: left;
+            text-align: center;
+            padding-bottom: 10px;
+            width: 80px;
+            margin-right: 10px;
+
+            color: #000000;
+            text-transform: uppercase;
+            font-size: 0.7em;
+
+            span {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                text-transform: uppercase;
+            }
+        }
+
+        .inverted {
+            -webkit-filter: invert(90%);
+            filter: invert(90%);
+        }
+    }
+}
+
+.page-heading {
     margin-top: 20px;
 
     .product-image {
@@ -576,9 +614,6 @@ body {
         }
     }
 }
-
-
-
 
 .product-image {
     width: 100%;
@@ -958,4 +993,42 @@ body {
         }
     }
 }
+
+.price {
+    display: block;
+    font-family: league_gothicregular;
+    color: $brand-blue;
+    font-size: 2.8em;
+    line-height: 100%;
+    padding-bottom: 10px;
+}
+
+.product-id,
+.attachment-type {
+    color: $brand-blue;
+}
+
+.other-views {
+    @extend %cleanUl;
+    float: left;
+    margin: 0 -5px;
+    overflow: hidden;
+    margin-bottom: 20px;
+
+    li {
+        float: left;
+        width: 25%;
+    }
+
+    a {
+        display: block;
+        margin: 0 5px;
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+
 

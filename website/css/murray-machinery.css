@@ -3,7 +3,7 @@
 .aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .product-highlight .sector-list,
 .product-highlight .vehicle-list,
 .page-heading .sector-list,
-.page-heading .vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras {
+.page-heading .vehicle-list, .product-item .sector-vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras, .other-views {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -687,8 +687,7 @@ body {
     color: #791b1f; }
   .product-highlight .detail,
   .page-heading .detail {
-    color: #ffffff;
-    padding-bottom: 50px; }
+    color: #ffffff; }
     @media (max-width: 768px) {
       .product-highlight .detail,
       .page-heading .detail {
@@ -760,6 +759,33 @@ body {
     .page-heading .vehicle-list i {
       -webkit-filter: invert(90%);
       filter: invert(90%); }
+
+.product-item .vehicle-icon,
+.product-item .sector-icon {
+  width: 42px;
+  height: 48px;
+  display: inline-block; }
+
+.product-item .sector-vehicle-list {
+  float: left; }
+  .product-item .sector-vehicle-list li {
+    float: left;
+    text-align: center;
+    padding-bottom: 10px;
+    width: 80px;
+    margin-right: 10px;
+    color: #000000;
+    text-transform: uppercase;
+    font-size: 0.7em; }
+    .product-item .sector-vehicle-list li span {
+      display: block;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      text-transform: uppercase; }
+  .product-item .sector-vehicle-list .inverted {
+    -webkit-filter: invert(90%);
+    filter: invert(90%); }
 
 .page-heading {
   margin-top: 20px; }
@@ -1033,3 +1059,29 @@ body {
     padding-right: 10px; }
     .table-key dd::after {
       content: ","; }
+
+.price {
+  display: block;
+  font-family: league_gothicregular;
+  color: #1c3389;
+  font-size: 2.8em;
+  line-height: 100%;
+  padding-bottom: 10px; }
+
+.product-id,
+.attachment-type {
+  color: #1c3389; }
+
+.other-views {
+  float: left;
+  margin: 0 -5px;
+  overflow: hidden;
+  margin-bottom: 20px; }
+  .other-views li {
+    float: left;
+    width: 25%; }
+  .other-views a {
+    display: block;
+    margin: 0 5px; }
+  .other-views img {
+    width: 100%; }
