@@ -451,13 +451,8 @@ body {
 
 .title,
 .subtitle {
-    //text-transform: uppercase;
     line-height: 100%;
     font-weight: normal;
-}
-
-.detail {
-    padding-bottom: 10px;
 }
 
 .product-highlight,
@@ -466,7 +461,6 @@ body {
 
     .title {
         color: $brand-white;
-        padding-bottom: 5px;
 
         span {
             color: $brand-dark-red;
@@ -479,17 +473,7 @@ body {
 
     .detail {
         color: $brand-white;
-        //padding-bottom: 50px;
-
-        @media (max-width: $width-sm) {
-            padding-bottom: 15px;
-        }
-
-        p {
-            &:nth-last-child(1){
-                margin-bottom: 0;
-            }
-        }
+        padding-bottom: 0;
     }
 
     .product-link {
@@ -559,6 +543,25 @@ body {
             -webkit-filter: invert(90%);
             filter: invert(90%);
         }
+    }
+}
+
+.detail {
+    padding-bottom: 10px;
+
+    @media (max-width: $width-sm) {
+        padding-bottom: 15px;
+    }
+
+    p {
+        &:nth-last-child(1){
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+    }
+
+    &:nth-last-child(1){
+        padding-bottom: 0;
     }
 }
 
@@ -1099,7 +1102,8 @@ body {
 
     li {
         border-bottom: 1px solid $brand-grey-light;
-        margin-bottom: 15px;
+        margin-bottom: 25px;
+        padding-bottom: 15px;
 
         &:nth-last-child(1){
             border-bottom: none;
