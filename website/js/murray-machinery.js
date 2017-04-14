@@ -260,7 +260,7 @@
         init: function () {
             this.trigger = $('#filter-trigger');
             this.shutter = $('#filter-shutter');
-            this.panel = $('#hidden-form');
+            this.panel = $('#filter-form');
             var self = this;
 
             this.trigger.on('click', function (e) {

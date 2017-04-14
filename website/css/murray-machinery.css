@@ -3,13 +3,13 @@
 .aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .product-highlight .sector-list,
 .product-highlight .vehicle-list,
 .page-heading .sector-list,
-.page-heading .vehicle-list, .single-item .sector-vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras, .other-views, .other-news {
+.page-heading .vehicle-list, .single-item .sector-vehicle-list, .footer .footer-links, #filter-form ul, .product-extras, .other-views, .other-news {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.aux-navigation .text, .main-carousel .slide:not(.active), #hidden-form input[type=checkbox],
-#hidden-form input[type=radio], #mm-1 .mm-title, #timed-carousel .slide {
+.aux-navigation .text, .main-carousel .slide:not(.active), #filter-form input[type=checkbox],
+#filter-form input[type=radio], #mm-1 .mm-title, #timed-carousel .slide {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -908,7 +908,7 @@ body {
   .filter-trigger:focus {
     color: #ffffff; }
 
-#hidden-form {
+#filter-form {
   position: absolute;
   bottom: -100%;
   left: 15px;
@@ -920,19 +920,19 @@ body {
   -o-transition: bottom 0.25s;
   -webkit-transition: bottom 0.25s;
   transition: bottom 0.25s; }
-  #hidden-form.open {
+  #filter-form.open {
     bottom: 0; }
   @media (max-width: 1200px) {
-    #hidden-form {
+    #filter-form {
       left: 0; } }
-  #hidden-form form {
+  #filter-form form {
     margin-top: 10px; }
-  #hidden-form fieldset {
+  #filter-form fieldset {
     padding-bottom: 10px;
     border-bottom: 1px solid #ffffff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     margin-bottom: 10px; }
-  #hidden-form legend {
+  #filter-form legend {
     font-family: league_gothicregular;
     text-transform: uppercase;
     color: #ffffff;
@@ -940,15 +940,15 @@ body {
     padding: 0;
     margin: 0;
     border: none; }
-  #hidden-form ul {
+  #filter-form ul {
     float: left; }
-    #hidden-form ul li {
+    #filter-form ul li {
       float: left;
       padding-right: 10px; }
-      #hidden-form ul li:nth-last-child(1) {
+      #filter-form ul li:nth-last-child(1) {
         padding-right: 0; }
-  #hidden-form input[type=checkbox] + label,
-  #hidden-form input[type=radio] + label {
+  #filter-form input[type=checkbox] + label,
+  #filter-form input[type=radio] + label {
     -webkit-filter: grayscale(100%) brightness(200%);
     filter: grayscale(100%) brightness(200%);
     background-size: 80%;
@@ -966,39 +966,39 @@ body {
     overflow: hidden;
     text-overflow: ellipsis;
     text-transform: uppercase; }
-  #hidden-form input[type=checkbox]:checked + label,
-  #hidden-form input[type=radio]:checked + label {
+  #filter-form input[type=checkbox]:checked + label,
+  #filter-form input[type=radio]:checked + label {
     opacity: 1; }
-  #hidden-form input[data-sector="agriculture"] + label {
+  #filter-form input[data-sector="agriculture"] + label {
     background-image: url("../images/sector-icon-agriculture.png"); }
-  #hidden-form input[data-sector="forestry"] + label {
+  #filter-form input[data-sector="forestry"] + label {
     background-image: url("../images/sector-icon-forestry.png"); }
-  #hidden-form input[data-sector="municipal"] + label {
+  #filter-form input[data-sector="municipal"] + label {
     background-image: url("../images/sector-icon-municipal.png"); }
-  #hidden-form input[data-sector="construction"] + label {
+  #filter-form input[data-sector="construction"] + label {
     background-image: url("../images/sector-icon-construction-white.png"); }
-  #hidden-form input[data-sector="waste"] + label {
+  #filter-form input[data-sector="waste"] + label {
     background-image: url("../images/sector-icon-waste-white.png"); }
-  #hidden-form input[data-sector="engineering"] + label {
+  #filter-form input[data-sector="engineering"] + label {
     background-image: url("../images/sector-icon-engineering.png"); }
-  #hidden-form input[data-sector="renewables"] + label {
+  #filter-form input[data-sector="renewables"] + label {
     background-image: url("../images/sector-icon-renewables-white.png"); }
-  #hidden-form input[data-sector="tractor"] + label {
+  #filter-form input[data-sector="tractor"] + label {
     background-image: url("../images/vehicle-tractor.png"); }
-  #hidden-form input[data-sector="backhoe"] + label {
+  #filter-form input[data-sector="backhoe"] + label {
     background-image: url("../images/vehicle-backhoe.png"); }
-  #hidden-form input[data-sector="load-shovel"] + label {
+  #filter-form input[data-sector="load-shovel"] + label {
     background-image: url("../images/vehicle-load-shovel.png"); }
-  #hidden-form input[data-sector="telehandler"] + label {
+  #filter-form input[data-sector="telehandler"] + label {
     background-image: url("../images/vehicle-telehandler.png"); }
-  #hidden-form input[data-sector="front-loader"] + label {
+  #filter-form input[data-sector="front-loader"] + label {
     background-image: url("../images/vehicle-front-loader.png"); }
-  #hidden-form input[data-sector="forklift"] + label {
+  #filter-form input[data-sector="forklift"] + label {
     background-image: url("../images/vehicle-forklift.png"); }
-  #hidden-form input[data-sector="skid-steer"] + label {
+  #filter-form input[data-sector="skid-steer"] + label {
     background-image: url("../images/vehicle-skid-steer.png"); }
-  #hidden-form .inverted input[type=checkbox] + label,
-  #hidden-form .inverted input[type=radio] + label {
+  #filter-form .inverted input[type=checkbox] + label,
+  #filter-form .inverted input[type=radio] + label {
     font-weight: bold;
     filter: invert(100%); }
 
