@@ -93,36 +93,37 @@ form label {
 form .checkbox {
   padding-top: 0 !important; }
 
-form input, form select, form textarea, form button, form .form-control {
-  -webkit-border-radius: 1px !important;
-  -moz-border-radius: 1px !important;
-  border-radius: 1px !important;
+form input, form select, form textarea, form button {
   box-shadow: none !important;
   border-color: #666666 !important;
   font-family: 'Open Sans', sans-serif;
   font-weight: normal !important; }
-  form input:focus, form select:focus, form textarea:focus, form button:focus, form .form-control:focus {
+  form input:not([type="radio"]), form input:not([type="checkbox"]), form select:not([type="radio"]), form select:not([type="checkbox"]), form textarea:not([type="radio"]), form textarea:not([type="checkbox"]), form button:not([type="radio"]), form button:not([type="checkbox"]) {
+    -webkit-border-radius: 1px !important;
+    -moz-border-radius: 1px !important;
+    border-radius: 1px !important; }
+  form input:focus, form select:focus, form textarea:focus, form button:focus {
     border-color: #000000 !important;
     box-shadow: none !important; }
-
-form input:not([type="checkbox"]), form select:not([type="checkbox"]), form textarea:not([type="checkbox"]), form button:not([type="checkbox"]) {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none; }
 
 form input, form select, form textarea {
   color: #000000; }
 
-form input[type="checkbox"] {
-  outline: none !important;
-  width: 15px;
-  height: 15px; }
+form input[type="checkbox"],
+form input[type="radio"] {
+  outline: none !important; }
+
+@media (max-width: 767px) {
+  form [type="submit"] {
+    width: 100%; } }
 
 form.form-horizontal {
   padding-bottom: 15px; }
   form.form-horizontal label:not(.checkbox-right) {
     text-align: left !important;
     font-size: 0.9em; }
+  form.form-horizontal .radio-inline {
+    padding-top: 0; }
 
 form .checkbox-right,
 form .checkbox-left {

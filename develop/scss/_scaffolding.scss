@@ -61,10 +61,13 @@ form {
         padding-top: 0 !important;
     }
 
+    input, select, textarea, button {
 
-    input, select, textarea, button, .form-control {
+        &:not([type="radio"]),
+        &:not([type="checkbox"]){
+            @include border-radius(1px);
+        }
 
-        @include border-radius(1px);
         box-shadow: none !important;
         border-color: $brand-grey !important;
         font-family: 'Open Sans', sans-serif;
@@ -77,21 +80,24 @@ form {
     }
 
     input, select, textarea, button {
-        &:not([type="checkbox"]) {
-            -webkit-appearance: none;
-            -moz-appearance:    none;
-            appearance:         none;
-        }
+        //-webkit-appearance: none;
+        //-moz-appearance:    none;
+        //appearance:         none;
     }
 
     input, select, textarea {
         color: #000000;
     }
 
-    input[type="checkbox"] {
+    input[type="checkbox"],
+    input[type="radio"]{
         outline: none !important;
-        width: 15px;
-        height: 15px;
+    }
+
+    [type="submit"]{
+        @media (max-width: $width-sm - 1) {
+            width: 100%;
+        }
     }
 
     &.form-horizontal {
@@ -100,6 +106,10 @@ form {
         label:not(.checkbox-right) {
             text-align: left !important;
             font-size: 0.9em;
+        }
+
+        .radio-inline {
+            padding-top: 0;
         }
     }
 
