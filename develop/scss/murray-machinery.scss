@@ -2,7 +2,6 @@
 @import "mixins";
 @import "fonts";
 @import "scaffolding";
-@import "buttons";
 
 body {
     overflow-x: hidden;
@@ -1224,17 +1223,6 @@ blockquote{
         &:hover {
             color: $brand-white;
             background: $brand-coal;
-        }
-    }
-}
-
-
-.col-xs-0 {
-    @media (max-width: $width-xs) {
-        .row {
-            > div {
-                width: 100% !important;
-            }
         }
     }
 }
