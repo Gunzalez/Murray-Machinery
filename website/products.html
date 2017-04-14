@@ -173,7 +173,7 @@
                 <div class="col-sm-12">
                     <h2 class="title text-uppercase">Products</h2>
                     <div class="detail">
-                        <p>Filtered by: <span id="filter-string"></span></p>
+                        <p>Filtered by: <span id="display-box"></span></p>
 
                         <script type="text/javascript">
                         // TODO: simulation
@@ -181,7 +181,7 @@
                             qS = loc.split('?')[1],
                             qsArr = qS.split('&'),
                             filterString = "",
-                            stringDisplay = document.getElementById('filter-string');
+                            displayBox = document.getElementById('display-box');
 
                         if(qS.length < 1){
 
@@ -190,18 +190,14 @@
 
                         } else {
 
-                            // write out users filter settings
+                            // write out user's filter settings
                             for(var i = 0; i < qsArr.length; i++ ){
                                 qsArr[i] = qsArr[i].split('=')[1].replace('+', " ")
                             }
 
-                            if(qsArr.length == 1){
-                                stringDisplay.innerHTML = qsArr[0]+'.';
-                            }
-
-                            if(qsArr.length > 1){
+                            if(qsArr.length > 0){
                                 filterString = qsArr.join(' + ');
-                                stringDisplay.innerHTML = filterString+'.';
+                                displayBox.innerHTML = '\''+filterString+'\'';
                             }
                         }
                         </script>
