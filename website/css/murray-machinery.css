@@ -1211,8 +1211,15 @@ blockquote {
       color: #ffffff;
       background: #333333; }
 
-.map {
-  width: 100%;
-  height: 320px;
-  background-color: #4cae4c;
+.google-maps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
   margin-bottom: 20px; }
+  .google-maps iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important; }
