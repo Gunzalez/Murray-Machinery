@@ -684,8 +684,8 @@ body {
   .product-highlight ul,
   .page-heading ul {
     padding-left: 20px; }
-  .product-highlight .product-image,
-  .page-heading .product-image {
+  .product-highlight .img-mm,
+  .page-heading .img-mm {
     padding-bottom: 20px; }
   .product-highlight .vehicle-icon,
   .product-highlight .sector-icon,
@@ -787,15 +787,15 @@ body {
 
 .page-heading {
   margin-top: 20px; }
-  .page-heading .product-image {
+  .page-heading .img-mm {
     margin-top: -30px;
     padding-bottom: 0;
     margin-bottom: 0; }
     @media (max-width: 768px) {
-      .page-heading .product-image {
+      .page-heading .img-mm {
         margin-top: 0; } }
 
-.product-image {
+.img-mm {
   width: 100%;
   margin-bottom: 10px;
   -webkit-border-radius: 1px !important;

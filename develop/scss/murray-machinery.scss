@@ -59,6 +59,7 @@ body {
     }
 
     @media (max-width: $width-xs) {
+
         a {
             padding: 10px 0 0 0;
             text-align: right;
@@ -296,6 +297,7 @@ body {
     margin-top: 7px;
     opacity: 1 !important;
     outline: none !important;
+
     .hamburger-inner,
     .hamburger-inner::before,
     .hamburger-inner::after {
@@ -484,7 +486,7 @@ body {
         padding-left: 20px;
     }
 
-    .product-image {
+    .img-mm {
         padding-bottom: 20px;
     }
 
@@ -615,7 +617,7 @@ body {
 .page-heading {
     margin-top: 20px;
 
-    .product-image {
+    .img-mm {
         margin-top: -30px;
         padding-bottom: 0;
         margin-bottom: 0;
@@ -626,7 +628,7 @@ body {
     }
 }
 
-.product-image {
+.img-mm {
     width: 100%;
     margin-bottom: 10px;
     @include border-radius(1px);
@@ -718,7 +720,6 @@ body {
     left: 15px;
     width: 100%;
     padding-right: 15px;
-
     background: $brand-red;
     height: 100%;
     @include transition(bottom 0.25s);
@@ -772,8 +773,7 @@ body {
     }
 
     input[type=checkbox] + label,
-    input[type=radio] + label
-    {
+    input[type=radio] + label {
         -webkit-filter: grayscale(100%) brightness(200%);
         filter: grayscale(100%) brightness(200%);
         background-size: 80%;
@@ -856,12 +856,14 @@ body {
 
 .mm-panels {
     .sector-icons {
+
         li {
             a {
                 position: relative;
                 padding-left: 55px;
             }
         }
+
         .sector-icon {
             position: absolute;
             width: 21px;
@@ -902,6 +904,7 @@ body {
 
     a {
         display: block;
+
         img {
             @include transition(all, 0.25s);
         }
@@ -964,11 +967,13 @@ body {
     }
 
     tr {
+
         td, th {
             &:nth-last-child(1){
                 border-right: none;
             }
         }
+
         &:nth-child(odd){
             td {
                 background: $brand-grey-light;
@@ -1020,9 +1025,6 @@ body {
 
     h4 {
         font-size: 1.0em !important;
-    }
-
-    dl {
     }
 
     dt {
