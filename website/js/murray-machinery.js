@@ -230,6 +230,7 @@
                             $slideProgress.width('0%');
                         }
                     });
+                    self.$progressBar.removeClass('display-none');
                     $slideProgress.width('0%');
                 };
 
