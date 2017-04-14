@@ -3,7 +3,7 @@
 .aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .product-highlight .sector-list,
 .product-highlight .vehicle-list,
 .page-heading .sector-list,
-.page-heading .vehicle-list, .product-item .sector-vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras, .other-views, .other-news {
+.page-heading .vehicle-list, .single-item .sector-vehicle-list, .footer .footer-links, #hidden-form ul, .product-extras, .other-views, .other-news {
   margin: 0;
   padding: 0;
   list-style: none; }
@@ -799,18 +799,18 @@ body {
       -webkit-filter: invert(90%);
       filter: invert(90%); }
 
-.product-item {
+.single-item {
   border-bottom: 1px solid #d2d2d2; }
-  .product-item:nth-last-child(1) {
+  .single-item:nth-last-child(1) {
     border-bottom: none; }
-  .product-item .vehicle-icon,
-  .product-item .sector-icon {
+  .single-item .vehicle-icon,
+  .single-item .sector-icon {
     width: 42px;
     height: 48px;
     display: inline-block; }
-  .product-item .sector-vehicle-list {
+  .single-item .sector-vehicle-list {
     float: left; }
-    .product-item .sector-vehicle-list li {
+    .single-item .sector-vehicle-list li {
       float: left;
       text-align: center;
       padding-bottom: 10px;
@@ -819,13 +819,13 @@ body {
       color: #000000;
       text-transform: uppercase;
       font-size: 0.7em; }
-      .product-item .sector-vehicle-list li span {
+      .single-item .sector-vehicle-list li span {
         display: block;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
         text-transform: uppercase; }
-    .product-item .sector-vehicle-list .inverted {
+    .single-item .sector-vehicle-list .inverted {
       -webkit-filter: invert(90%);
       filter: invert(90%); }
 
