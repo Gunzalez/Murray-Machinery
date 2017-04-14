@@ -68,6 +68,7 @@ body {
         li {
             text-align: right;
             display: block;
+
             &:nth-child(2){
                 a {
                     padding: 5px 0 15px 0;
@@ -184,13 +185,16 @@ body {
     }
 
     @media (max-width: $width-md) {
+
         > ul {
             display: none;
         }
     }
 
     .has-menu {
+
         .has-menu {
+
             i {
                 float: right;
                 margin-top: 3px;
@@ -199,6 +203,7 @@ body {
     }
 
     .sector-nav {
+
         a {
             padding: 3px 10px;
         }
@@ -819,7 +824,6 @@ body {
     .inverted {
         input[type=checkbox] + label,
         input[type=radio] + label {
-            //color: #000000;
             font-weight: bold;
             filter: invert(100%);
         }
@@ -858,6 +862,7 @@ body {
     .sector-icons {
 
         li {
+
             a {
                 position: relative;
                 padding-left: 55px;
@@ -975,6 +980,7 @@ body {
         }
 
         &:nth-child(odd){
+
             td {
                 background: $brand-grey-light;
             }
@@ -1004,9 +1010,6 @@ body {
                 width: 100%;
                 font-size: 0.9em;
                 border-right: none;
-            }
-
-            &:nth-last-child(1){
             }
         }
 
@@ -1236,10 +1239,3 @@ blockquote{
         height: 100% !important;
     }
 }
-
-
-
-
-
-
-
