@@ -12,6 +12,28 @@
         init: function (){}
     };
 
+    mMachinery.utils = {
+        doAfterImagesLoaded: function(imgSrcArr, callback){
+            var imagesToLoad = imgSrcArr;
+            var cnt = imagesToLoad.length;
+            var imagesLoaded = 0;
+
+            var loadAllImages = function(){
+                var img = new Image();
+                $(img).load(function(){
+                    imagesLoaded++;
+                    if(imagesLoaded == cnt){
+                        callback();
+                    } else {
+                        // recursive
+                        loadAllImages();
+                    }
+                }).attr('src',imagesToLoad[imagesLoaded]);
+            };
+            loadAllImages();
+        },
+    };
+
     mMachinery.navigation = {
 
         // initial set up
@@ -52,7 +74,6 @@
                 },
                 "extensions": [
                     "theme-white",
-                    //"pagedim-black",
                     "border-offset"
                 ]
             });
@@ -93,29 +114,6 @@
             this.$controls.eq(index).addClass('active');
         },
 
-        doAfterImagesLoaded: function(callback){
-            var imagesToLoad = [];
-            this.$slides.each(function (i, obj) {
-                imagesToLoad.push($(obj).attr('data-slide-bg'))
-            });
-            var cnt = imagesToLoad.length;
-            var imagesLoaded = 0;
-
-            var loadAllImages = function(){
-                var img = new Image();
-                $(img).load(function(){
-                    imagesLoaded++;
-                    if(imagesLoaded == cnt){
-                        callback();
-                    } else {
-                        // recursive
-                        loadAllImages();
-                    }
-                }).attr('src',imagesToLoad[imagesLoaded]);
-            };
-            loadAllImages();
-        },
-
         init: function(){
 
             this.$parent = $('.main-carousel');
@@ -127,8 +125,14 @@
             this.timer = null;
             var self = this;
 
-            this.doAfterImagesLoaded(function(){
+            // create src array of images to be loaded
+            var imagesToLoad = [];
+            this.$slides.each(function (i, obj) {
+                imagesToLoad.push($(obj).attr('data-slide-bg'))
+            });
 
+            // create callback to be done after images are loaded
+            var callback = function(){
                 // attach carousel controls events
                 self.$controls.each(function(i, obj){
                     $(obj).on('click', function(e){
@@ -158,8 +162,10 @@
 
                 // display carousel controls
                 self.$controlBox.removeClass('controls-not-ready');
-                
-            });
+            };
+
+            // pass array and callback to utils function
+            mMachinery.utils.doAfterImagesLoaded(imagesToLoad, callback);
         }
     };
 
@@ -175,6 +181,61 @@
                     $mainView.attr('src', $('img',$(this)).attr('src'));
                 });
             })
+        }
+    };
+
+    mMachinery.timedCarousel = {
+
+        changeSlide: function () {
+            var $activeSlide = $('.active', this.$stage);
+            var currIndex = this.$slides.index($activeSlide);
+
+            this.$slides.removeClass('active');
+            currIndex++;
+            if(currIndex == this.$slides.length){
+                currIndex = 0;
+            }
+
+            var $newActiveSlide = $(this.$slides[currIndex]).addClass('active');
+            this.$stage.css('background-image', 'url("' + $newActiveSlide.attr('src') + '")');
+        },
+
+        init: function () {
+            this.$stage = $('#timed-carousel');
+            this.$slides = $('.slide', this.$stage);
+            this.$progressBar = $('.slide-progress-bar', this.$stage);
+            this.delay = 30; // 30 seconds
+            this.timer = null;
+
+            var self = this;
+            if(this.$slides.length > 1) {
+                // create src array of images to be loaded
+                var imagesToLoad = [];
+                this.$slides.each(function (i, obj) {
+                    imagesToLoad.push($(obj).attr('src'))
+                });
+
+                // create callback to be done after images are loaded
+                var callback = function () {
+
+                    var $slideProgress = $('<div />');
+                    self.$progressBar.append($slideProgress);
+
+                    $slideProgress.css('transition-duration', self.delay + 's');
+                    $slideProgress.get(0).addEventListener('transitionend', function () {
+                        self.changeSlide();
+                        if($slideProgress.width() === 0){
+                            $slideProgress.width('100%');
+                        } else {
+                            $slideProgress.width('0%');
+                        }
+                    });
+                    $slideProgress.width('0%');
+                };
+
+                // pass array and callback to utils function
+                mMachinery.utils.doAfterImagesLoaded(imagesToLoad, callback);
+            }
         }
     };
 
@@ -222,6 +283,7 @@
         mMachinery.carousel.init();
         mMachinery.filter.init();
         mMachinery.views.init();
+        mMachinery.timedCarousel.init();
 
         // resize triggers
         $(window).on('resize', function () {
