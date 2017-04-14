@@ -79,10 +79,14 @@ form {
         }
     }
 
-    input, select, textarea, button {
-        //-webkit-appearance: none;
-        //-moz-appearance:    none;
-        //appearance:         none;
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    select, textarea, button {
+        outline: none !important;
+        -webkit-appearance: none;
+        -moz-appearance:    none;
+        appearance:         none;
     }
 
     input, select, textarea {
@@ -368,8 +372,9 @@ a {
 
 .desktop {
     .mobile-link {
-        color: $brand-grey;
-        cursor: default;
+        color: $brand-grey !important;
+        cursor: default !important;
+        text-decoration: none !important;
     }
 }
 
