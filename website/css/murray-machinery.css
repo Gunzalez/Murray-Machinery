@@ -1141,7 +1141,8 @@ body {
 
 .product-id,
 .attachment-type,
-.article-date {
+.article-date,
+.document-type {
   color: #1c3389;
   font-weight: 700; }
 

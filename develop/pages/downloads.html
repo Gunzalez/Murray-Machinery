@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block navigation %}
+    {% import 'macros/main-navigation-macro.html' as nav %}
+    {{nav.active('info')}}
+{% endblock %}
+
+{% block content %}
+    <div class="section">
+        <div class="content page-heading">
+            <div class="container">
+                <div class="col-sm-12">
+                    <h2 class="title text-uppercase">Download list</h2>
+                    <div class="detail">
+                        <p>Select a document from the list below</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content single-item"><!-- downloadable item starts -->
+            <div class="container">
+                <div class="col-sm-9">
+                    <h2 class="title">Title of document</h2>
+                    <div class="detail">
+                        <p class="document-type">PDF</p>
+                        <p>Aenean eget malesuada ex, at placerat risus. Maecenas a <a href="product.html?id=44">tempor</a> ipsum, ut elementum augue. Aliquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <a href="#" class="btn">Download document <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div><!-- downloadable item ends -->
+
+        <div class="content single-item"><!-- downloadable item starts -->
+            <div class="container">
+                <div class="col-sm-9">
+                    <h2 class="title">Another title of document</h2>
+                    <div class="detail">
+                        <p class="document-type">DOC</p>
+                        <p>Hget malesuada ex, aena  ium, ut elemepsum, ut elementt plaena  ipsum, ut elem entcerat risena  ipsum, ut elemetus. Maecena  ipsum, ut elnementum aug, iquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <a href="#" class="btn">Download document <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div><!-- downloadable item ends -->
+
+        <div class="content single-item"><!-- downloadable item starts -->
+            <div class="container">
+                <div class="col-sm-9">
+                    <h2 class="title">Document title and description</h2>
+                    <div class="detail">
+                        <p class="document-type">XSL</p>
+                        <p>Maecena  ipsum, ut elem nean eget malesuada ex, aena  ium, ut elemepsum, ut elementt plaena  ipsum, ut elem entcerat risena  ipsum, ut elementus. ntum augue. Aliquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <a href="#" class="btn">Download document <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div><!-- downloadable item ends -->
+
+        <div class="content single-item"><!-- downloadable item starts -->
+            <div class="container">
+                <div class="col-sm-9">
+                    <h2 class="title">Another document title</h2>
+                    <div class="detail">
+                        <p class="document-type">XSL</p>
+                        <p>Maecena  ipsum, ut elem nean eget males <a href="product.html?id=44">tempor</a> mepsum, ut elementt plaena  ipsum, ut elem entcerat risena  ipsum, ut elementus. ntum augue. Aliquam ex nibh, suscipit ut venenatis at, sagittis id ligula.</p>
+                    </div>
+                </div>
+                <div class="col-sm-3 text-right">
+                    <a href="#" class="btn">Download document <i class="glyphicon glyphicon-triangle-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </div><!-- downloadable item ends -->
+
+    </div>
+{% endblock %}
