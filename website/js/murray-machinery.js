@@ -22,7 +22,7 @@
                 var img = new Image();
                 $(img).load(function(){
                     imagesLoaded++;
-                    if(imagesLoaded == cnt){
+                    if(imagesLoaded === cnt){
                         callback();
                     } else {
                         // recursive
@@ -31,7 +31,7 @@
                 }).attr('src',imagesToLoad[imagesLoaded]);
             };
             loadAllImages();
-        },
+        }
     };
 
     mMachinery.navigation = {
@@ -77,6 +77,7 @@
                     "border-offset"
                 ]
             });
+
             mMachinery.navigation.API = this.smallScreenMenu.data("mmenu");
             mMachinery.navigation.API.bind("opened", function() {
                 mMachinery.navigation.$toggleBtn.addClass('is-active');
@@ -92,6 +93,7 @@
         },
 
         resize: function(){
+
             // close/hide all menu on resize
             this.$menuToggleBtns.each(function(i, obj){
                 $(obj).removeClass('hover');
@@ -103,19 +105,21 @@
     mMachinery.carousel = {
 
         changeSlide: function(index){
+
             // hide/show slide copy
             this.$slides.removeClass('active');
             this.$slides.eq(index).addClass('active');
+
             // change slide back ground image
             var newBg = this.$slides.eq(index).attr('data-slide-bg');
             this.$parent.css('background-image', 'url("'+newBg+'")');
+
             // update blue dots to reflect change
             this.$controls.removeClass('active');
             this.$controls.eq(index).addClass('active');
         },
 
         init: function(){
-
             this.$parent = $('.main-carousel');
             this.$slides = $('.slide');
             this.$controlBox = $('.slide-controls');
@@ -153,7 +157,7 @@
                         var $activeLink = $('.active', self.$controlBox);
                         var activeIndex = self.$controls.index($activeLink);
                         var nextIndex = activeIndex + 1;
-                        if(nextIndex == self.$controls.length){
+                        if(nextIndex === self.$controls.length){
                             nextIndex = 0
                         }
                         self.changeSlide(nextIndex);
@@ -192,7 +196,7 @@
 
             this.$slides.removeClass('active');
             currIndex++;
-            if(currIndex == this.$slides.length){
+            if(currIndex === this.$slides.length){
                 currIndex = 0;
             }
 
@@ -209,6 +213,7 @@
 
             var self = this;
             if(this.$slides.length > 1) {
+
                 // create src array of images to be loaded
                 var imagesToLoad = [];
                 this.$slides.each(function (i, obj) {
@@ -292,7 +297,7 @@
             var newWidth = $(window).width(),
                 oldWidth = mMachinery.properties.windowWidth;
 
-            if (oldWidth != newWidth) {
+            if (oldWidth !== newWidth) {
                 mMachinery.properties.windowWidth = newWidth;
                 mMachinery.resize();
             }

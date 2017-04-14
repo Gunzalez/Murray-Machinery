@@ -78,6 +78,7 @@ body {
 
 .main-navigation {
     $nav-border-colour: lighten($brand-red, 40%);
+
     a {
         outline: none !important;
     }
@@ -679,7 +680,6 @@ body {
 }
 
 #filter-trigger {
-
     position: absolute;
     left: 30px;
     bottom: -5px;
@@ -696,7 +696,6 @@ body {
 }
 
 .filter-trigger {
-
     font-family: league_gothicregular;
     text-transform: uppercase;
     color: $brand-dark-red;
@@ -794,12 +793,6 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
         text-transform: uppercase;
-
-
-
-        //@media (max-width: $width-lg) {
-        //    width: 80px;
-        //}
     }
 
     input[type=checkbox]:checked + label,
@@ -824,7 +817,6 @@ body {
     input[data-sector="skid-steer"] + label { background-image: url('../images/vehicle-skid-steer.png'); }
 
     .inverted {
-
         input[type=checkbox] + label,
         input[type=radio] + label {
             //color: #000000;
@@ -833,7 +825,6 @@ body {
         }
     }
 }
-
 
 // small screen nav styles override
 .mm-listview>li>a,
@@ -1121,7 +1112,7 @@ blockquote{
     position: relative;
     border: none;
 
-    &::before{
+    &::before {
         content: "\201C"; /*Unicode for Left Double Quote*/
 
         font-family: league_gothicregular;
@@ -1167,7 +1158,7 @@ blockquote{
     .slide-progress-bar {
         width: 100%;
         height: 3px;
-        background-color: $brand-white;
+        background-color: $brand-grey-light;
         position: absolute;
         bottom: -3px;
         left: 0;
