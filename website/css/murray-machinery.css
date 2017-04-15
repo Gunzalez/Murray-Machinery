@@ -638,13 +638,14 @@ body {
       border-radius: 50% !important;
       background: #ffffff;
       text-indent: -9000px;
-      -moz-transition: background 0.5s;
-      -o-transition: background 0.5s;
-      -webkit-transition: background 0.5s;
-      transition: background 0.5s;
-      outline: none !important; }
+      -moz-transition: opacity 0.5s;
+      -o-transition: opacity 0.5s;
+      -webkit-transition: opacity 0.5s;
+      transition: opacity 0.5s;
+      outline: none !important;
+      opacity: 0.4; }
       .main-carousel .slide-controls a:hover, .main-carousel .slide-controls a.active {
-        background: #d73037; }
+        opacity: 1.0; }
     @media (max-width: 768px) {
       .main-carousel .slide-controls li {
         float: left;
@@ -1151,7 +1152,6 @@ blockquote {
     padding-top: 5px; }
 
 #timed-carousel {
-  margin-top: -10px;
   width: 100%;
   background-position: top center;
   -moz-transition: background 1s;

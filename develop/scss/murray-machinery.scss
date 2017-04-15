@@ -424,12 +424,13 @@ body {
             @include border-radius(50%);
             background: $brand-white;
             text-indent: -9000px;
-            @include transition(background 0.5s);
+            @include transition(opacity 0.5s);
             outline: none !important;
+            opacity: 0.4;
 
             &:hover,
             &.active{
-                background: $brand-red;
+                opacity: 1.0;
             }
         }
 
@@ -1144,7 +1145,6 @@ blockquote{
 }
 
 #timed-carousel {
-    margin-top: -10px;
     width: 100%;
     background-position: top center;
     @include transition(background 1.0s);
