@@ -1160,7 +1160,7 @@ blockquote {
   transition: background 1s;
   margin-bottom: 10px; }
   #timed-carousel .slides {
-    height: 320px;
+    height: 270px;
     width: 100%;
     position: relative; }
   #timed-carousel .slide-progress-bar {
@@ -1168,7 +1168,7 @@ blockquote {
     height: 3px;
     background-color: #d2d2d2;
     position: absolute;
-    bottom: -3px;
+    bottom: -28px;
     left: 0; }
     #timed-carousel .slide-progress-bar > div {
       width: 100%;
@@ -1179,16 +1179,6 @@ blockquote {
       -webkit-transition: width 30s;
       transition: width 30s;
       transition-timing-function: linear; }
-
-.padding-resize {
-  padding: 10px 80px 25px 80px;
-  text-align: center; }
-  @media (max-width: 992px) {
-    .padding-resize {
-      padding: 0 40px 25px 40px; } }
-  @media (max-width: 768px) {
-    .padding-resize {
-      padding: 0 0 15px 0; } }
 
 .sector-pod {
   margin-bottom: 25px; }

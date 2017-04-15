@@ -1155,7 +1155,7 @@ blockquote{
     }
 
     .slides {
-        height: 320px;
+        height: 270px;
         width: 100%;
         position: relative;
     }
@@ -1165,7 +1165,7 @@ blockquote{
         height: 3px;
         background-color: $brand-grey-light;
         position: absolute;
-        bottom: -3px;
+        bottom: -28px;
         left: 0;
 
         > div {
@@ -1175,19 +1175,6 @@ blockquote{
             @include transition(width 30s);
             transition-timing-function: linear;
         }
-    }
-}
-
-.padding-resize {
-    padding: 10px 80px 25px 80px;
-    text-align: center;
-
-    @media (max-width: $width-md) {
-        padding: 0 40px 25px 40px;
-    }
-
-    @media (max-width: $width-sm) {
-        padding: 0 0 15px 0;
     }
 }
 
