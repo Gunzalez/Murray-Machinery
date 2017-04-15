@@ -368,6 +368,9 @@ p {
   .col-xs-0 .row > div {
     width: 100% !important; } }
 
+.empty-content {
+  height: 715px; }
+
 body {
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;
