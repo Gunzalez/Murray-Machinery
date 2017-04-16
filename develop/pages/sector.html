@@ -13,18 +13,20 @@
                 <div class="col-sm-12">
                     <h2 class="title text-uppercase" id="display-box">Agriculture</h2>
                     <div class="detail">
-                        <p>Some introductory copy for this sector</p>
+                        <p>Some introductory copy for <span id="display-box-2" style="text-transform: capitalize;">this sector</span></p>
                     </div>
                     <script type="text/javascript">
                         // TODO: simulation
                         var loc = window.location.href,
                             qS = loc.split('?')[1],
                             id = qS.split('=')[1],
-                            displayBox = document.getElementById('display-box');
+                            displayBox = document.getElementById('display-box'),
+                            displayBox2 = document.getElementById('display-box-2');
 
                         id = id.replace('+', ' ');
                         if(id.length > 0){
                             displayBox.innerHTML = id;
+                            displayBox2.innerHTML = id;
                         }
                     </script>
                 </div>
