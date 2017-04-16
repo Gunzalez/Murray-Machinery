@@ -181,8 +181,8 @@
                     $otherViews = $('.other-views', $(obj));
 
                 $('a', $otherViews).on('click', function (e) {
-                    console.log($mainView);
-                    console.log('U')
+                    // console.log($mainView);
+                    // console.log('U')
                     e.preventDefault();
                     $mainView.attr('src', $('img',$(this)).attr('src'));
                 });
