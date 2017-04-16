@@ -181,8 +181,6 @@
                     $otherViews = $('.other-views', $(obj));
 
                 $('a', $otherViews).on('click', function (e) {
-                    // console.log($mainView);
-                    // console.log('U')
                     e.preventDefault();
                     $mainView.attr('src', $('img',$(this)).attr('src'));
                 });
@@ -251,16 +249,14 @@
 
         toggle: function () {            
             if(this.state === 'feature'){
-                var featureHeight = this.$feature.height();
-                this.$container.height(featureHeight);                
+                this.$container.height(this.$feature.height());
                 this.$feature.removeClass('static');
                 this.$container.height(0); 
                 this.state = 'filter';
             } else {
-                var filterHeight = this.$filter.height();
-                this.$container.height(filterHeight);                
+                this.$container.height(this.$filter.height());
                 this.$filter.removeClass('static');
-                this.$container.height(0); 
+                this.$container.height(0);
                 this.state = 'feature';
             }
         },
@@ -297,7 +293,7 @@
             var self = this;
             if(this.$container.length > 0){
                 this.$container.get(0).addEventListener('transitionend', function () {
-                    self.transitionEnded();                
+                    self.transitionEnded();
                 });
 
                 this.$switcher.on('click', function (e) {

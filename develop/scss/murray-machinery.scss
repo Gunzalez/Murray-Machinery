@@ -482,11 +482,10 @@ body {
 
     .detail {
         color: $brand-white;
-        padding-bottom: 0;
     }
 
     .product-link {
-        display: inline-block;
+        display: block;
     }
 
     ul {
@@ -555,17 +554,14 @@ body {
     }
 }
 
-.detail {
-    padding-bottom: 15px;
+.page-heading {
 
-    @media (max-width: $width-sm) {
-        padding-bottom: 15px;
-    }
+    .detail {
 
-    p {
-        &:nth-last-child(1){
-            margin-bottom: 0;
-            padding-bottom: 0;
+        p {
+            &:nth-last-child(1){
+                margin-bottom: 0;
+            }
         }
     }
 }
@@ -694,11 +690,12 @@ body {
     border-color: $brand-white;
     background-color: $brand-dark-red;
     color: $brand-white;
-
     position: absolute;
-    right: 15px;
     top: 0;
-
+    right: 30px;
+    @media (max-width: $width-lg) {
+        right: 15px;
+    }
     i {
         font-size: 0.8em;
         margin-left: 5px;
@@ -709,9 +706,12 @@ body {
 #product-filter {
     position: absolute;
     bottom: 0;
-    left: 0;
-    //padding-right: 15px;
-    width: 100%;
+    left: 15px;
+    right: 15px;
+    @media (max-width: $width-lg) {
+        left: 0;
+        right: 0;
+    }
     background: $brand-red;
     overflow: auto;
 

@@ -18,21 +18,20 @@
                     <script type="text/javascript">
                         // TODO: simulation
                         var loc = window.location.href,
-                            qS = loc.split('?')[1],
-                            qsArr = qS.split('&'),
-                            filterString = "",
-                            displayBox = document.getElementById('display-box');
+                            displayBox = document.getElementById('display-box'),
+                            qS = loc.split('?')[1];
 
-                        if(qS.length < 2){
-
-                            // no filter, go to stock items
+                        if(!qS){
                             displayBox.innerHTML = 'Every single Murray Machinery product';
-
                         } else {
+                            var qsArr = qS.split('&'),
+                                filterString = "";
 
                             // write out user's filter settings
                             for(var i = 0; i < qsArr.length; i++ ){
-                                qsArr[i] = qsArr[i].split('=')[1].replace('+', " ")
+                                if(qsArr[i].indexOf('=') !== -1){
+                                    qsArr[i] = qsArr[i].split('=')[1].replace('+', " ");
+                                }
                             }
 
                             if(qsArr.length > 0){
