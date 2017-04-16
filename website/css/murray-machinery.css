@@ -3,13 +3,14 @@
 .aux-navigation ul, .main-navigation ul, .main-carousel .slide-controls ul, .product-highlight .sector-list,
 .product-highlight .vehicle-list,
 .page-heading .sector-list,
-.page-heading .vehicle-list, .single-item .sector-vehicle-list, .footer .footer-links, #filter-form ul, .product-extras, .other-views, .other-news {
+.page-heading .vehicle-list, .single-item .sector-vehicle-list, .footer .footer-links, #product-filter ul, .product-extras, .other-views, .other-news {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-.aux-navigation .text, .main-carousel .slide:not(.active), #filter-form input[type=checkbox],
-#filter-form input[type=radio], #mm-1 .mm-title, #timed-carousel .slide {
+.aux-navigation .text, .main-carousel .slide:not(.active), #product-feature:not(.visible),
+#product-filter:not(.visible), #product-filter input[type=checkbox],
+#product-filter input[type=radio], #mm-1 .mm-title, #timed-carousel .slide {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -55,18 +56,6 @@
     .container {
       width: 100%; } }
 
-.product-highlight .container {
-  position: relative;
-  overflow: hidden; }
-
-@media (max-width: 1200px) {
-  .content .container {
-    padding-right: 0;
-    padding-left: 0; } }
-
-.cleft {
-  clear: left; }
-
 .content {
   padding: 25px 0; }
   .content .large-cta {
@@ -83,6 +72,13 @@
         font-size: 0.7em; } }
     .content .large-cta:hover {
       background: url("../images/bg-heading.png") -15px center no-repeat; }
+  @media (max-width: 1200px) {
+    .content .container {
+      padding-right: 0;
+      padding-left: 0; } }
+
+.cleft {
+  clear: left; }
 
 .section {
   position: relative; }
@@ -747,9 +743,6 @@ body {
       -webkit-filter: invert(90%);
       filter: invert(90%); }
 
-.page-heading .container {
-  overflow: visible; }
-
 .detail {
   padding-bottom: 15px; }
   @media (max-width: 768px) {
@@ -835,126 +828,132 @@ body {
       .footer .footer-copy a:hover {
         color: #ffffff; }
 
-#filter-trigger {
-  position: absolute;
-  left: 30px;
-  bottom: -5px;
-  -moz-transition: all 0.25s;
-  -o-transition: all 0.25s;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-  z-index: 2; }
-  #filter-trigger.open-state {
-    bottom: 100%; }
-  @media (max-width: 1200px) {
-    #filter-trigger {
-      left: 15px; } }
+#container-product-filter {
+  position: relative;
+  overflow: hidden;
+  -moz-transition: height, 0.5s;
+  -o-transition: height, 0.5s;
+  -webkit-transition: height, 0.5s;
+  transition: height, 0.5s; }
 
-.filter-trigger {
-  font-family: league_gothicregular;
-  text-transform: uppercase;
-  color: #791b1f;
-  font-size: 1.5em;
-  display: inline-block;
-  text-decoration: none; }
-  .filter-trigger i {
-    display: block; }
-  .filter-trigger:focus {
-    color: #ffffff; }
-
-#filter-form {
+#feature-filter-switcher {
+  border-color: #ffffff;
+  background-color: #791b1f;
+  color: #ffffff;
   position: absolute;
-  bottom: -100%;
-  left: 15px;
+  right: 15px;
+  top: 0; }
+  #feature-filter-switcher i {
+    font-size: 0.8em;
+    margin-left: 5px; }
+
+#product-feature,
+#product-filter {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   width: 100%;
   padding-right: 15px;
   background: #d73037;
-  height: 100%;
-  -moz-transition: bottom 0.25s;
-  -o-transition: bottom 0.25s;
-  -webkit-transition: bottom 0.25s;
-  transition: bottom 0.25s; }
-  #filter-form.open {
-    bottom: 0; }
-  @media (max-width: 1200px) {
-    #filter-form {
-      left: 0; } }
-  #filter-form form {
-    margin-top: 10px; }
-  #filter-form fieldset {
-    padding-bottom: 10px;
-    border-bottom: 1px solid #ffffff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
-    margin-bottom: 10px; }
-  #filter-form legend {
-    font-family: league_gothicregular;
-    text-transform: uppercase;
-    color: #ffffff;
-    font-size: 1.8em;
-    padding: 0;
-    margin: 0;
-    border: none; }
-  #filter-form ul {
-    float: left; }
-    #filter-form ul li {
-      float: left;
-      padding-right: 10px; }
-      #filter-form ul li:nth-last-child(1) {
-        padding-right: 0; }
-  #filter-form input[type=checkbox] + label,
-  #filter-form input[type=radio] + label {
-    -webkit-filter: grayscale(100%) brightness(200%);
-    filter: grayscale(100%) brightness(200%);
-    background-size: 80%;
-    width: 90px;
-    display: inline-block;
-    opacity: 0.5;
-    cursor: pointer;
-    background-repeat: no-repeat;
-    background-position: top center;
-    padding-top: 90px;
-    color: #ffffff;
-    font-size: 0.75em;
-    text-align: center;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    text-transform: uppercase; }
-  #filter-form input[type=checkbox]:checked + label,
-  #filter-form input[type=radio]:checked + label {
-    opacity: 1; }
-  #filter-form input[data-sector="agriculture"] + label {
-    background-image: url("../images/sector-icon-agriculture.png"); }
-  #filter-form input[data-sector="forestry"] + label {
-    background-image: url("../images/sector-icon-forestry.png"); }
-  #filter-form input[data-sector="municipal"] + label {
-    background-image: url("../images/sector-icon-municipal.png"); }
-  #filter-form input[data-sector="construction"] + label {
-    background-image: url("../images/sector-icon-construction-white.png"); }
-  #filter-form input[data-sector="waste"] + label {
-    background-image: url("../images/sector-icon-waste-white.png"); }
-  #filter-form input[data-sector="engineering"] + label {
-    background-image: url("../images/sector-icon-engineering.png"); }
-  #filter-form input[data-sector="renewables"] + label {
-    background-image: url("../images/sector-icon-renewables-white.png"); }
-  #filter-form input[data-sector="tractor"] + label {
-    background-image: url("../images/vehicle-tractor.png"); }
-  #filter-form input[data-sector="backhoe"] + label {
-    background-image: url("../images/vehicle-backhoe.png"); }
-  #filter-form input[data-sector="load-shovel"] + label {
-    background-image: url("../images/vehicle-load-shovel.png"); }
-  #filter-form input[data-sector="telehandler"] + label {
-    background-image: url("../images/vehicle-telehandler.png"); }
-  #filter-form input[data-sector="front-loader"] + label {
-    background-image: url("../images/vehicle-front-loader.png"); }
-  #filter-form input[data-sector="forklift"] + label {
-    background-image: url("../images/vehicle-forklift.png"); }
-  #filter-form input[data-sector="skid-steer"] + label {
-    background-image: url("../images/vehicle-skid-steer.png"); }
-  #filter-form .inverted input[type=checkbox] + label,
-  #filter-form .inverted input[type=radio] + label {
-    font-weight: bold;
-    filter: invert(100%); }
+  overflow: auto; }
+  #product-feature.static,
+  #product-filter.static {
+    position: static; }
+
+#product-filter fieldset {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ffffff;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  margin-bottom: 10px; }
+
+#product-filter legend {
+  font-family: league_gothicregular;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-size: 1.8em;
+  margin: 0;
+  border: none;
+  line-height: 100%;
+  padding: 0 0 20px 0; }
+
+#product-filter ul {
+  float: left; }
+  #product-filter ul li {
+    float: left;
+    padding-right: 10px; }
+    #product-filter ul li:nth-last-child(1) {
+      padding-right: 0; }
+
+#product-filter input[type=checkbox] + label,
+#product-filter input[type=radio] + label {
+  -webkit-filter: grayscale(100%) brightness(200%);
+  filter: grayscale(100%) brightness(200%);
+  background-size: 80%;
+  width: 90px;
+  display: inline-block;
+  opacity: 0.5;
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-position: top center;
+  padding-top: 90px;
+  color: #ffffff;
+  font-size: 0.75em;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: uppercase; }
+
+#product-filter input[type=checkbox]:checked + label,
+#product-filter input[type=radio]:checked + label {
+  opacity: 1; }
+
+#product-filter input[data-sector="agriculture"] + label {
+  background-image: url("../images/sector-icon-agriculture.png"); }
+
+#product-filter input[data-sector="forestry"] + label {
+  background-image: url("../images/sector-icon-forestry.png"); }
+
+#product-filter input[data-sector="municipal"] + label {
+  background-image: url("../images/sector-icon-municipal.png"); }
+
+#product-filter input[data-sector="construction"] + label {
+  background-image: url("../images/sector-icon-construction-white.png"); }
+
+#product-filter input[data-sector="waste"] + label {
+  background-image: url("../images/sector-icon-waste-white.png"); }
+
+#product-filter input[data-sector="engineering"] + label {
+  background-image: url("../images/sector-icon-engineering.png"); }
+
+#product-filter input[data-sector="renewables"] + label {
+  background-image: url("../images/sector-icon-renewables-white.png"); }
+
+#product-filter input[data-sector="tractor"] + label {
+  background-image: url("../images/vehicle-tractor.png"); }
+
+#product-filter input[data-sector="backhoe"] + label {
+  background-image: url("../images/vehicle-backhoe.png"); }
+
+#product-filter input[data-sector="load-shovel"] + label {
+  background-image: url("../images/vehicle-load-shovel.png"); }
+
+#product-filter input[data-sector="telehandler"] + label {
+  background-image: url("../images/vehicle-telehandler.png"); }
+
+#product-filter input[data-sector="front-loader"] + label {
+  background-image: url("../images/vehicle-front-loader.png"); }
+
+#product-filter input[data-sector="forklift"] + label {
+  background-image: url("../images/vehicle-forklift.png"); }
+
+#product-filter input[data-sector="skid-steer"] + label {
+  background-image: url("../images/vehicle-skid-steer.png"); }
+
+#product-filter .inverted input[type=checkbox] + label,
+#product-filter .inverted input[type=radio] + label {
+  font-weight: bold;
+  filter: invert(100%); }
 
 .mm-listview > li > a,
 .mm-listview > li > span {

@@ -554,12 +554,6 @@ body {
     }
 }
 
-.page-heading {
-    .container {
-        overflow: visible;
-    }
-}
-
 .detail {
     padding-bottom: 15px;
 
@@ -687,60 +681,48 @@ body {
     }
 }
 
-#filter-trigger {
-    position: absolute;
-    left: 30px;
-    bottom: -5px;
-    @include transition(all 0.25s);
-    z-index: 2;
-
-    &.open-state {
-        bottom: 100%;
-    }
-
-    @media (max-width: $width-lg) {
-        left: 15px;
-    }
+#container-product-filter {
+    position: relative;
+    overflow: hidden;
+    @include transition(height, 0.5s);
 }
 
-.filter-trigger {
-    font-family: league_gothicregular;
-    text-transform: uppercase;
-    color: $brand-dark-red;
-    font-size: 1.5em;
-    display: inline-block;
-    text-decoration: none;
+#feature-filter-switcher {
+    border-color: $brand-white;
+    background-color: $brand-dark-red;
+    color: $brand-white;
+
+    position: absolute;
+    right: 15px;
+    top: 0;
 
     i {
-        display: block;
-    }
-
-    &:focus{
-        color: #ffffff;
+        font-size: 0.8em;
+        margin-left: 5px;
     }
 }
 
-#filter-form {
+#product-feature,
+#product-filter {
     position: absolute;
-    bottom: -100%;
-    left: 15px;
+    bottom: 0;
+    left: 0;
     width: 100%;
     padding-right: 15px;
     background: $brand-red;
-    height: 100%;
-    @include transition(bottom 0.25s);
+    overflow: auto;
 
-    &.open {
-        bottom: 0;
+    &.static {
+        position: static;
     }
 
-    @media (max-width: $width-lg) {
-        left: 0;
+    &:not(.visible) {
+        @extend %visuallyHidden;
     }
+}
 
-    form {
-        margin-top: 10px;
-    }
+
+#product-filter {
 
     fieldset {
         padding-bottom: 10px;
@@ -754,9 +736,10 @@ body {
         text-transform: uppercase;
         color: #ffffff;
         font-size: 1.8em;
-        padding: 0;
         margin: 0;
         border: none;
+        line-height: 100%;
+        padding: 0 0 20px 0;
     }
 
     input[type=checkbox],

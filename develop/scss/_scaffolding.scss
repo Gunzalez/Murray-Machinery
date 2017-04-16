@@ -6,26 +6,6 @@
     }
 }
 
-.product-highlight {
-    .container {
-        position: relative;
-        overflow: hidden;
-    }
-}
-
-.content {
-    .container {
-        @media (max-width: $width-lg){
-            padding-right: 0;
-            padding-left: 0;
-        }
-    }
-}
-
-.cleft {
-    clear: left;
-}
-
 .content {
     padding: 25px 0;
 
@@ -45,11 +25,23 @@
             //padding-left: 20px;
         }
     }
+
+    .container {
+        @media (max-width: $width-lg){
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+}
+
+.cleft {
+    clear: left;
 }
 
 .section {
     position: relative;
 }
+
 
 form {
 

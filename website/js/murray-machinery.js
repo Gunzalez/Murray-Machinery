@@ -188,7 +188,7 @@
         }
     };
 
-    mMachinery.timedCarousel = {
+    mMachinery.timed = {
 
         changeSlide: function () {
             var $activeSlide = $('.active', this.$stage);
@@ -247,36 +247,63 @@
 
     mMachinery.filter = {
 
-        toggle: function (toggle) {
-            if(toggle){
-                this.panel.addClass('open');
-                this.trigger.addClass('open-state');
-
-                $('html, body').animate({
-                    //scrollTop: this.panel.offset().top
-                }, 500);
-
+        toggle: function () {            
+            if(this.state === 'feature'){
+                var featureHeight = this.$feature.height();
+                this.$container.height(featureHeight);                
+                this.$feature.removeClass('static');
+                this.$container.height(0); 
+                this.state = 'filter';
             } else {
-                this.panel.removeClass('open');
-                this.trigger.removeClass('open-state');
+                var filterHeight = this.$filter.height();
+                this.$container.height(filterHeight);                
+                this.$filter.removeClass('static');
+                this.$container.height(0); 
+                this.state = 'feature';
+            }
+        },
+
+        callback: function() {
+            if(this.$container.height() === 0){
+                if(this.state === 'filter'){
+                    this.$feature.removeClass('visible');
+                    this.$filter.addClass('visible');
+                    var filterHeight = this.$filter.height();
+                    this.$container.height(filterHeight); 
+                } else {
+                    this.$filter.removeClass('visible');
+                    this.$feature.addClass('visible');
+                    var featureHeight = this.$feature.height();
+                    this.$container.height(featureHeight); 
+                }
+            } else {
+                if(this.$filter.height() === this.$container.height()){
+                    this.$filter.addClass('static');
+                    this.$container.removeAttr('style');
+                } else if(this.$feature.height() === this.$container.height()){
+                    this.$feature.addClass('static');
+                    this.$container.removeAttr('style');
+                }
             }
         },
 
         init: function () {
-            this.trigger = $('#filter-trigger');
-            this.shutter = $('#filter-shutter');
-            this.panel = $('#filter-form');
+            this.$filter = $('#product-filter');
+            this.$feature = $('#product-feature');
+            this.$switcher = $('#feature-filter-switcher');
+            this.$container = $('#container-product-filter');
+            this.state = 'feature';
+
             var self = this;
 
-            this.trigger.on('click', function (e) {
-                e.preventDefault();
-                self.toggle('open');
+            this.$container.get(0).addEventListener('transitionend', function () {
+                self.callback();                
             });
 
-            this.shutter.on('click', function (e) {
+            this.$switcher.on('click', function (e) {
                 e.preventDefault();
-                self.toggle(false);
-            })
+                self.toggle();
+            });
         }
 
     };
@@ -289,7 +316,7 @@
         mMachinery.carousel.init();
         mMachinery.filter.init();
         mMachinery.views.init();
-        mMachinery.timedCarousel.init();
+        mMachinery.timed.init();
 
         // resize triggers
         $(window).on('resize', function () {
