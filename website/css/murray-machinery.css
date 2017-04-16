@@ -834,9 +834,6 @@ body {
   transition: height, 0.5s; }
 
 #feature-filter-switcher {
-  border-color: #ffffff;
-  background-color: #791b1f;
-  color: #ffffff;
   position: absolute;
   top: 0;
   right: 30px; }
@@ -846,6 +843,14 @@ body {
   #feature-filter-switcher i {
     font-size: 0.8em;
     margin-left: 5px; }
+  #feature-filter-switcher.feature .feature-label {
+    display: none; }
+  #feature-filter-switcher.feature .filter-label {
+    display: inline-block; }
+  #feature-filter-switcher.filter .feature-label {
+    display: inline-block; }
+  #feature-filter-switcher.filter .filter-label {
+    display: none; }
 
 #product-feature,
 #product-filter {

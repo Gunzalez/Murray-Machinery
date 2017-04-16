@@ -687,18 +687,35 @@ body {
 }
 
 #feature-filter-switcher {
-    border-color: $brand-white;
-    background-color: $brand-dark-red;
-    color: $brand-white;
     position: absolute;
     top: 0;
     right: 30px;
+
     @media (max-width: $width-lg) {
         right: 15px;
     }
+
     i {
         font-size: 0.8em;
         margin-left: 5px;
+    }
+
+    &.feature {
+        .feature-label {
+            display: none;
+        }
+        .filter-label {
+            display: inline-block;
+        }
+    }
+
+    &.filter {
+        .feature-label {
+            display: inline-block;
+        }
+        .filter-label {
+            display: none;
+        }
     }
 }
 

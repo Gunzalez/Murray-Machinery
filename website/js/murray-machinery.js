@@ -266,11 +266,13 @@
                 if(this.state === 'filter'){
                     this.$feature.removeClass('visible');
                     this.$filter.addClass('visible');
-                    this.$container.height(this.$filter.height()); 
+                    this.$container.height(this.$filter.height());
+                    this.$switcher.addClass('filter').removeClass('feature');
                 } else {
                     this.$filter.removeClass('visible');
                     this.$feature.addClass('visible');
-                    this.$container.height(this.$feature.height()); 
+                    this.$container.height(this.$feature.height());
+                    this.$switcher.removeClass('filter').addClass('feature');
                 }
             } else {
                 if(this.$filter.height() === this.$container.height()){
@@ -299,6 +301,7 @@
                 this.$switcher.on('click', function (e) {
                     e.preventDefault();
                     self.toggle();
+                    $(this).blur();
                 });
             }
         }
