@@ -664,7 +664,10 @@ body {
 
 .product-highlight,
 .page-heading {
-  background: #d73037; }
+  background: #d73037;
+  -webkit-box-shadow: inset 0 2px 6px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: inset 0 2px 6px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0 2px 6px 0 rgba(0, 0, 0, 0.26); }
   .product-highlight .title,
   .page-heading .title {
     color: #ffffff; }
@@ -800,7 +803,10 @@ body {
   border-radius: 1px !important; }
 
 .footer {
-  background: #1c3389; }
+  background: #1c3389;
+  -webkit-box-shadow: inset 0 3px 8px 0 rgba(0, 0, 0, 0.26);
+  -moz-box-shadow: inset 0 3px 8px 0 rgba(0, 0, 0, 0.26);
+  box-shadow: inset 0 3px 8px 0 rgba(0, 0, 0, 0.26); }
   .footer .container {
     padding-top: 15px;
     padding-bottom: 35px;
@@ -853,7 +859,6 @@ body {
   bottom: 0;
   left: 0;
   width: 100%;
-  padding-right: 15px;
   background: #d73037;
   overflow: auto; }
   #product-feature.static,

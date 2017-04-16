@@ -135,7 +135,7 @@
                 imagesToLoad.push($(obj).attr('data-slide-bg'))
             });
 
-            // create callback to be done after images are loaded
+            // create callback to be called after images are loaded
             var callback = function(){
                 // attach carousel controls events
                 self.$controls.each(function(i, obj){
@@ -168,7 +168,7 @@
                 self.$controlBox.removeClass('controls-not-ready');
             };
 
-            // pass array and callback to utils function
+            // pass array, callback to preLoading function
             mMachinery.utils.doAfterImagesLoaded(imagesToLoad, callback);
         }
     };
@@ -181,6 +181,8 @@
                     $otherViews = $('.other-views', $(obj));
 
                 $('a', $otherViews).on('click', function (e) {
+                    console.log($mainView);
+                    console.log('U')
                     e.preventDefault();
                     $mainView.attr('src', $('img',$(this)).attr('src'));
                 });
@@ -220,7 +222,7 @@
                     imagesToLoad.push($(obj).attr('src'))
                 });
 
-                // create callback to be done after images are loaded
+                // create callback to be called after images are loaded
                 var callback = function () {
 
                     var $slideProgress = $('<div />');
@@ -239,7 +241,7 @@
                     $slideProgress.width('0%');
                 };
 
-                // pass array and callback to utils function
+                // pass array, callback to preloading function
                 mMachinery.utils.doAfterImagesLoaded(imagesToLoad, callback);
             }
         }
@@ -263,18 +265,16 @@
             }
         },
 
-        callback: function() {
+        transitionEnded: function() {
             if(this.$container.height() === 0){
                 if(this.state === 'filter'){
                     this.$feature.removeClass('visible');
                     this.$filter.addClass('visible');
-                    var filterHeight = this.$filter.height();
-                    this.$container.height(filterHeight); 
+                    this.$container.height(this.$filter.height()); 
                 } else {
                     this.$filter.removeClass('visible');
                     this.$feature.addClass('visible');
-                    var featureHeight = this.$feature.height();
-                    this.$container.height(featureHeight); 
+                    this.$container.height(this.$feature.height()); 
                 }
             } else {
                 if(this.$filter.height() === this.$container.height()){
@@ -295,15 +295,16 @@
             this.state = 'feature';
 
             var self = this;
+            if(this.$container.length > 0){
+                this.$container.get(0).addEventListener('transitionend', function () {
+                    self.transitionEnded();                
+                });
 
-            this.$container.get(0).addEventListener('transitionend', function () {
-                self.callback();                
-            });
-
-            this.$switcher.on('click', function (e) {
-                e.preventDefault();
-                self.toggle();
-            });
+                this.$switcher.on('click', function (e) {
+                    e.preventDefault();
+                    self.toggle();
+                });
+            }
         }
 
     };
