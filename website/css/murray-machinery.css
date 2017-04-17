@@ -189,10 +189,10 @@ form textarea {
   font-family: league_gothicregular;
   text-transform: uppercase;
   font-size: 1.5em;
-  color: #791b1f;
   background-color: #d2d2d2;
+  color: #791b1f;
   outline: none !important;
-  padding: 6px 8px 6px 12px; }
+  padding: 5px 10px 5px 14px; }
   .btn i {
     font-size: 0.75em; }
   .btn:hover {
@@ -229,7 +229,7 @@ form textarea {
   background-color: #d73037;
   color: #ffffff;
   outline: none !important;
-  padding: 6px 12px;
+  padding: 5px 14px;
   font-weight: normal;
   line-height: 1.42857143; }
 
@@ -310,6 +310,7 @@ a {
   a.more-link {
     font-weight: bold;
     color: #791b1f;
+    padding-top: 2px;
     display: block; }
     a.more-link i {
       font-size: 0.75em; }
@@ -902,6 +903,10 @@ body {
   border-bottom: 1px solid #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   margin-bottom: 10px; }
+  @media (max-width: 480px) {
+    #product-filter fieldset {
+      border-bottom: none;
+      margin-bottom: 0; } }
 
 #product-filter legend {
   font-family: league_gothicregular;
@@ -912,10 +917,6 @@ body {
   border: none;
   line-height: 100%;
   padding: 0 0 20px 0; }
-
-@media (max-width: 480px) {
-  #product-filter .btn {
-    width: 100%; } }
 
 #product-filter ul {
   float: left; }
