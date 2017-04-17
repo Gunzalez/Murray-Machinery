@@ -12,6 +12,9 @@ Hours so far
 14th - Contact form                         8 hrs
 15th - Homepage filter re-starts            4 hrs
 16th - Homepage filter done                 6 hrs
+16th - Finishing off Filter +
+       Bug fixing and Testing +
+       Site clean up                        4 hrs
 
 
 
