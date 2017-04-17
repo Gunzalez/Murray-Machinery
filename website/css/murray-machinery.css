@@ -118,7 +118,7 @@ form input[type="checkbox"],
 form input[type="radio"] {
   outline: none !important; }
 
-@media (max-width: 767px) {
+@media (max-width: 479px) {
   form [type="submit"] {
     width: 100%; } }
 
@@ -209,6 +209,10 @@ form textarea {
     height: 34px;
     line-height: 34px;
     padding: 0 10px !important; }
+  @media (max-width: 480px) {
+    .btn {
+      display: block;
+      width: 100%; } }
 
 .badge {
   border: none;
@@ -232,7 +236,7 @@ form textarea {
 .links-list .btn,
 .links-list .badge {
   margin-bottom: 10px; }
-  @media (max-width: 768px) {
+  @media (max-width: 480px) {
     .links-list .btn,
     .links-list .badge {
       display: block; } }
@@ -361,8 +365,10 @@ p {
   margin-bottom: 15px; }
 
 @media (max-width: 480px) {
-  .col-xs-0 .row > div {
-    width: 100% !important; } }
+  .col-xs-0 {
+    width: 100% !important; }
+    .col-xs-0 .row > div {
+      width: 100% !important; } }
 
 .empty-content {
   height: 715px; }
@@ -672,6 +678,9 @@ body {
     .product-highlight .title span,
     .page-heading .title span {
       color: #791b1f; }
+  .product-highlight .padded-prefix,
+  .page-heading .padded-prefix {
+    padding-bottom: 3px; }
   .product-highlight .subtitle,
   .page-heading .subtitle {
     color: #791b1f; }
@@ -836,10 +845,11 @@ body {
 #feature-filter-switcher {
   position: absolute;
   top: 0;
-  right: 30px; }
-  @media (max-width: 1200px) {
+  right: 15px; }
+  @media (max-width: 480px) {
     #feature-filter-switcher {
-      right: 15px; } }
+      left: 15px;
+      width: 100%; } }
   #feature-filter-switcher i {
     font-size: 0.8em;
     margin-left: 5px; }
@@ -879,11 +889,15 @@ body {
   font-family: league_gothicregular;
   text-transform: uppercase;
   color: #ffffff;
-  font-size: 1.8em;
+  font-size: 2.8em;
   margin: 0;
   border: none;
   line-height: 100%;
   padding: 0 0 20px 0; }
+
+@media (max-width: 480px) {
+  #product-filter .btn {
+    width: 100%; } }
 
 #product-filter ul {
   float: left; }

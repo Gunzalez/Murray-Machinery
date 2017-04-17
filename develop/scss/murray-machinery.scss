@@ -476,6 +476,10 @@ body {
         }
     }
 
+    .padded-prefix {
+        padding-bottom: 3px;
+    }
+
     .subtitle {
         color: $brand-dark-red;
     }
@@ -689,11 +693,16 @@ body {
 #feature-filter-switcher {
     position: absolute;
     top: 0;
-    right: 30px;
+    right: 15px;
 
-    @media (max-width: $width-lg) {
-        right: 15px;
+    @media (max-width: $width-xs) {
+        left: 15px;
+        width: 100%;
     }
+    //
+    //@media (max-width: $width-xs) {
+    //    left: 15px;
+    //}
 
     i {
         font-size: 0.8em;
@@ -725,12 +734,13 @@ body {
     bottom: 0;
     left: 15px;
     right: 15px;
+    background: $brand-red;
+    overflow: auto;
+
     @media (max-width: $width-lg) {
         left: 0;
         right: 0;
     }
-    background: $brand-red;
-    overflow: auto;
 
     &.static {
         position: static;
@@ -740,7 +750,6 @@ body {
         @extend %visuallyHidden;
     }
 }
-
 
 #product-filter {
 
@@ -755,11 +764,17 @@ body {
         font-family: league_gothicregular;
         text-transform: uppercase;
         color: #ffffff;
-        font-size: 1.8em;
+        font-size: 2.8em;
         margin: 0;
         border: none;
         line-height: 100%;
         padding: 0 0 20px 0;
+    }
+
+    .btn {
+        @media (max-width: $width-xs) {
+            width: 100%;
+        }
     }
 
     input[type=checkbox],

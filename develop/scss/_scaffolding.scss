@@ -91,7 +91,7 @@ form {
     }
 
     [type="submit"]{
-        @media (max-width: $width-sm - 1) {
+        @media (max-width: $width-xs - 1) {
             width: 100%;
         }
     }
@@ -213,6 +213,11 @@ form {
         line-height: 34px;
         padding: 0 10px !important;
     }
+
+    @media (max-width: $width-xs) {
+        display: block;
+        width: 100%;
+    }
 }
 
 .badge {
@@ -234,7 +239,7 @@ form {
     .btn,
     .badge {
         margin-bottom: 10px;
-        @media (max-width: $width-sm) {
+        @media (max-width: $width-xs) {
             display: block;
         }
     }
@@ -416,6 +421,7 @@ p {
 
 .col-xs-0 {
     @media (max-width: $width-xs) {
+        width: 100% !important;
         .row {
             > div {
                 width: 100% !important;
