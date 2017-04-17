@@ -16,19 +16,24 @@
                     </div>
 
                     <script type="text/javascript">
+
                         // TODO: simulation
                         var loc = window.location.href,
                             displayBox = document.getElementById('display-box'),
-                            qS = loc.split('?')[1];
+                            qS = loc.split('?')[1],
+                            defaultMsg = 'All Murray Machinery products';
 
                         if(!qS){
-                            displayBox.innerHTML = 'Every single Murray Machinery product';
+
+                            displayBox.innerHTML = defaultMsg;
+
                         } else {
+
                             var qsArr = qS.split('&'),
                                 filterString = "";
 
                             // write out user's filter settings
-                            for(var i = 0; i < qsArr.length; i++ ){
+                            for(var i = 0; i < qsArr.length; i++){
                                 if(qsArr[i].indexOf('=') !== -1){
                                     qsArr[i] = qsArr[i].split('=')[1].replace('+', " ");
                                 }
@@ -38,6 +43,7 @@
                                 filterString = qsArr.join(' + ');
                                 displayBox.innerHTML = '\''+filterString+'\'';
                             }
+
                         }
                     </script>
 

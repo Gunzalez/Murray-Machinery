@@ -339,9 +339,10 @@ a {
     &.more-link {
         font-weight: bold;
         color: $brand-dark-red;
+        display: block;
 
-        &::after {
-            content: "...";
+        i {
+            font-size: 0.75em;
         }
     }
 }

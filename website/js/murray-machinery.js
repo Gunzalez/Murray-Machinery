@@ -251,12 +251,12 @@
 
         toggle: function () {            
             if(this.state === 'feature'){
-                this.$container.height(this.$feature.height());
+                this.$container.height(this.$feature.outerHeight());
                 this.$feature.removeClass('static');
                 this.$container.height(0); 
                 this.state = 'filter';
             } else {
-                this.$container.height(this.$filter.height());
+                this.$container.height(this.$filter.outerHeight());
                 this.$filter.removeClass('static');
                 this.$container.height(0);
                 this.state = 'feature';
@@ -268,19 +268,26 @@
                 if(this.state === 'filter'){
                     this.$feature.removeClass('visible');
                     this.$filter.addClass('visible');
-                    this.$container.height(this.$filter.height());
+                    this.$container.height(this.$filter.outerHeight());
+
+                    // change filter display
                     this.$switcher.addClass('filter').removeClass('feature');
                 } else {
                     this.$filter.removeClass('visible');
                     this.$feature.addClass('visible');
-                    this.$container.height(this.$feature.height());
+                    this.$container.height(this.$feature.outerHeight());
+
+                    // change filter display
                     this.$switcher.removeClass('filter').addClass('feature');
                 }
             } else {
-                if(this.$filter.height() === this.$container.height()){
+
+                // transitionEnded get fired even before transition actually ends
+                // so we test for heights again.
+                if(this.$filter.outerHeight() === this.$container.outerHeight()){
                     this.$filter.addClass('static');
                     this.$container.removeAttr('style');
-                } else if(this.$feature.height() === this.$container.height()){
+                } else if(this.$feature.outerHeight() === this.$container.outerHeight()){
                     this.$feature.addClass('static');
                     this.$container.removeAttr('style');
                 }

@@ -635,6 +635,15 @@ body {
     @include border-radius(1px);
 }
 
+.img-icon-box {
+    text-align: center;
+
+    .img-icon {
+        display: inline-block;
+        margin-bottom: 15px;
+    }
+}
+
 .footer {
     background: $brand-blue;
     @include dropShadow(true);
@@ -692,7 +701,11 @@ body {
 #product-becomes-filter {
     position: absolute;
     top: 0;
-    right: 15px;
+    right: 30px;
+
+    @media (max-width: $width-lg) {
+        right: 15px;
+    }
 
     @media (max-width: $width-xs) {
         left: 15px !important;
@@ -733,6 +746,10 @@ body {
     right: 15px;
     background: $brand-red;
     overflow: auto;
+
+    @media (max-width: $width-xs) {
+        padding-top: 65px;
+    }
 
     @media (max-width: $width-lg) {
         left: 0;
