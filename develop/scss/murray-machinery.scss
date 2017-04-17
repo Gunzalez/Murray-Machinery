@@ -687,22 +687,19 @@ body {
     position: relative;
     overflow: hidden;
     @include transition(height, 0.5s);
-    //transition-timing-function: linear;
 }
 
-#feature-filter-switcher {
+#product-becomes-filter {
     position: absolute;
     top: 0;
     right: 15px;
 
     @media (max-width: $width-xs) {
-        left: 15px;
-        width: 100%;
+        left: 15px !important;
     }
-    //
-    //@media (max-width: $width-xs) {
-    //    left: 15px;
-    //}
+}
+
+#feature-filter-switcher {
 
     i {
         font-size: 0.8em;
