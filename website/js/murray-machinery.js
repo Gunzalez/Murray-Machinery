@@ -69,11 +69,13 @@
 
             this.smallScreenMenu.mmenu({
                 offCanvas: {
-                    position  : "right",
+                    "position"  : "right",
                     "zposition": "back"
                 },
                 "extensions": [
                     "theme-white",
+                    //"theme-dark",
+                    "pagedim-black",
                     "border-offset"
                 ]
             });
