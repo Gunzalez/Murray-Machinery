@@ -15,6 +15,7 @@ Hours so far
 16th - Finishing off Filter +
        Bug fixing and Testing +
        Site clean up                        4 hrs
+18th - Site is completed                    6 hrs
 
 
 
