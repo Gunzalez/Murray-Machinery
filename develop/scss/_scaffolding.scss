@@ -22,7 +22,6 @@
 
         &:hover {
             background: url("../images/bg-heading.png") -15px center no-repeat;
-            //padding-left: 20px;
         }
     }
 
@@ -338,12 +337,16 @@ a {
 
     &.more-link {
         font-weight: bold;
-        color: $brand-dark-red;
+        color: $brand-red;
         padding-top: 2px;
         display: block;
 
         i {
             font-size: 0.75em;
+        }
+
+        &:hover {
+            color: $brand-black;
         }
     }
 }
