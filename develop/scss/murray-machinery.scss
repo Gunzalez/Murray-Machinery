@@ -377,7 +377,7 @@ body {
         background: rgba(255, 255, 255, 0.8);
         padding: 20px;
         @include border-radius(1px);
-        width: 488px;
+        width: 500px;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -670,6 +670,7 @@ body {
 
                 &:hover {
                     color: $brand-white;
+                    text-decoration: underline;
                 }
             }
         }

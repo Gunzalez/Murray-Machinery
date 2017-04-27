@@ -309,7 +309,7 @@ a {
       font-size: 0.6em; }
   a.more-link {
     font-weight: bold;
-    color: #d73037;
+    color: #791b1f;
     padding-top: 2px;
     display: block; }
     a.more-link i {
@@ -615,7 +615,7 @@ body {
     -webkit-border-radius: 1px !important;
     -moz-border-radius: 1px !important;
     border-radius: 1px !important;
-    width: 488px;
+    width: 500px;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -832,7 +832,8 @@ body {
         padding: 10px;
         text-decoration: none; }
         .footer .footer-links li a:hover {
-          color: #ffffff; }
+          color: #ffffff;
+          text-decoration: underline; }
   .footer .footer-copy {
     text-align: center;
     color: #ffffff;
