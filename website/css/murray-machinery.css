@@ -821,9 +821,6 @@ body {
         overflow: hidden;
         text-overflow: ellipsis;
         text-transform: uppercase; }
-    .single-item .sector-vehicle-list .inverted {
-      -webkit-filter: invert(90%);
-      filter: invert(90%); }
 
 .page-heading {
   margin-top: 20px; }
