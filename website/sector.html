@@ -249,11 +249,16 @@
                     </script>
                 </div>
                 <div class="col-xs-9 col-xs-0">
-                    <h2 class="title">Our machines won't let you down</h2>
+                    <h2 class="title">Our <div id="sector-badge" style="display: inline!important; text-transform: capitalize !important;"></div> machines won't let you down</h2>
                     <div class="detail">
                         <p>We're confident you'll agree with our many satisfied customers that Murray Machinery are a great choice for agricultural material handling attachments in the UK.</p>
                         <p>Established near Aberdeen (UK) in 1979, Murray Machinery are UK agricultural machinery manufacturers who specialise in material handling attachments to fit telescopic handlers, forklifts and loaders.</p>
                     </div>
+                    <script type="text/javascript">
+                        if(id.length > 0){
+                            document.getElementById('sector-badge').innerHTML = id;
+                        }
+                    </script>
                 </div>
             </div>
         </div>

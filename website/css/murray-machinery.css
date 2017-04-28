@@ -9,8 +9,7 @@
   list-style: none; }
 
 .aux-navigation .text, .main-carousel .slide:not(.active), #product-feature:not(.visible),
-#product-filter:not(.visible), #product-filter input[type=checkbox],
-#product-filter input[type=radio], #mm-1 .mm-title, #timed-carousel .slide {
+#product-filter:not(.visible), #mm-1 .mm-title, #timed-carousel .slide {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -356,7 +355,8 @@ a {
   font-weight: bold;
   text-decoration: none; }
   .detail .article-link:hover {
-    color: #111111; }
+    color: #111111;
+    text-decoration: underline; }
 
 .desktop .mobile-link {
   color: #666666 !important;
@@ -547,42 +547,50 @@ body {
 .sector-icon {
   background-size: contain; }
   .sector-icon.agriculture {
-    background-image: url("../images/sector-icon-agriculture.png"); }
+    background-image: url("../images/sector-icons/agriculture.png"); }
+    .sector-icon.agriculture.white {
+      background-image: url("../images/sector-icons/agriculture-w.png"); }
   .sector-icon.forestry {
-    background-image: url("../images/sector-icon-forestry.png"); }
+    background-image: url("../images/sector-icons/forestry.png"); }
+    .sector-icon.forestry.white {
+      background-image: url("../images/sector-icons/forestry-w.png"); }
   .sector-icon.renewables {
-    background-image: url("../images/sector-icon-renewables.png"); }
+    background-image: url("../images/sector-icons/renewables.png"); }
     .sector-icon.renewables.white {
-      background-image: url("../images/sector-icon-renewables-white.png"); }
+      background-image: url("../images/sector-icons/renewables-w.png"); }
   .sector-icon.municipal {
-    background-image: url("../images/sector-icon-municipal.png"); }
+    background-image: url("../images/sector-icons/municipal.png"); }
+    .sector-icon.municipal.white {
+      background-image: url("../images/sector-icons/municipal-w.png"); }
   .sector-icon.engineering {
-    background-image: url("../images/sector-icon-engineering.png"); }
+    background-image: url("../images/sector-icons/engineering.png"); }
+    .sector-icon.engineering.white {
+      background-image: url("../images/sector-icons/engineering-w.png"); }
   .sector-icon.waste {
-    background-image: url("../images/sector-icon-waste.png"); }
+    background-image: url("../images/sector-icons/waste.png"); }
     .sector-icon.waste.white {
-      background-image: url("../images/sector-icon-waste-white.png"); }
+      background-image: url("../images/sector-icons/waste-w.png"); }
   .sector-icon.construction {
-    background-image: url("../images/sector-icon-construction.png"); }
+    background-image: url("../images/sector-icons/construction.png"); }
     .sector-icon.construction.white {
-      background-image: url("../images/sector-icon-construction-white.png"); }
+      background-image: url("../images/sector-icons/construction-w.png"); }
 
 .vehicle-icon {
   background-size: contain; }
   .vehicle-icon.backhoe {
-    background-image: url("../images/vehicle-backhoe.png"); }
+    background-image: url("../images/machine-icons/back-hoe.png"); }
   .vehicle-icon.forklift {
-    background-image: url("../images/vehicle-forklift.png"); }
+    background-image: url("../images/machine-icons/forklift.png"); }
   .vehicle-icon.front-loader {
-    background-image: url("../images/vehicle-front-loader.png"); }
+    background-image: url("../images/machine-icons/front-loader.png"); }
   .vehicle-icon.skid-steer {
-    background-image: url("../images/vehicle-skid-steer.png"); }
+    background-image: url("../images/machine-icons/skid-steer.png"); }
   .vehicle-icon.telehandler {
-    background-image: url("../images/vehicle-telehandler.png"); }
+    background-image: url("../images/machine-icons/telehandler.png"); }
   .vehicle-icon.tractor {
-    background-image: url("../images/vehicle-tractor.png"); }
+    background-image: url("../images/machine-icons/tractor.png"); }
   .vehicle-icon.load-shovel {
-    background-image: url("../images/vehicle-load-shovel.png"); }
+    background-image: url("../images/machine-icons/load-shovel.png"); }
 
 .toggle-navigation {
   margin-top: 7px;
@@ -782,10 +790,10 @@ body {
     .product-highlight .vehicle-list li,
     .page-heading .vehicle-list li {
       color: #000000 !important; }
-    .product-highlight .vehicle-list i,
-    .page-heading .vehicle-list i {
-      -webkit-filter: invert(90%);
-      filter: invert(90%); }
+  .product-highlight button,
+  .page-heading button {
+    background-color: #ffffff;
+    color: #d73037; }
 
 .page-heading .detail p:nth-last-child(1) {
   margin-bottom: 0; }
@@ -934,7 +942,6 @@ body {
 
 #product-filter fieldset {
   padding-bottom: 10px;
-  border-bottom: 1px solid #ffffff;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   margin-bottom: 10px; }
   @media (max-width: 480px) {
@@ -953,83 +960,84 @@ body {
   padding: 0 0 20px 0; }
 
 #product-filter ul {
-  float: left; }
+  float: left;
+  width: 100%;
+  text-align: justify;
+  color: #ffffff; }
   #product-filter ul li {
-    float: left;
-    padding-right: 10px; }
-    #product-filter ul li:nth-last-child(1) {
-      padding-right: 0; }
+    display: inline-block;
+    text-align: center; }
 
-#product-filter input[type=checkbox] + label,
-#product-filter input[type=radio] + label {
-  -webkit-filter: grayscale(100%) brightness(200%);
-  filter: grayscale(100%) brightness(200%);
-  background-size: 80%;
-  width: 90px;
-  display: inline-block;
-  opacity: 0.5;
-  cursor: pointer;
-  background-repeat: no-repeat;
-  background-position: top center;
-  padding-top: 90px;
-  color: #ffffff;
-  font-size: 0.75em;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  text-transform: uppercase; }
-
-#product-filter input[type=checkbox]:checked + label,
-#product-filter input[type=radio]:checked + label {
-  opacity: 1; }
-
-#product-filter input[data-sector="agriculture"] + label {
-  background-image: url("../images/sector-icon-agriculture.png"); }
-
-#product-filter input[data-sector="forestry"] + label {
-  background-image: url("../images/sector-icon-forestry.png"); }
-
-#product-filter input[data-sector="municipal"] + label {
-  background-image: url("../images/sector-icon-municipal.png"); }
-
-#product-filter input[data-sector="construction"] + label {
-  background-image: url("../images/sector-icon-construction-white.png"); }
-
-#product-filter input[data-sector="waste"] + label {
-  background-image: url("../images/sector-icon-waste-white.png"); }
-
-#product-filter input[data-sector="engineering"] + label {
-  background-image: url("../images/sector-icon-engineering.png"); }
-
-#product-filter input[data-sector="renewables"] + label {
-  background-image: url("../images/sector-icon-renewables-white.png"); }
-
-#product-filter input[data-sector="tractor"] + label {
-  background-image: url("../images/vehicle-tractor.png"); }
-
-#product-filter input[data-sector="backhoe"] + label {
-  background-image: url("../images/vehicle-backhoe.png"); }
-
-#product-filter input[data-sector="load-shovel"] + label {
-  background-image: url("../images/vehicle-load-shovel.png"); }
-
-#product-filter input[data-sector="telehandler"] + label {
-  background-image: url("../images/vehicle-telehandler.png"); }
-
-#product-filter input[data-sector="front-loader"] + label {
-  background-image: url("../images/vehicle-front-loader.png"); }
-
-#product-filter input[data-sector="forklift"] + label {
-  background-image: url("../images/vehicle-forklift.png"); }
-
-#product-filter input[data-sector="skid-steer"] + label {
-  background-image: url("../images/vehicle-skid-steer.png"); }
-
-#product-filter .inverted input[type=checkbox] + label,
-#product-filter .inverted input[type=radio] + label {
-  font-weight: bold;
-  filter: invert(100%); }
+@media (min-width: 992px) {
+  #product-filter input[type=checkbox],
+  #product-filter input[type=radio] {
+    display: none; }
+  #product-filter input[type=checkbox] + label,
+  #product-filter input[type=radio] + label {
+    background-size: 100%;
+    width: 90%;
+    display: inline-block;
+    opacity: 0.5;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-position: top center;
+    padding-top: 110%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 0.75em;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    -moz-transition: all, 0.25s;
+    -o-transition: all, 0.25s;
+    -webkit-transition: all, 0.25s;
+    transition: all, 0.25s; }
+  #product-filter input[type=checkbox]:checked + label,
+  #product-filter input[type=radio]:checked + label {
+    opacity: 1;
+    text-decoration: underline; }
+  #product-filter input[type=checkbox],
+  #product-filter input[type=radio] {
+    -moz-transition: all, 0.25s;
+    -o-transition: all, 0.25s;
+    -webkit-transition: all, 0.25s;
+    transition: all, 0.25s; }
+  #product-filter input[type=checkbox]:hover + label,
+  #product-filter input[type=radio]:hover + label {
+    opacity: 1 !important; }
+  #product-filter input[data-sector="agriculture"] + label {
+    background-image: url("../images/sector-icons/agriculture-w.png"); }
+  #product-filter input[data-sector="forestry"] + label {
+    background-image: url("../images/sector-icons/forestry-w.png"); }
+  #product-filter input[data-sector="municipal"] + label {
+    background-image: url("../images/sector-icons/municipal-w.png"); }
+  #product-filter input[data-sector="construction"] + label {
+    background-image: url("../images/sector-icons/construction-w.png"); }
+  #product-filter input[data-sector="waste"] + label {
+    background-image: url("../images/sector-icons/waste-w.png"); }
+  #product-filter input[data-sector="engineering"] + label {
+    background-image: url("../images/sector-icons/engineering-w.png"); }
+  #product-filter input[data-sector="renewables"] + label {
+    background-image: url("../images/sector-icons/renewables-w.png"); }
+  #product-filter input[data-sector="tractor"] + label {
+    background-image: url("../images/machine-icons/tractor.png"); }
+  #product-filter input[data-sector="backhoe"] + label {
+    background-image: url("../images/machine-icons/back-hoe.png"); }
+  #product-filter input[data-sector="load-shovel"] + label {
+    background-image: url("../images/machine-icons/load-shovel.png"); }
+  #product-filter input[data-sector="telehandler"] + label {
+    background-image: url("../images/machine-icons/telehandler.png"); }
+  #product-filter input[data-sector="front-loader"] + label {
+    background-image: url("../images/machine-icons/front-loader.png"); }
+  #product-filter input[data-sector="forklift"] + label {
+    background-image: url("../images/machine-icons/forklift.png"); }
+  #product-filter input[data-sector="skid-steer"] + label {
+    background-image: url("../images/machine-icons/skid-steer.png"); }
+  #product-filter .inverted input[type=checkbox] + label,
+  #product-filter .inverted input[type=radio] + label {
+    color: #111111; } }
 
 .mm-listview > li > a,
 .mm-listview > li > span {
@@ -1295,3 +1303,10 @@ blockquote {
     left: 0;
     width: 100% !important;
     height: 100% !important; }
+
+@media (min-width: 992px) {
+  .seven-cols .col-md-1,
+  .seven-cols .col-sm-1,
+  .seven-cols .col-lg-1 {
+    width: 14.285714285714285714285714285714%;
+    *width: 14.285714285714285714285714285714%; } }
