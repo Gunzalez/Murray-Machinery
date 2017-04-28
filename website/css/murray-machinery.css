@@ -746,9 +746,7 @@ body {
     width: 42px;
     height: 48px;
     display: inline-block;
-    margin-right: 5px;
-    -webkit-filter: grayscale(100%) brightness(200%);
-    filter: grayscale(100%) brightness(200%); }
+    margin-right: 5px; }
   .product-highlight .sector-list,
   .product-highlight .vehicle-list,
   .page-heading .sector-list,
@@ -756,7 +754,6 @@ body {
     float: left;
     clear: left;
     width: 100%;
-    border-bottom: 1px solid #ffffff;
     border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
     .product-highlight .sector-list li,
     .product-highlight .vehicle-list li,

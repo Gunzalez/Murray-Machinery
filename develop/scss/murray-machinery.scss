@@ -524,8 +524,6 @@ body {
         height: 48px;
         display: inline-block;
         margin-right: 5px;
-        -webkit-filter: grayscale(100%) brightness(200%);
-        filter: grayscale(100%) brightness(200%);
     }
 
     .sector-list,
@@ -534,7 +532,6 @@ body {
         float: left;
         clear: left;
         width: 100%;
-        border-bottom: 1px solid #ffffff;
         border-bottom: 1px solid rgba(255, 255, 255, 0.3);
 
         li {
