@@ -36,6 +36,10 @@ body {
         @media (max-width: $width-md) {
             font-size: 1.0em;
         }
+
+        &:hover {
+            text-decoration: underline;
+        }
     }
 
     .text {
@@ -45,6 +49,11 @@ body {
     .icon {
         padding: 12px 10px;
         font-size: 1.0em;
+
+        &:hover {
+            background: $brand-blue;
+            color: $brand-white;
+        }
     }
 
     @media (max-width: $width-md) {
@@ -377,7 +386,7 @@ body {
         background: rgba(255, 255, 255, 0.8);
         padding: 20px;
         @include border-radius(1px);
-        width: 500px;
+        width: 50%;
         position: absolute;
         bottom: 0;
         left: 0;
@@ -386,7 +395,7 @@ body {
         box-shadow: 0 0 4px 1px rgba(0,0,0,0.16);
 
         @media (max-width: $width-sm) {
-            width: auto;
+            width: 100%;
         }
 
         p {

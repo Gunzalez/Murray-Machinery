@@ -59,19 +59,44 @@
 .content {
   padding: 25px 0; }
   .content .large-cta {
-    background: url("../images/bg-heading.png") 0 center no-repeat;
-    padding: 15px 15px 12px 15px;
+    background: url("../images/stock_arrow.png") right center no-repeat;
     display: inline-block;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    padding: 0;
+    border-radius: 3px;
     -moz-transition: all 0.25s;
     -o-transition: all 0.25s;
     -webkit-transition: all 0.25s;
-    transition: all 0.25s; }
-    @media (max-width: 992px) {
+    transition: all 0.25s;
+    font-weight: normal; }
+    .content .large-cta a {
+      display: inline-block;
+      background: url("../images/stock_logo.png") 0 0 no-repeat;
+      background-size: cover;
+      padding: 10px 60px 8px 15px;
+      -moz-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      -webkit-transition: all 0.5s;
+      transition: all 0.5s;
+      position: relative; }
+      .content .large-cta a i {
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        margin-top: -12px; }
+      .content .large-cta a:hover {
+        background: url("../images/stock_logo.png") -15px 0 no-repeat;
+        background-size: cover; }
+    @media (max-width: 768px) {
       .content .large-cta {
-        padding: 10px;
-        font-size: 0.7em; } }
-    .content .large-cta:hover {
-      background: url("../images/bg-heading.png") -15px center no-repeat; }
+        display: block;
+        background: #cccccc;
+        font-size: 2.0em; }
+        .content .large-cta a {
+          display: block; }
+          .content .large-cta a i {
+            right: 10px; } }
   @media (max-width: 1200px) {
     .content .container {
       padding-right: 0;
@@ -315,7 +340,8 @@ a {
     a.more-link i {
       font-size: 0.75em; }
     a.more-link:hover {
-      color: #111111; }
+      color: #111111;
+      text-decoration: underline; }
 
 .strong {
   font-weight: bold; }
@@ -397,10 +423,15 @@ body {
   @media (max-width: 992px) {
     .aux-navigation a {
       font-size: 1.0em; } }
+  .aux-navigation a:hover {
+    text-decoration: underline; }
 
 .aux-navigation .icon {
   padding: 12px 10px;
   font-size: 1.0em; }
+  .aux-navigation .icon:hover {
+    background: #1c3389;
+    color: #ffffff; }
 
 @media (max-width: 992px) {
   .aux-navigation .icon {
@@ -615,7 +646,7 @@ body {
     -webkit-border-radius: 1px !important;
     -moz-border-radius: 1px !important;
     border-radius: 1px !important;
-    width: 500px;
+    width: 50%;
     position: absolute;
     bottom: 0;
     left: 0;
@@ -624,7 +655,7 @@ body {
     box-shadow: 0 0 4px 1px rgba(0, 0, 0, 0.16); }
     @media (max-width: 768px) {
       .main-carousel .slide {
-        width: auto; } }
+        width: 100%; } }
     .main-carousel .slide p:nth-last-child(1) {
       margin-bottom: 0; }
   .main-carousel .title {
