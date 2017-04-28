@@ -44,11 +44,13 @@
             display: block;
             background: #cccccc;
             font-size: 2.0em;
+            text-align: center;
 
             a {
+                padding: 10px 15px 8px 15px;
                 display: block;
                 i {
-                    right: 10px;
+                    position: static;
                 }
             }
         }
