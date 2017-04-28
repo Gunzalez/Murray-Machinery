@@ -94,7 +94,7 @@
         font-size: 2.0em;
         text-align: center; }
         .content .large-cta a {
-          padding: 10px 15px 8px 15px;
+          padding: 10px 0 8px 0;
           display: block; }
           .content .large-cta a i {
             position: static; } }
