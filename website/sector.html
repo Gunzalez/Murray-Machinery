@@ -162,7 +162,7 @@
                                         </a>
                                     </li>
                                     <li>
-                                        <a href="sector.html?id=rewnewables">
+                                        <a href="sector.html?id=renewables">
                                             <span class="sector-icon renewables" aria-hidden="true"></span>
                                             <span class="text">Renewables</span>
                                         </a>
@@ -238,7 +238,15 @@
         <div class="content">
             <div class="container">
                 <div class="col-xs-3 col-xs-0 img-icon-box">
-                    <img src="images/sector-icon-agriculture.png" alt="Agriculture icon" class="img-responsive img-icon" />
+                    <img src="images/blank-sector.png" alt="" class="img-responsive img-icon" id="sector-icon" />
+                    <script type="text/javascript">
+                        if(id.length > 0){
+                            var sector = id;
+                            sector = sector.split(' ')[0];
+                            document.getElementById('sector-icon').src = "images/sector-icons/" + sector + ".png";
+                            document.getElementById('sector-icon').alt = id;
+                        }
+                    </script>
                 </div>
                 <div class="col-xs-9 col-xs-0">
                     <h2 class="title">Our machines won't let you down</h2>
