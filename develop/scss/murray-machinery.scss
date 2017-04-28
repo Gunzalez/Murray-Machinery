@@ -884,7 +884,6 @@ body {
         input[data-sector="front-loader"] + label { background-image: url('../images/machine-icons/front-loader.png'); }
         input[data-sector="forklift"] + label { background-image: url('../images/machine-icons/forklift.png'); }
         input[data-sector="skid-steer"] + label { background-image: url('../images/machine-icons/skid-steer.png'); }
-
     }
 }
 
@@ -1283,16 +1282,6 @@ blockquote{
         height: 100% !important;
     }
 }
-
-
-//@media (min-width: 480px){
-//    .seven-cols .col-md-1,
-//    .seven-cols .col-sm-1,
-//    .seven-cols .col-lg-1  {
-//        width: 100%;
-//        *width: 100%;
-//    }
-//}
 
 @media (min-width: 992px) {
     .seven-cols .col-md-1,

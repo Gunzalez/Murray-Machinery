@@ -74,7 +74,6 @@
                 },
                 "extensions": [
                     "theme-white",
-                    //"theme-dark",
                     "pagedim-black",
                     "border-offset"
                 ]
@@ -84,6 +83,7 @@
             mMachinery.navigation.API.bind("opened", function() {
                 mMachinery.navigation.$toggleBtn.addClass('is-active');
             });
+
             mMachinery.navigation.API.bind("closed", function() {
                 mMachinery.navigation.$toggleBtn.removeClass('is-active');
             });
@@ -282,8 +282,8 @@
                 }
             } else {
 
-                // transitionEnded get fired even before transition actually ends
-                // so we test for heights again.
+                // because transitionEnded gets fired even before transition actually ends
+                // we test for heights before we do stuff.
                 if(this.$filter.outerHeight() === this.$container.outerHeight()){
                     this.$filter.addClass('static');
                     this.$container.removeAttr('style');
