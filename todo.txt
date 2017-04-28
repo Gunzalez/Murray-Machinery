@@ -16,6 +16,7 @@ Hours so far
        Bug fixing and Testing +
        Site clean up                        4 hrs
 18th - Site is completed                    6 hrs
+28th - Filter icons and others              4 hrs
 
 
 
@@ -23,11 +24,11 @@ Hours so far
 TODO
 =======================
 ## Featured product carousel
-## Some sort of filter on the homepage
-Drop shadow on drop down menu
 
 
 
 TODO done
 =======================
 # Display carousel after pre-loaded images
+## Some sort of filter on the homepage
+Drop shadow on drop down menu
