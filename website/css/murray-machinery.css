@@ -955,6 +955,8 @@ body {
   border: none;
   line-height: 100%;
   padding: 0 0 20px 0; }
+  #product-filter legend.inverted {
+    color: #111111; }
 
 #product-filter ul {
   float: left;
@@ -964,6 +966,16 @@ body {
   #product-filter ul li {
     display: inline-block;
     text-align: center; }
+
+#product-filter .inverted input[type=checkbox] + label,
+#product-filter .inverted input[type=radio] + label {
+  color: #111111; }
+
+#product-filter input {
+  -moz-transition: all, 0.25s;
+  -o-transition: all, 0.25s;
+  -webkit-transition: all, 0.25s;
+  transition: all, 0.25s; }
 
 @media (min-width: 992px) {
   #product-filter input[type=checkbox],
@@ -991,19 +1003,14 @@ body {
     -o-transition: all, 0.25s;
     -webkit-transition: all, 0.25s;
     transition: all, 0.25s; }
+    #product-filter input[type=checkbox] + label:hover,
+    #product-filter input[type=radio] + label:hover {
+      opacity: 1 !important; }
   #product-filter input[type=checkbox]:checked + label,
   #product-filter input[type=radio]:checked + label {
-    opacity: 1;
-    text-decoration: underline; }
-  #product-filter input[type=checkbox],
-  #product-filter input[type=radio] {
-    -moz-transition: all, 0.25s;
-    -o-transition: all, 0.25s;
-    -webkit-transition: all, 0.25s;
-    transition: all, 0.25s; }
-  #product-filter input[type=checkbox]:hover + label,
-  #product-filter input[type=radio]:hover + label {
-    opacity: 1 !important; }
+    opacity: 1 !important;
+    text-decoration: underline !important;
+    font-weight: bold; }
   #product-filter input[data-sector="agriculture"] + label {
     background-image: url("../images/sector-icons/agriculture-w.png"); }
   #product-filter input[data-sector="forestry"] + label {
@@ -1031,10 +1038,7 @@ body {
   #product-filter input[data-sector="forklift"] + label {
     background-image: url("../images/machine-icons/forklift.png"); }
   #product-filter input[data-sector="skid-steer"] + label {
-    background-image: url("../images/machine-icons/skid-steer.png"); }
-  #product-filter .inverted input[type=checkbox] + label,
-  #product-filter .inverted input[type=radio] + label {
-    color: #111111; } }
+    background-image: url("../images/machine-icons/skid-steer.png"); } }
 
 .mm-listview > li > a,
 .mm-listview > li > span {

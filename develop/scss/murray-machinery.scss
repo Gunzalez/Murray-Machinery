@@ -803,6 +803,10 @@ body {
         border: none;
         line-height: 100%;
         padding: 0 0 20px 0;
+
+        &.inverted {
+            color: $brand-black;
+        }
     }
 
     ul {
@@ -816,6 +820,17 @@ body {
             display: inline-block;
             text-align: center;
         }
+    }
+
+    .inverted {
+        input[type=checkbox] + label,
+        input[type=radio] + label {
+            color: $brand-black;
+        }
+    }
+
+    input {
+        @include transition(all, 0.25s);
     }
 
     @media (min-width: $width-md) {
@@ -846,23 +861,17 @@ body {
             text-overflow: ellipsis;
             text-transform: uppercase;
             @include transition(all, 0.25s);
+
+            &:hover {
+                opacity: 1 !important;
+            }
         }
 
         input[type=checkbox]:checked + label,
         input[type=radio]:checked + label {
-            opacity: 1;
-            text-decoration: underline;
-        }
-
-
-        input[type=checkbox],
-        input[type=radio] {
-            @include transition(all, 0.25s);
-        }
-
-        input[type=checkbox]:hover + label,
-        input[type=radio]:hover + label {
             opacity: 1 !important;
+            text-decoration: underline !important;
+            font-weight: bold;
         }
 
         input[data-sector="agriculture"] + label { background-image: url('../images/sector-icons/agriculture-w.png'); }
@@ -881,12 +890,6 @@ body {
         input[data-sector="forklift"] + label { background-image: url('../images/machine-icons/forklift.png'); }
         input[data-sector="skid-steer"] + label { background-image: url('../images/machine-icons/skid-steer.png'); }
 
-        .inverted {
-            input[type=checkbox] + label,
-            input[type=radio] + label {
-                color: $brand-black;
-            }
-        }
     }
 }
 
