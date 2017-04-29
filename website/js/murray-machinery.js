@@ -1,5 +1,6 @@
 // JavaScript Document
-(function ($, window) {
+(function ($, window, Modernizr) {
+    "use strict";
 
     var mMachinery = {};
 
@@ -7,29 +8,26 @@
         windowWidth: ''
     };
 
-    mMachinery.page = {
-        resize: function(){},
-        init: function (){}
-    };
-
     mMachinery.utils = {
-        doAfterImagesLoaded: function(imgSrcArr, callback){
-            var imagesToLoad = imgSrcArr;
-            var cnt = imagesToLoad.length;
-            var imagesLoaded = 0;
+        doAfterImagesLoaded: function (imgSrcArr, callback) {
+            var imagesToLoad = imgSrcArr,
+                cnt = imagesToLoad.length,
+                imagesLoaded = 0,
 
-            var loadAllImages = function(){
-                var img = new Image();
-                $(img).load(function(){
-                    imagesLoaded++;
-                    if(imagesLoaded === cnt){
-                        callback();
-                    } else {
-                        // recursive
-                        loadAllImages();
-                    }
-                }).attr('src',imagesToLoad[imagesLoaded]);
-            };
+                loadAllImages = function () {
+                    var img = new Image();
+                    $(img).load(function () {
+                        imagesLoaded++;
+                        if (imagesLoaded === cnt) {
+                            callback();
+                        } else {
+                            // recursive
+                            loadAllImages();
+                        }
+                    }).attr('src', imagesToLoad[imagesLoaded]);
+                };
+
+            // call the function immediately
             loadAllImages();
         }
     };
@@ -37,7 +35,7 @@
     mMachinery.navigation = {
 
         // initial set up
-        init: function(){
+        init: function () {
 
             // elements of this component
             this.$parentRow = $('.main-navigation');
@@ -46,22 +44,22 @@
             this.smallScreenMenu = $("#menu");
             this.$toggleBtn = $('.toggle-navigation', this.$parentRow);
 
-            this.$menuToggleBtns.each(function(i, obj){
-                $('> a', $(obj)).on('click', function(e){
+            this.$menuToggleBtns.each(function (i, obj) {
+                $('> a', $(obj)).on('click', function (e) {
                     e.preventDefault();
-                    if(Modernizr.touch){
+                    if (Modernizr.touch) {
                         $(obj).siblings().removeClass('hover');
                         $(obj).toggleClass('hover');
                         $(obj).blur();
                     }
                 });
 
-                if(!Modernizr.touch){
-                    $(obj).on('mouseenter', function(){
+                if (!Modernizr.touch) {
+                    $(obj).on('mouseenter', function () {
                         $(obj).addClass('hover');
                     });
 
-                    $(obj).on('mouseleave', function(){
+                    $(obj).on('mouseleave', function () {
                         $(obj).removeClass('hover');
                     });
                 }
@@ -80,24 +78,24 @@
             });
 
             mMachinery.navigation.API = this.smallScreenMenu.data("mmenu");
-            mMachinery.navigation.API.bind("opened", function() {
+            mMachinery.navigation.API.bind("opened", function () {
                 mMachinery.navigation.$toggleBtn.addClass('is-active');
             });
 
-            mMachinery.navigation.API.bind("closed", function() {
+            mMachinery.navigation.API.bind("closed", function () {
                 mMachinery.navigation.$toggleBtn.removeClass('is-active');
             });
 
-            this.$toggleBtn.on('click', function(e){
+            this.$toggleBtn.on('click', function (e) {
                 e.preventDefault();
                 mMachinery.navigation.API.open();
             });
         },
 
-        resize: function(){
+        resize: function () {
 
-            // close/hide all menu on resize
-            this.$menuToggleBtns.each(function(i, obj){
+            // close/hide all menu when widow is re-sized
+            this.$menuToggleBtns.each(function (i, obj) {
                 $(obj).removeClass('hover');
             });
             mMachinery.navigation.API.close();
@@ -106,7 +104,7 @@
 
     mMachinery.carousel = {
 
-        changeSlide: function(index){
+        changeSlide: function (index) {
 
             // hide/show slide copy
             this.$slides.removeClass('active');
@@ -114,14 +112,14 @@
 
             // change slide back ground image
             var newBg = this.$slides.eq(index).attr('data-slide-bg');
-            this.$parent.css('background-image', 'url("'+newBg+'")');
+            this.$parent.css('background-image', 'url("' + newBg + '")');
 
             // update blue dots to reflect change
             this.$controls.removeClass('active');
             this.$controls.eq(index).addClass('active');
         },
 
-        init: function(){
+        init: function () {
             this.$parent = $('.main-carousel');
             this.$slides = $('.slide');
             this.$controlBox = $('.slide-controls');
@@ -134,19 +132,19 @@
             // create src array of images to be loaded
             var imagesToLoad = [];
             this.$slides.each(function (i, obj) {
-                imagesToLoad.push($(obj).attr('data-slide-bg'))
+                imagesToLoad.push($(obj).attr('data-slide-bg'));
             });
 
-            // create callback to be called after images are loaded
-            var callback = function(){
+            // create callback function to be executed after images are loaded
+            var callback = function () {
                 // attach carousel controls events
-                self.$controls.each(function(i, obj){
-                    $(obj).on('click', function(e){
+                self.$controls.each(function (i, obj) {
+                    $(obj).on('click', function (e) {
                         e.preventDefault();
-                        if(!$(obj).hasClass('active')){
+                        if (!$(obj).hasClass('active')) {
                             var index = self.$controls.index($(obj));
                             self.changeSlide(index);
-                            if(self.timer){
+                            if (self.timer) {
                                 clearInterval(self.timer);
                             }
                         }
@@ -154,13 +152,14 @@
                 });
 
                 // set up carousel timer
-                self.timer = setInterval(function(){
-                    if(!self.$parent.is(":hover")){
-                        var $activeLink = $('.active', self.$controlBox);
-                        var activeIndex = self.$controls.index($activeLink);
-                        var nextIndex = activeIndex + 1;
-                        if(nextIndex === self.$controls.length){
-                            nextIndex = 0
+                self.timer = setInterval(function () {
+                    if (!self.$parent.is(":hover")) {
+                        var $activeLink = $('.active', self.$controlBox),
+                            activeIndex = self.$controls.index($activeLink),
+                            nextIndex = activeIndex + 1;
+
+                        if (nextIndex === self.$controls.length) {
+                            nextIndex = 0;
                         }
                         self.changeSlide(nextIndex);
                     }
@@ -170,7 +169,7 @@
                 self.$controlBox.removeClass('controls-not-ready');
             };
 
-            // pass array, callback to preLoading function
+            // pass array, callback to pre-loading function
             mMachinery.utils.doAfterImagesLoaded(imagesToLoad, callback);
         }
     };
@@ -184,21 +183,21 @@
 
                 $('a', $otherViews).on('click', function (e) {
                     e.preventDefault();
-                    $mainView.attr('src', $('img',$(this)).attr('src'));
+                    $mainView.attr('src', $('img', $(this)).attr('src'));
                 });
-            })
+            });
         }
     };
 
     mMachinery.timed = {
 
         changeSlide: function () {
-            var $activeSlide = $('.active', this.$stage);
-            var currIndex = this.$slides.index($activeSlide);
+            var $activeSlide = $('.active', this.$stage),
+                currIndex = this.$slides.index($activeSlide);
 
             this.$slides.removeClass('active');
             currIndex++;
-            if(currIndex === this.$slides.length){
+            if (currIndex === this.$slides.length) {
                 currIndex = 0;
             }
 
@@ -210,28 +209,28 @@
             this.$stage = $('#timed-carousel');
             this.$slides = $('.slide', this.$stage);
             this.$progressBar = $('.slide-progress-bar', this.$stage);
-            this.delay = 30; // 30 seconds
+            this.delay = 15; // 15 seconds before image switch
             this.timer = null;
 
             var self = this;
-            if(this.$slides.length > 1) {
+            if (this.$slides.length > 1) {
 
                 // create src array of images to be loaded
                 var imagesToLoad = [];
                 this.$slides.each(function (i, obj) {
-                    imagesToLoad.push($(obj).attr('src'))
+                    imagesToLoad.push($(obj).attr('src'));
                 });
 
-                // create callback to be called after images are loaded
+                // create callback to be executed after all images are loaded
                 var callback = function () {
 
-                    var $slideProgress = $('<div />');
+                    var $slideProgress = $('<div></div>');
                     self.$progressBar.append($slideProgress);
 
                     $slideProgress.css('transition-duration', self.delay + 's');
                     $slideProgress.get(0).addEventListener('transitionend', function () {
                         self.changeSlide();
-                        if($slideProgress.width() === 0){
+                        if ($slideProgress.width() === 0) {
                             $slideProgress.width('100%');
                         } else {
                             $slideProgress.width('0%');
@@ -241,7 +240,7 @@
                     $slideProgress.width('0%');
                 };
 
-                // pass array, callback to preloading function
+                // pass array, callback to pre-loading function
                 mMachinery.utils.doAfterImagesLoaded(imagesToLoad, callback);
             }
         }
@@ -249,11 +248,11 @@
 
     mMachinery.filter = {
 
-        toggle: function () {            
-            if(this.state === 'feature'){
+        toggle: function () {
+            if (this.state === 'feature') {
                 this.$container.height(this.$feature.outerHeight());
                 this.$feature.removeClass('static');
-                this.$container.height(0); 
+                this.$container.height(0);
                 this.state = 'filter';
             } else {
                 this.$container.height(this.$filter.outerHeight());
@@ -263,9 +262,10 @@
             }
         },
 
-        transitionEnded: function() {
-            if(this.$container.height() === 0){
-                if(this.state === 'filter'){
+        transitionEnded: function () {
+            if (this.$container.height() === 0) {
+                if (this.state === 'filter') {
+
                     this.$feature.removeClass('visible');
                     this.$filter.addClass('visible');
                     this.$container.height(this.$filter.outerHeight());
@@ -273,6 +273,7 @@
                     // change filter display
                     this.$switcher.addClass('filter').removeClass('feature');
                 } else {
+
                     this.$filter.removeClass('visible');
                     this.$feature.addClass('visible');
                     this.$container.height(this.$feature.outerHeight());
@@ -284,10 +285,10 @@
 
                 // because transitionEnded gets fired even before transition actually ends
                 // we test for heights before we do stuff.
-                if(this.$filter.outerHeight() === this.$container.outerHeight()){
+                if (this.$filter.outerHeight() === this.$container.outerHeight()) {
                     this.$filter.addClass('static');
                     this.$container.removeAttr('style');
-                } else if(this.$feature.outerHeight() === this.$container.outerHeight()){
+                } else if (this.$feature.outerHeight() === this.$container.outerHeight()) {
                     this.$feature.addClass('static');
                     this.$container.removeAttr('style');
                 }
@@ -302,7 +303,7 @@
             this.state = 'feature';
 
             var self = this;
-            if(this.$container.length > 0){
+            if (this.$container.length > 0) {
                 this.$container.get(0).addEventListener('transitionend', function () {
                     self.transitionEnded();
                 });
@@ -314,13 +315,11 @@
                 });
             }
         }
-
     };
 
     mMachinery.init = function () {
 
-        // all init here
-        mMachinery.page.init();
+        // all init function here
         mMachinery.navigation.init();
         mMachinery.carousel.init();
         mMachinery.filter.init();
@@ -346,7 +345,6 @@
 
     // main resize
     mMachinery.resize = function () {
-        mMachinery.page.resize();
         mMachinery.navigation.resize();
     };
 
@@ -355,4 +353,4 @@
         mMachinery.init();
     });
 
-}(jQuery, window));
+}(jQuery, window, Modernizr));
