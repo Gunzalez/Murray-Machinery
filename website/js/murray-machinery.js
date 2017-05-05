@@ -8,6 +8,15 @@
         windowWidth: ''
     };
 
+    mMachinery.environment = {
+        init: function(){
+            var $extraOptions = $('.product-extras li');
+            if($extraOptions.length > 0){
+                $extraOptions.matchHeight({});
+            }
+        }
+    };
+
     mMachinery.utils = {
         doAfterImagesLoaded: function (imgSrcArr, callback) {
             var imagesToLoad = imgSrcArr,
@@ -320,6 +329,7 @@
     mMachinery.init = function () {
 
         // all init function here
+        mMachinery.environment.init();
         mMachinery.navigation.init();
         mMachinery.carousel.init();
         mMachinery.filter.init();

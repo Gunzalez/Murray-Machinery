@@ -1070,18 +1070,28 @@ body {
 
 .product-extras {
   float: left;
-  background: #d2d2d2;
   width: 100%;
   overflow: hidden;
   margin-bottom: 30px; }
   .product-extras li {
     float: left;
-    padding: 10px 10px  10020px 10px;
+    padding: 10px 10px 10px 10px;
     font-size: 0.75em;
     width: 25%;
+    border-bottom: 1px solid #ffffff;
     border-right: 1px solid #ffffff;
-    height: 100%;
-    margin-bottom: -10000px; }
+    background: #d2d2d2; }
+    .product-extras li .title {
+      font-size: 1.1em;
+      padding-bottom: 5px;
+      font-weight: bold; }
+    .product-extras li .unit-price {
+      font-size: 1.0em;
+      font-weight: bold;
+      color: #1c3389; }
+    .product-extras li p {
+      margin-bottom: 0;
+      padding-bottom: 0; }
     @media (max-width: 992px) {
       .product-extras li {
         width: 50%; } }
