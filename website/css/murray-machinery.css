@@ -405,6 +405,10 @@ p {
 .empty-content {
   height: 715px; }
 
+@media (min-width: 480px) {
+  .mobile-spacer {
+    display: none; } }
+
 body {
   overflow-x: hidden;
   font-family: 'Open Sans', sans-serif;

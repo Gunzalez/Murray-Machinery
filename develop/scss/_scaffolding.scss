@@ -473,3 +473,9 @@ p {
     height: 715px;
 }
 
+.mobile-spacer {
+    @media (min-width: $width-xs) {
+        display: none;
+    }
+}
+
