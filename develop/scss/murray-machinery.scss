@@ -1313,3 +1313,24 @@ blockquote{
         *width: 14.285714285714285714285714285714%;
     }
 }
+
+.mm-paginaton {
+    padding: 15px;
+
+    @media (min-width: $width-sm) {
+        text-align: center;
+    }
+
+    a {
+        border: none;
+        @include border-radius(1px);
+        margin: 0 5px 5px 5px;
+    }
+
+    .active {
+        a {
+            background-color: $brand-blue;
+            border-color: $brand-blue;
+        }
+    }
+}
