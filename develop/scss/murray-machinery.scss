@@ -774,6 +774,12 @@ body {
     &:not(.visible) {
         @extend %visuallyHidden;
     }
+
+    form {
+        button {
+            float: right;
+        }
+    }
 }
 
 #product-filter {

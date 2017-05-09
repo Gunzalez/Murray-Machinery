@@ -939,6 +939,9 @@ body {
   #product-feature.static,
   #product-filter.static {
     position: static; }
+  #product-feature form button,
+  #product-filter form button {
+    float: right; }
 
 #product-filter fieldset {
   padding-bottom: 10px;
