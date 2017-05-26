@@ -875,21 +875,21 @@ body {
             font-weight: bold;
         }
 
-        input[data-sector="agriculture"] + label { background-image: url('../images/sector-icons/agriculture-w.png'); }
-        input[data-sector="forestry"] + label { background-image: url('../images/sector-icons/forestry-w.png'); }
-        input[data-sector="municipal"] + label { background-image: url('../images/sector-icons/municipal-w.png'); }
-        input[data-sector="construction"] + label { background-image: url('../images/sector-icons/construction-w.png'); }
-        input[data-sector="waste"] + label { background-image: url('../images/sector-icons/waste-w.png'); }
-        input[data-sector="engineering"] + label { background-image: url('../images/sector-icons/engineering-w.png'); }
-        input[data-sector="renewables"] + label { background-image: url('../images/sector-icons/renewables-w.png'); }
+        input[data-sector="agriculture"] + label { background-image: url('../images/filter-icons/agriculture.png'); }
+        input[data-sector="forestry"] + label { background-image: url('../images/filter-icons/forestry.png'); }
+        input[data-sector="municipal"] + label { background-image: url('../images/filter-icons/municipal.png'); }
+        input[data-sector="construction"] + label { background-image: url('../images/filter-icons/construction.png'); }
+        input[data-sector="waste"] + label { background-image: url('../images/filter-icons/waste.png'); }
+        input[data-sector="engineering"] + label { background-image: url('../images/filter-icons/engineering.png'); }
+        input[data-sector="renewables"] + label { background-image: url('../images/filter-icons/renewables.png'); }
 
-        input[data-sector="tractor"] + label { background-image: url('../images/machine-icons/tractor.png'); }
-        input[data-sector="backhoe"] + label { background-image: url('../images/machine-icons/back-hoe.png'); }
-        input[data-sector="load-shovel"] + label { background-image: url('../images/machine-icons/load-shovel.png'); }
-        input[data-sector="telehandler"] + label { background-image: url('../images/machine-icons/telehandler.png'); }
-        input[data-sector="front-loader"] + label { background-image: url('../images/machine-icons/front-loader.png'); }
-        input[data-sector="forklift"] + label { background-image: url('../images/machine-icons/forklift.png'); }
-        input[data-sector="skid-steer"] + label { background-image: url('../images/machine-icons/skid-steer.png'); }
+        input[data-sector="tractor"] + label { background-image: url('../images/filter-icons/tractor.png'); }
+        input[data-sector="backhoe"] + label { background-image: url('../images/filter-icons/back-hoe.png'); }
+        input[data-sector="load-shovel"] + label { background-image: url('../images/filter-icons/load-shovel.png'); }
+        input[data-sector="telehandler"] + label { background-image: url('../images/filter-icons/telehandler.png'); }
+        input[data-sector="front-loader"] + label { background-image: url('../images/filter-icons/front-loader.png'); }
+        input[data-sector="forklift"] + label { background-image: url('../images/filter-icons/forklift.png'); }
+        input[data-sector="skid-steer"] + label { background-image: url('../images/filter-icons/skid-steer.png'); }
     }
 }
 

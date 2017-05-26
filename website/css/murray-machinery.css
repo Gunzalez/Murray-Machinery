@@ -1018,33 +1018,33 @@ body {
     text-decoration: underline !important;
     font-weight: bold; }
   #product-filter input[data-sector="agriculture"] + label {
-    background-image: url("../images/sector-icons/agriculture-w.png"); }
+    background-image: url("../images/filter-icons/agriculture.png"); }
   #product-filter input[data-sector="forestry"] + label {
-    background-image: url("../images/sector-icons/forestry-w.png"); }
+    background-image: url("../images/filter-icons/forestry.png"); }
   #product-filter input[data-sector="municipal"] + label {
-    background-image: url("../images/sector-icons/municipal-w.png"); }
+    background-image: url("../images/filter-icons/municipal.png"); }
   #product-filter input[data-sector="construction"] + label {
-    background-image: url("../images/sector-icons/construction-w.png"); }
+    background-image: url("../images/filter-icons/construction.png"); }
   #product-filter input[data-sector="waste"] + label {
-    background-image: url("../images/sector-icons/waste-w.png"); }
+    background-image: url("../images/filter-icons/waste.png"); }
   #product-filter input[data-sector="engineering"] + label {
-    background-image: url("../images/sector-icons/engineering-w.png"); }
+    background-image: url("../images/filter-icons/engineering.png"); }
   #product-filter input[data-sector="renewables"] + label {
-    background-image: url("../images/sector-icons/renewables-w.png"); }
+    background-image: url("../images/filter-icons/renewables.png"); }
   #product-filter input[data-sector="tractor"] + label {
-    background-image: url("../images/machine-icons/tractor.png"); }
+    background-image: url("../images/filter-icons/tractor.png"); }
   #product-filter input[data-sector="backhoe"] + label {
-    background-image: url("../images/machine-icons/back-hoe.png"); }
+    background-image: url("../images/filter-icons/back-hoe.png"); }
   #product-filter input[data-sector="load-shovel"] + label {
-    background-image: url("../images/machine-icons/load-shovel.png"); }
+    background-image: url("../images/filter-icons/load-shovel.png"); }
   #product-filter input[data-sector="telehandler"] + label {
-    background-image: url("../images/machine-icons/telehandler.png"); }
+    background-image: url("../images/filter-icons/telehandler.png"); }
   #product-filter input[data-sector="front-loader"] + label {
-    background-image: url("../images/machine-icons/front-loader.png"); }
+    background-image: url("../images/filter-icons/front-loader.png"); }
   #product-filter input[data-sector="forklift"] + label {
-    background-image: url("../images/machine-icons/forklift.png"); }
+    background-image: url("../images/filter-icons/forklift.png"); }
   #product-filter input[data-sector="skid-steer"] + label {
-    background-image: url("../images/machine-icons/skid-steer.png"); } }
+    background-image: url("../images/filter-icons/skid-steer.png"); } }
 
 .mm-listview > li > a,
 .mm-listview > li > span {
