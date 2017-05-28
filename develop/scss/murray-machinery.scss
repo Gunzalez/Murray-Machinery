@@ -237,49 +237,49 @@ body {
     &.agriculture {
         background-image: url('../images/sector-icons/agriculture.png');
         &.white {
-            background-image: url('../images/sector-icons/agriculture-w.png');
+            background-image: url('../images/filter-icons/agriculture.png');
         }
     }
 
     &.forestry {
         background-image: url('../images/sector-icons/forestry.png');
         &.white {
-            background-image: url('../images/sector-icons/forestry-w.png');
+            background-image: url('../images/filter-icons/forestry.png');
         }
     }
 
     &.renewables {
         background-image: url('../images/sector-icons/renewables.png');
         &.white {
-            background-image: url('../images/sector-icons/renewables-w.png');
+            background-image: url('../images/filter-icons/renewables.png');
         }
     }
 
     &.municipal {
         background-image: url('../images/sector-icons/municipal.png');
         &.white {
-            background-image: url('../images/sector-icons/municipal-w.png');
+            background-image: url('../images/filter-icons/municipal.png');
         }
     }
 
     &.engineering {
         background-image: url('../images/sector-icons/engineering.png');
         &.white {
-            background-image: url('../images/sector-icons/engineering-w.png');
+            background-image: url('../images/filter-icons/engineering.png');
         }
     }
 
     &.waste {
         background-image: url('../images/sector-icons/waste.png');
         &.white {
-            background-image: url('../images/sector-icons/waste-w.png');
+            background-image: url('../images/filter-icons/waste.png');
         }
     }
 
     &.construction {
         background-image: url('../images/sector-icons/construction.png');
         &.white {
-            background-image: url('../images/sector-icons/construction-w.png');
+            background-image: url('../images/filter-icons/construction.png');
         }
     }
 }
@@ -288,31 +288,31 @@ body {
     background-size: contain;
 
     &.backhoe {
-        background-image: url('../images/machine-icons/back-hoe.png');
+        background-image: url('../images/filter-icons/back-hoe.png');
     }
 
     &.forklift {
-        background-image: url('../images/machine-icons/forklift.png');
+        background-image: url('../images/filter-icons/forklift.png');
     }
 
     &.front-loader {
-        background-image: url('../images/machine-icons/front-loader.png');
+        background-image: url('../images/filter-icons/front-loader.png');
     }
 
     &.skid-steer {
-        background-image: url('../images/machine-icons/skid-steer.png');
+        background-image: url('../images/filter-icons/skid-steer.png');
     }
 
     &.telehandler {
-        background-image: url('../images/machine-icons/telehandler.png');
+        background-image: url('../images/filter-icons/telehandler.png');
     }
 
     &.tractor {
-        background-image: url('../images/machine-icons/tractor.png');
+        background-image: url('../images/filter-icons/tractor.png');
     }
 
     &.load-shovel {
-        background-image: url('../images/machine-icons/load-shovel.png');
+        background-image: url('../images/filter-icons/load-shovel.png');
     }
 }
 
