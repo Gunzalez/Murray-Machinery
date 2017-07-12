@@ -770,6 +770,7 @@ body {
       padding-bottom: 10px;
       padding-right: 10px;
       width: 90px;
+      min-height: 120px;
       color: #ffffff;
       text-transform: uppercase;
       font-size: 0.75em; }
@@ -1164,8 +1165,11 @@ body {
       display: block;
       border-bottom: 1px solid #ffffff;
       float: left;
-      width: 25%;
+      width: 38%;
       border-right: none; }
+      .product-variations td:last-child, .product-variations th:last-child {
+        width: 24%;
+        text-align: right; }
       .product-variations td:first-child, .product-variations th:first-child {
         float: none;
         width: 100%;
